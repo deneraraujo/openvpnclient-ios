@@ -3,7 +3,7 @@
 
 def shared_pods
   use_frameworks!
-  pod 'OpenVPNAdapter', :git => 'https://github.com/ss-abramchuk/OpenVPNAdapter.git'
+  pod 'OpenVPNAdapter', :git => 'https://github.com/deneraraujo/OpenVPNAdapter.git'
 end
 
 target 'VPNClient' do

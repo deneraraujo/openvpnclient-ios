@@ -13,6 +13,7 @@
 
 #import "OpenVPNConfiguration+Internal.h"
 #import "OpenVPNServerEntry+Internal.h"
+#import "OpenVPNDhcpOptionEntry+Internal.h" //Added by Dener Araújo - 2020-09-06
 
 using namespace openvpn;
 
@@ -55,6 +56,20 @@ using namespace openvpn;
             }
             
             _servers = servers;
+        }
+
+        //Added by Dener Araújo - 2020-09-06
+        _dhcpOptions = nil;
+        
+        if (!eval.dhcpOptionList.empty()) {
+            NSMutableArray *dhcpOptions = [NSMutableArray new];
+            
+            for (ClientAPI::DhcpOptionEntry entry : eval.dhcpOptionList) {
+                OpenVPNDhcpOptionEntry *dhcpOptionEntry = [[OpenVPNDhcpOptionEntry alloc] initWithDhcpOptionEntry:entry];
+                [dhcpOptions addObject:dhcpOptionEntry];
+            }
+            
+            _dhcpOptions = dhcpOptions;
         }
     }
     return self;

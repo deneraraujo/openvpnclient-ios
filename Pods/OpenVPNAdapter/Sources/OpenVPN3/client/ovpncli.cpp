@@ -663,6 +663,14 @@ namespace openvpn {
 	    se.friendlyName = i->friendlyName;
 	    eval.serverList.push_back(se);
 	  }
+    // Added by Dener Araújo - 2020-09-06
+    for (ParseClientConfig::DhcpOptionList::const_iterator i = cc.dhcpOptionList().begin(); i != cc.dhcpOptionList().end(); ++i)
+      {
+        DhcpOptionEntry de;
+        de.type = i->type;
+        de.address = i->address;
+        eval.dhcpOptionList.push_back(de);
+      }
       }
       catch (const std::exception& e)
 	{
