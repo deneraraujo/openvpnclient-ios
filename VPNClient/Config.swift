@@ -1,6 +1,6 @@
 //
 //  Config.swift
-//  TunnelProvider
+//  VPN Client, TunnelProvider
 //
 //  Created by Dener Araújo on 07/08/20.
 //
