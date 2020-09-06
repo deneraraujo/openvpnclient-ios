@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12D0B2FCB98C3E2EA05997AC /* Pods_TunnelProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B75770CA705C6EBB06094F /* Pods_TunnelProvider.framework */; };
+		C525E0B3892DE7AB63B13B3E /* Pods_VPNClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F3253E199261E962B16A03 /* Pods_VPNClient.framework */; };
+		ED02603A24D60A3800D00301 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02603924D60A3800D00301 /* AppDelegate.swift */; };
+		ED02603C24D60A3800D00301 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02603B24D60A3800D00301 /* SceneDelegate.swift */; };
+		ED02603E24D60A3800D00301 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02603D24D60A3800D00301 /* MainView.swift */; };
+		ED02604024D60A3900D00301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED02603F24D60A3900D00301 /* Assets.xcassets */; };
+		ED02604324D60A3900D00301 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED02604224D60A3900D00301 /* Preview Assets.xcassets */; };
+		ED02604624D60A3900D00301 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED02604424D60A3900D00301 /* LaunchScreen.storyboard */; };
+		ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */; };
+		ED594CD624DBE4010069D301 /* TunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED594CCE24DBE4010069D301 /* TunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ED594CDA24DBE4230069D301 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */; };
+		ED91EC3824E135AD00E462EC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3324E1355800E462EC /* Config.swift */; };
+		ED91EC3D24E135E700E462EC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3B24E135E700E462EC /* Config.swift */; };
+		ED91EC4024E1417900E462EC /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3F24E1417900E462EC /* LogView.swift */; };
+		ED91EC4724E15A8800E462EC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3C24E135E700E462EC /* Log.swift */; };
+		ED91EC4B24E15AA000E462EC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC4A24E15AA000E462EC /* Log.swift */; };
+		ED91EC4D24E15ABE00E462EC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC4C24E15ABE00E462EC /* Util.swift */; };
+		ED91EC4F24E15ACA00E462EC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC4E24E15ACA00E462EC /* Util.swift */; };
+		ED91EC5124E343BE00E462EC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED91EC5024E343BE00E462EC /* CloudKit.framework */; };
+		EDAA1A9624D60C3100EBFC9C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */; };
+		EDAD6F6124D9EA520050A0C9 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD6F6024D9EA510050A0C9 /* VPN.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED594CD424DBE4010069D301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED02602E24D60A3800D00301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED594CCD24DBE4010069D301;
+			remoteInfo = TunnelProvider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED02605F24D60AB600D00301 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ED594CD624DBE4010069D301 /* TunnelProvider.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		28F3253E199261E962B16A03 /* Pods_VPNClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VPNClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C401C5A307E526A6D51D847 /* Pods-TunnelProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TunnelProvider.debug.xcconfig"; path = "Target Support Files/Pods-TunnelProvider/Pods-TunnelProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		6360911D7CD295D760DD4FB4 /* Pods-TunnelProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TunnelProvider.release.xcconfig"; path = "Target Support Files/Pods-TunnelProvider/Pods-TunnelProvider.release.xcconfig"; sourceTree = "<group>"; };
+		64B75770CA705C6EBB06094F /* Pods_TunnelProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TunnelProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C07908E4A1E7936892FFD01A /* Pods-VPNClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPNClient.release.xcconfig"; path = "Target Support Files/Pods-VPNClient/Pods-VPNClient.release.xcconfig"; sourceTree = "<group>"; };
+		C2CE15A60AB137788A624A77 /* Pods-VPNClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPNClient.debug.xcconfig"; path = "Target Support Files/Pods-VPNClient/Pods-VPNClient.debug.xcconfig"; sourceTree = "<group>"; };
+		ED02603624D60A3800D00301 /* VPNClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED02603924D60A3800D00301 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED02603B24D60A3800D00301 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ED02603D24D60A3800D00301 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		ED02603F24D60A3900D00301 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED02604224D60A3900D00301 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED02604524D60A3900D00301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED02604724D60A3900D00301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED594CCE24DBE4010069D301 /* TunnelProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TunnelProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TunnelProvider.entitlements; sourceTree = "<group>"; };
+		ED91EC3324E1355800E462EC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		ED91EC3B24E135E700E462EC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = VPNClient/Config.swift; sourceTree = SOURCE_ROOT; };
+		ED91EC3C24E135E700E462EC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = VPNClient/Log.swift; sourceTree = SOURCE_ROOT; };
+		ED91EC3F24E1417900E462EC /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		ED91EC4A24E15AA000E462EC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = VPNClient/Log.swift; sourceTree = SOURCE_ROOT; };
+		ED91EC4C24E15ABE00E462EC /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		ED91EC4E24E15ACA00E462EC /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = VPNClient/Util.swift; sourceTree = SOURCE_ROOT; };
+		ED91EC5024E343BE00E462EC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		EDAA1A9424D60C3100EBFC9C /* VPNClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPNClient.entitlements; sourceTree = "<group>"; };
+		EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		EDAD6F6024D9EA510050A0C9 /* VPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED02603324D60A3800D00301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED91EC5124E343BE00E462EC /* CloudKit.framework in Frameworks */,
+				C525E0B3892DE7AB63B13B3E /* Pods_VPNClient.framework in Frameworks */,
+				EDAA1A9624D60C3100EBFC9C /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED594CCB24DBE4010069D301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED594CDA24DBE4230069D301 /* NetworkExtension.framework in Frameworks */,
+				12D0B2FCB98C3E2EA05997AC /* Pods_TunnelProvider.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EE5C9985C419148DA3857B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE15A60AB137788A624A77 /* Pods-VPNClient.debug.xcconfig */,
+				C07908E4A1E7936892FFD01A /* Pods-VPNClient.release.xcconfig */,
+				4C401C5A307E526A6D51D847 /* Pods-TunnelProvider.debug.xcconfig */,
+				6360911D7CD295D760DD4FB4 /* Pods-TunnelProvider.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A121DBA43F8256BC93D7C7D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED91EC5024E343BE00E462EC /* CloudKit.framework */,
+				EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */,
+				28F3253E199261E962B16A03 /* Pods_VPNClient.framework */,
+				64B75770CA705C6EBB06094F /* Pods_TunnelProvider.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED02602D24D60A3800D00301 = {
+			isa = PBXGroup;
+			children = (
+				ED02603824D60A3800D00301 /* VPNClient */,
+				ED594CCF24DBE4010069D301 /* TunnelProvider */,
+				ED02603724D60A3800D00301 /* Products */,
+				2EE5C9985C419148DA3857B3 /* Pods */,
+				A121DBA43F8256BC93D7C7D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ED02603724D60A3800D00301 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED02603624D60A3800D00301 /* VPNClient.app */,
+				ED594CCE24DBE4010069D301 /* TunnelProvider.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED02603824D60A3800D00301 /* VPNClient */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C5CE924D9E31C0010FF37 /* View */,
+				EDAA1A9424D60C3100EBFC9C /* VPNClient.entitlements */,
+				ED02603924D60A3800D00301 /* AppDelegate.swift */,
+				ED02603B24D60A3800D00301 /* SceneDelegate.swift */,
+				EDAD6F6024D9EA510050A0C9 /* VPN.swift */,
+				ED91EC3324E1355800E462EC /* Config.swift */,
+				ED91EC3C24E135E700E462EC /* Log.swift */,
+				ED91EC4C24E15ABE00E462EC /* Util.swift */,
+				ED02603F24D60A3900D00301 /* Assets.xcassets */,
+				ED02604424D60A3900D00301 /* LaunchScreen.storyboard */,
+				ED02604724D60A3900D00301 /* Info.plist */,
+				ED02604124D60A3900D00301 /* Preview Content */,
+			);
+			path = VPNClient;
+			sourceTree = "<group>";
+		};
+		ED02604124D60A3900D00301 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ED02604224D60A3900D00301 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ED1C5CE924D9E31C0010FF37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED02603D24D60A3800D00301 /* MainView.swift */,
+				ED91EC3F24E1417900E462EC /* LogView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED594CCF24DBE4010069D301 /* TunnelProvider */ = {
+			isa = PBXGroup;
+			children = (
+				ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */,
+				ED91EC3B24E135E700E462EC /* Config.swift */,
+				ED91EC4A24E15AA000E462EC /* Log.swift */,
+				ED91EC4E24E15ACA00E462EC /* Util.swift */,
+				ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */,
+			);
+			path = TunnelProvider;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED02603524D60A3800D00301 /* VPNClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED02604A24D60A3900D00301 /* Build configuration list for PBXNativeTarget "VPNClient" */;
+			buildPhases = (
+				A1D94C242A8BB801F6977256 /* [CP] Check Pods Manifest.lock */,
+				ED02603224D60A3800D00301 /* Sources */,
+				ED02603324D60A3800D00301 /* Frameworks */,
+				ED02603424D60A3800D00301 /* Resources */,
+				ED02605F24D60AB600D00301 /* Embed App Extensions */,
+				9FCD5908C359D61C0B2AFF7F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED594CD524DBE4010069D301 /* PBXTargetDependency */,
+			);
+			name = VPNClient;
+			productName = VPNClient;
+			productReference = ED02603624D60A3800D00301 /* VPNClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED594CCD24DBE4010069D301 /* TunnelProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED594CD724DBE4010069D301 /* Build configuration list for PBXNativeTarget "TunnelProvider" */;
+			buildPhases = (
+				AB5E0B584935EE3DC19CC08D /* [CP] Check Pods Manifest.lock */,
+				ED594CCA24DBE4010069D301 /* Sources */,
+				ED594CCB24DBE4010069D301 /* Frameworks */,
+				ED594CCC24DBE4010069D301 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TunnelProvider;
+			productName = TunnelProvider;
+			productReference = ED594CCE24DBE4010069D301 /* TunnelProvider.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED02602E24D60A3800D00301 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				TargetAttributes = {
+					ED02603524D60A3800D00301 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					ED594CCD24DBE4010069D301 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = ED02603124D60A3800D00301 /* Build configuration list for PBXProject "VPNClient" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED02602D24D60A3800D00301;
+			productRefGroup = ED02603724D60A3800D00301 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED02603524D60A3800D00301 /* VPNClient */,
+				ED594CCD24DBE4010069D301 /* TunnelProvider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED02603424D60A3800D00301 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED02604624D60A3900D00301 /* LaunchScreen.storyboard in Resources */,
+				ED02604324D60A3900D00301 /* Preview Assets.xcassets in Resources */,
+				ED02604024D60A3900D00301 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED594CCC24DBE4010069D301 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FCD5908C359D61C0B2AFF7F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VPNClient/Pods-VPNClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VPNClient/Pods-VPNClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VPNClient/Pods-VPNClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D94C242A8BB801F6977256 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VPNClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB5E0B584935EE3DC19CC08D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TunnelProvider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED02603224D60A3800D00301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDAD6F6124D9EA520050A0C9 /* VPN.swift in Sources */,
+				ED91EC4724E15A8800E462EC /* Log.swift in Sources */,
+				ED02603A24D60A3800D00301 /* AppDelegate.swift in Sources */,
+				ED91EC4D24E15ABE00E462EC /* Util.swift in Sources */,
+				ED02603C24D60A3800D00301 /* SceneDelegate.swift in Sources */,
+				ED02603E24D60A3800D00301 /* MainView.swift in Sources */,
+				ED91EC3824E135AD00E462EC /* Config.swift in Sources */,
+				ED91EC4024E1417900E462EC /* LogView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED594CCA24DBE4010069D301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */,
+				ED91EC3D24E135E700E462EC /* Config.swift in Sources */,
+				ED91EC4B24E15AA000E462EC /* Log.swift in Sources */,
+				ED91EC4F24E15ACA00E462EC /* Util.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED594CD524DBE4010069D301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED594CCD24DBE4010069D301 /* TunnelProvider */;
+			targetProxy = ED594CD424DBE4010069D301 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED02604424D60A3900D00301 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED02604524D60A3900D00301 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED02604824D60A3900D00301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED02604924D60A3900D00301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED02604B24D60A3900D00301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2CE15A60AB137788A624A77 /* Pods-VPNClient.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VPNClient/VPNClient.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VPNClient/Preview Content\"";
+				DEVELOPMENT_TEAM = R39CR3AH82;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VPNClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.deneraraujo.VPNClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED02604C24D60A3900D00301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C07908E4A1E7936892FFD01A /* Pods-VPNClient.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VPNClient/VPNClient.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VPNClient/Preview Content\"";
+				DEVELOPMENT_TEAM = R39CR3AH82;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VPNClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.deneraraujo.VPNClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ED594CD824DBE4010069D301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C401C5A307E526A6D51D847 /* Pods-TunnelProvider.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TunnelProvider/TunnelProvider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R39CR3AH82;
+				INFOPLIST_FILE = TunnelProvider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.deneraraujo.VPNClient.TunnelProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED594CD924DBE4010069D301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6360911D7CD295D760DD4FB4 /* Pods-TunnelProvider.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TunnelProvider/TunnelProvider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R39CR3AH82;
+				INFOPLIST_FILE = TunnelProvider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.deneraraujo.VPNClient.TunnelProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED02603124D60A3800D00301 /* Build configuration list for PBXProject "VPNClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED02604824D60A3900D00301 /* Debug */,
+				ED02604924D60A3900D00301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED02604A24D60A3900D00301 /* Build configuration list for PBXNativeTarget "VPNClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED02604B24D60A3900D00301 /* Debug */,
+				ED02604C24D60A3900D00301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED594CD724DBE4010069D301 /* Build configuration list for PBXNativeTarget "TunnelProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED594CD824DBE4010069D301 /* Debug */,
+				ED594CD924DBE4010069D301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED02602E24D60A3800D00301 /* Project object */;
+}

@@ -1,0 +1,1390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E8526CD631470896FA949BBDA8E80F /* OpenVPNConnectionInfo+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 46E5E4C701BC0235D257DEF6BAE1328F /* OpenVPNConnectionInfo+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		043840939A93F39FF45AF61E98A18F5B /* ssl_cookie.c in Sources */ = {isa = PBXBuildFile; fileRef = 19F0F1E000A48B025E5E8F1B1B6E8E10 /* ssl_cookie.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		044025C8361C62BC015D4A5B2357894E /* net_sockets.c in Sources */ = {isa = PBXBuildFile; fileRef = 909EC007D113E8234D463EC57416492C /* net_sockets.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		071817BBD2387B82C137153DCF682AD5 /* OpenVPNError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C311BAB729D13DCC549CBB48F5DCE62 /* OpenVPNError.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		07E52F8165CA47FE9CD35EEBB884199C /* oid.c in Sources */ = {isa = PBXBuildFile; fileRef = 242A2D43FF090850AFE1C529DED6EE2D /* oid.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		0816DF71F666D5877E46141B7BC8ADDB /* pkwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = 949E4E8C113439ECDE5126520FFA2728 /* pkwrite.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		0E40C5A958D2F5E326FE6A2D16F2AE2E /* md4.c in Sources */ = {isa = PBXBuildFile; fileRef = 65C57A65379A87E1A8BA79A159D0CC33 /* md4.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		170E9AEBE37644FE5F8A5AF448E4D26A /* OpenVPNAdapter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0502DA9F0D131E728D201476E6017B9A /* OpenVPNAdapter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		174CECD061A193D48CBAB3039F7C6FBC /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 14AF75B3E790BC1A5BE2EEEEA34D006D /* md5.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		192AE474EBB7A883FF5213B623C1B3CF /* memory_buffer_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7D1475D188AAA31598BC59544DD5667D /* memory_buffer_alloc.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		1AA7D3C19F9AB98456459A89F0DA94D2 /* xxhash.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD148B0FFE24FC69A859FB2E59CFA23 /* xxhash.c */; settings = {COMPILER_FLAGS = "-DXXH_NAMESPACE=LZ4_"; }; };
+		1D46D38D3DAC9D7AD947534AFD0BED7A /* rsa_internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 8569739F1A370ED47F6EC88337AF471A /* rsa_internal.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		1D5C0F016DABFD6A82817B4E9CBBE3F5 /* x509_csr.c in Sources */ = {isa = PBXBuildFile; fileRef = C1ECB8CAA00A8280520953E932862491 /* x509_csr.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		1DAD0726FB2A1F791417229E793D08E3 /* OpenVPNReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E0876AB26BCF4C0BD6329D97A55612A /* OpenVPNReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EA39CEB49852A66E7D4B7ED9EB4FDCB /* cipher.c in Sources */ = {isa = PBXBuildFile; fileRef = 548949084C267CFC190E650FF751691E /* cipher.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		20B0E2B08D8BCF1A19D0012D0228B5B0 /* lz4hc.h in Headers */ = {isa = PBXBuildFile; fileRef = 779FB43827EC797EE7E1D1DAE866D688 /* lz4hc.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		219504FF5DE993EF28D6005B2A4492A8 /* OpenVPNAdapterPacketFlow.h in Headers */ = {isa = PBXBuildFile; fileRef = 175E03CC8DB9981626AAB9FCF5EC5971 /* OpenVPNAdapterPacketFlow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22F08583493B0FD3AB8B289596E9D864 /* ecp.c in Sources */ = {isa = PBXBuildFile; fileRef = 15CA3671EF3CC6F6EB78BE3480DDC9D5 /* ecp.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		25A4BA491D78976963E4DBD3031B8C8A /* OpenVPNReachability+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D19E8EFA091EA060555F2418E956087 /* OpenVPNReachability+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		269E3BFA0EE2708EDEDE4B0FE90E038C /* ovpncli.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 32152260FD3B730942AEC06D6B17DDE9 /* ovpncli.hpp */; settings = {ATTRIBUTES = (Private, ); }; };
+		26B069B780E38A2AA2C9E6C0BD333E88 /* OpenVPNClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C01FBE073AB4ACB7BB7FD2D8E60892F8 /* OpenVPNClient.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2B75259F41C6EBCCB3F3D6B25A7DDCC3 /* pk_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 12CC10EC1D37464418EBCF62151CA4AA /* pk_wrap.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		2EC4E28E028E89BA08EB965B68A1A7EF /* dhm.c in Sources */ = {isa = PBXBuildFile; fileRef = A4D2EA152BAEC0FA3DE98AB43DC1DB78 /* dhm.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		3198FED54DFD66E888F40C6E0A8DE41C /* OpenVPNTransportStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E8647432CDD70039B38875A0641111 /* OpenVPNTransportStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33871610C7B59B2C23CF73B8F0B78287 /* asn1write.c in Sources */ = {isa = PBXBuildFile; fileRef = B556E514D618326BBE81C348192A2821 /* asn1write.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		33CEF746FC047BADB3C59B47E86EB7A2 /* ripemd160.c in Sources */ = {isa = PBXBuildFile; fileRef = D4F18E9E466D4F6901028664C1826D3D /* ripemd160.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		33E654F43B5429E0FA436A31D78A8977 /* hmac_drbg.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0BBDC62DA597582E5246563593EA9 /* hmac_drbg.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		34659D5D7F7041C91A7EBD359516CEAB /* OpenVPNReachability.mm in Sources */ = {isa = PBXBuildFile; fileRef = BCC10FCC1DE8202E18AC5D77CBDEB876 /* OpenVPNReachability.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		3694FE6307F950C4F77D0C736A03CE98 /* x509write_crt.c in Sources */ = {isa = PBXBuildFile; fileRef = A28D3300B4A391CA53105AFF30C11339 /* x509write_crt.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		3AED738CEB85C64EB2EC6780AD34A7C6 /* cipher_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = D48E497DDE4AC3851A1C59CD120FC143 /* cipher_wrap.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		3C1D05D63A128C947D7E1AE47510CE4C /* OpenVPNIPv6Preference.h in Headers */ = {isa = PBXBuildFile; fileRef = C58F2C0796225E8C55AA7FA1FC32F9A8 /* OpenVPNIPv6Preference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C4BE1DB62BB04D14DD9971CADCBF796 /* OpenVPNPacketFlowBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2AABA84B882120C428FCAE89FEC35DB /* OpenVPNPacketFlowBridge.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		3C7AA94B3A02203F0CD7A2497CF9C7DD /* timing.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA10097D56F2D52F8F79101A701669 /* timing.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		3D0019C30376B42D42AAE216793B89F8 /* OpenVPNConnectionInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50165708FD558DCF31526BEB8CA8F006 /* OpenVPNConnectionInfo.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		3EE886ADE20D14FEF13FF78FBBA15EA9 /* ssl_ciphersuites.c in Sources */ = {isa = PBXBuildFile; fileRef = F7B42FDBC713D444AD5359D0EABADADA /* ssl_ciphersuites.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		3F42D7E4AD93A635657470527723A03B /* rsa.c in Sources */ = {isa = PBXBuildFile; fileRef = 15B68ED87CE560FF21AA1D8FE67E3C97 /* rsa.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		3FCEB263B31E8E3DCEC2607175A8B3B6 /* threading.c in Sources */ = {isa = PBXBuildFile; fileRef = 601E6C4DD1FC7A5A0DD653ECE28E4425 /* threading.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		40F469A0A163C4E469051CCC68503DD6 /* version_features.c in Sources */ = {isa = PBXBuildFile; fileRef = B1768DED96D58514D3DA23DB1474131B /* version_features.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		4104B24B9D2B3856CE238B9F553C6732 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = F48CE5C523B7699DE794624099EF043F /* base64.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		435EDAC3903BC759DFF46C8855BD5983 /* OpenVPNTLSCertProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = FA4AEC3F861E2B31F2F064852847FAC1 /* OpenVPNTLSCertProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43FCFE1561CA61884136EB97A9A0AC12 /* OpenVPNServerEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 07987EEE9CCF9B45855A1D1D396DAC46 /* OpenVPNServerEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		448CF2A9F3C3684D4035B75A0FD24FCC /* OpenVPNPrivateKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D9360D981C06F3C40F6416B28E9DF0 /* OpenVPNPrivateKey.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		450A224E71468FE01EEE95FDFA0B542B /* Pods-VPNClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC4905C9F2723F7FC3BD40F62974293 /* Pods-VPNClient-dummy.m */; };
+		453589CEBF1B6CA4B47D14A6D06DF19C /* OpenVPNError.h in Headers */ = {isa = PBXBuildFile; fileRef = D690DB0B1742B1B84CAE470206D533EA /* OpenVPNError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		458AB1F061E590A79010A7177DD3224B /* pk.c in Sources */ = {isa = PBXBuildFile; fileRef = D22FA74114037A59585CADCA5E6032B8 /* pk.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		46871014FF463B839D6880803C476F85 /* OpenVPNProperties+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC8E9D517DD1590D0826C21A80244819 /* OpenVPNProperties+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		47405CACF850A636592E1899F6411E39 /* OpenVPNInterfaceStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DC835E78F55B11F5AFDBDCE48E7396B /* OpenVPNInterfaceStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49C27E26B4335CD8DB2684628D0B06AE /* md.c in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B362853E5FA2FD88B0B8FC65892D0 /* md.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		4A87D19DA2AB45951D9D4183159FEB57 /* md2.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B847CE033945E827A378E84479DC348 /* md2.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		4BEEF3E27648800F65F9E18887F9481A /* NSError+OpenVPNError.h in Headers */ = {isa = PBXBuildFile; fileRef = E29D14A78C7A538C74D92793FB499552 /* NSError+OpenVPNError.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4C419B704687997891817C80F30AEF5F /* Pods-VPNClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD0738360619819E5313BFCC039D757 /* Pods-VPNClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F7B1A37E2387884A9FDD7AAA8A05DF1 /* OpenVPNCredentials.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3684105D005F8720CEC9EBE8262E9C7 /* OpenVPNCredentials.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		50B58EB1C4AB6FB897B045CB0AE139FA /* pkcs12.c in Sources */ = {isa = PBXBuildFile; fileRef = 84631EB95B38E048DFFEEF42A9F30573 /* pkcs12.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		51111CD0F92304E29134873D282C3D03 /* OpenVPNPacket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38347F24C4F774B860E36EE41D65F1B1 /* OpenVPNPacket.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		51B7CC439CA9D39382F3A7DA62879FEF /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = E9FABFA74410709622390E8D0EFBF0F0 /* entropy.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		540F89DEFC9FC5C90AE17196EE88F719 /* gcm.c in Sources */ = {isa = PBXBuildFile; fileRef = E0FB1DC9AE628D7340B0ECE015071CA7 /* gcm.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		5BAB7EBFF7806C0EB154E4180B522957 /* OpenVPNConnectionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B90F6B354288EED0D7C539DBB1C2B5A /* OpenVPNConnectionInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6011A9A6F490D8CAD15AA61B44769B94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA197E6B37891AF223EB1820B2B321C /* Foundation.framework */; };
+		612C76C54B8DEE59CB14645F6442436A /* ssl_cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 68705A48B5A03D00A7B3DA6191183983 /* ssl_cache.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		62BA2701A0B139E920060061FD862E13 /* ecp_curves.c in Sources */ = {isa = PBXBuildFile; fileRef = 09DAB6CC4E6F3C753CB315A6847AB716 /* ecp_curves.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		64DB3CBA160FF8BE0590D8DDA08842E4 /* OpenVPNPrivateKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 4308C26AB5A9B77CCFE5A3FB9AF18393 /* OpenVPNPrivateKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		652BF60240F225627176885860AAB14D /* arc4.c in Sources */ = {isa = PBXBuildFile; fileRef = EB59B10E3D2484ED793ABB4783275815 /* arc4.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		6573000880CEFF0BCB73C6E7D7AFF93E /* havege.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B65A8A9BEE3FCF5BE8767BAB422A5F7 /* havege.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		684F3FBCB32563B954164DECF1DB1594 /* ccm.c in Sources */ = {isa = PBXBuildFile; fileRef = AAB8F50592AF4122F50771F9826AD8EE /* ccm.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		691B34E963A1716E42F031C92D120D3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA197E6B37891AF223EB1820B2B321C /* Foundation.framework */; };
+		6BD3338C2AB7E6CCA6F1D864F4F6D26D /* OpenVPNConfiguration+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F42E00CB792245B503EB53232DDFEE8 /* OpenVPNConfiguration+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6CDF56BD458786CF589DECBA52121435 /* camellia.c in Sources */ = {isa = PBXBuildFile; fileRef = 7831A2E2191DF7D6CE4FB7F7AB8233A2 /* camellia.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		6FA686A20C49E367779E9A646E466D72 /* ssl_tls.c in Sources */ = {isa = PBXBuildFile; fileRef = A1C9779F570BDDB5FE218CE2341BA76F /* ssl_tls.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		6FD7C5256741B57AA765A4A9C9CC01EA /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = C11809C566CD014B4065313B6FC9396E /* error.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		7117F19B61785B0264D86A92630AD467 /* debug.c in Sources */ = {isa = PBXBuildFile; fileRef = E594D5D824754EE684ACAF8F3062BA18 /* debug.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		716A2DFAD2411F1A6DF212058C97426B /* lz4.h in Headers */ = {isa = PBXBuildFile; fileRef = 594FC6D026BDD24426D9F3DD724324BB /* lz4.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		72C5E40F08F12EB6C541338894ABA587 /* OpenVPNAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB298D3DF0AC11F98F397739B6B8BF6C /* OpenVPNAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78177856C458F82A95E6835ABF004DE6 /* OpenVPNCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA9A54394C142E17477D46EDBBDAC5 /* OpenVPNCertificate.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		79CC237FC23AD781275922BB3876665D /* xtea.c in Sources */ = {isa = PBXBuildFile; fileRef = 5BE186B8F0B19D683AC1A1C6BECB2E08 /* xtea.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		7A3E9160CC599AF874895C0F07533AEA /* lz4hc.c in Sources */ = {isa = PBXBuildFile; fileRef = 463BD5F06B8D847FF96F600B0B0B9FEF /* lz4hc.c */; settings = {COMPILER_FLAGS = "-DXXH_NAMESPACE=LZ4_"; }; };
+		7A3F649A4B0D0ED4057CE1F12C7B06CE /* OpenVPNNetworkSettingsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4761B5BE707F44843170B4C7D5FBAC30 /* OpenVPNNetworkSettingsBuilder.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		7A603621BB7E35FC92C65A906A416678 /* OpenVPNProperties.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64D534F4484519A5E2542F22C9843C8C /* OpenVPNProperties.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		7A916334321888E41DEC13A1DD9EBD53 /* NSArray+OpenVPNAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 92CB9DBBD04D6C26C45A334ED2ED119D /* NSArray+OpenVPNAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7C69B18600889A4B7607F97DA70F30FB /* ctr_drbg.c in Sources */ = {isa = PBXBuildFile; fileRef = 99598415688EBD05C5E5674CF57CFA53 /* ctr_drbg.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		7D2E4B1BE4B1183360AA9FD0E2B87F47 /* OpenVPNKeyType.h in Headers */ = {isa = PBXBuildFile; fileRef = B88DA7AB153997AE3405C597014F8C4E /* OpenVPNKeyType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8312015A1251C28E8B90E0CE8088FD39 /* OpenVPNReachabilityTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B09B7DB95797DFDAB11AB04719CD923 /* OpenVPNReachabilityTracker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		84C4C2F3CEB6F92F18F7B04A30959CE7 /* pkcs11.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E6FFE20AABD4FC09AF0F59D132D71 /* pkcs11.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		8534FA607ECE7A8F1D95106C847FE1A8 /* x509.c in Sources */ = {isa = PBXBuildFile; fileRef = 1EFD2FAB71114D44F74445369CAF7722 /* x509.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		8587B7767C75F9B76F8E886026F4E01E /* x509_crl.c in Sources */ = {isa = PBXBuildFile; fileRef = 3352F14F1A7952C1D36ECCAECB6F4B81 /* x509_crl.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		8608C66688733796CB5349E8D16C6A36 /* pem.c in Sources */ = {isa = PBXBuildFile; fileRef = 13FE4E6FF21383F3811FF36323D281A8 /* pem.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		879D50F18A79D40949B1873B80ADC4A9 /* OpenVPNCredentials+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F4D03293E2F5C056ABE8E757555FE393 /* OpenVPNCredentials+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8837FD154C20B6250762BC762C8F0923 /* OpenVPNInterfaceStats+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2FCC413F3A68E906A92FD7300FA360 /* OpenVPNInterfaceStats+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		89BD80682D1B034D66515F061EF2AA2E /* OpenVPNSessionToken.h in Headers */ = {isa = PBXBuildFile; fileRef = D05AF757D47E624472E10DBB93D0D339 /* OpenVPNSessionToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B1D8B2E745C24DA32BFB1F812719674 /* x509_create.c in Sources */ = {isa = PBXBuildFile; fileRef = E224D6230806973EE366B7E81F265573 /* x509_create.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		8C7A846744A44B4EFAF920654AE9EA8B /* OpenVPNCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C9FCC7B0C45C7DF253CCD366074927 /* OpenVPNCredentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E265E3C8B134A77518D02C4DE4D0A70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E84A41E47948CD98192DC608813F218 /* SystemConfiguration.framework */; };
+		8FE342C252D8C9CAB291F3E3ECA0218A /* OpenVPNReachabilityStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = C7F7319DB9CB1022CCA192436CF8BBAA /* OpenVPNReachabilityStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9099271C1FB779092969B745501EF9C6 /* OpenVPNCompressionMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F305EE75EF5625C51A490779F3E60D7 /* OpenVPNCompressionMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9276CAC7174354EC5A0EF06228A242DE /* OpenVPNNetworkSettingsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8244BE8149687F0B4E333D4D54CA0F /* OpenVPNNetworkSettingsBuilder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9487FDC3247F7A4F3686064D552ABCF9 /* OpenVPNTransportProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C27E8D5C6318C36C06BACED6B97EBB5E /* OpenVPNTransportProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99925D41DE6DE608A8E05EE3E816A6DF /* blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = C8F0124F408AACA43128A62C79A8882F /* blowfish.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		9BFEF0C6E0A22AA8B31F00EB4C56C8F8 /* OpenVPNSessionToken+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B67FB8325E8BB98FF4D6C5879F9E6D03 /* OpenVPNSessionToken+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9D1113B154548D155D9D9F5F7D4D8F51 /* NSArray+OpenVPNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 895520B46073F0A6BE8EC01BFC795104 /* NSArray+OpenVPNAdditions.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		9D73E95EFBA4AE74D4B19AAEA6C724C9 /* des.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E89B1C289B230D7A57EAD1105E6B1FD /* des.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		9FC3FC5B86EB666DF2764139D91FF7D2 /* cmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F41AFAE15CFF69D4DC28182D9AAC8 /* cmac.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		A1DCC2D19F1853E7D87B392FA5BB030F /* OpenVPNPacketFlowBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C49B14E0BD224F6EF1D9BC9ADCA182 /* OpenVPNPacketFlowBridge.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3DBF743BD47D52078871F64864CD2DF /* lz4frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 439DE5686669C8A1E12450B29047C7B0 /* lz4frame.c */; settings = {COMPILER_FLAGS = "-DXXH_NAMESPACE=LZ4_"; }; };
+		A42314DCCC5B8083843482E1C23EA629 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8D1185F717323493E6BA00E0AF706 /* UIKit.framework */; };
+		B05D9561B5C5B1072F89B3DE49A3DCC5 /* OpenVPNReachabilityTracker.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7258B0250391A08434058A06198F8F7 /* OpenVPNReachabilityTracker.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		B09AC8B657ADB3E34BE00DDB602E0778 /* pkparse.c in Sources */ = {isa = PBXBuildFile; fileRef = E50D38960E4EA7A5D1287A824FC09986 /* pkparse.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		B3604211F170AF314644B5591A290307 /* NSError+OpenVPNError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F93AF78E111349B3E0A77BCD76378 /* NSError+OpenVPNError.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		B37665561FFDDBE6CAB0977640F835F1 /* OpenVPNTransportStats+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DA0E05512C9874E47EF7B8DF8931FC /* OpenVPNTransportStats+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B3C36B60FD08ED7749079069C41CE0E4 /* entropy_poll.c in Sources */ = {isa = PBXBuildFile; fileRef = 28C9473802BF0ED0788E7DC18906A57B /* entropy_poll.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		B3E3F706839285A2923731801AD13BA2 /* OpenVPNMinTLSVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = B34A14CAFD20446F5DED38EF828E0FC8 /* OpenVPNMinTLSVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E364298D9E84131BC8DED3CD3B96B0 /* OpenVPNClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DD03D6B8E81E14F597FA880DD9786 /* OpenVPNClient.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		BA7BE3FAB2DD5C5F0E9D22382CF6780E /* aes.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE583F84C11366D81A48D9177C3CED /* aes.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		C04FCE09AE8844828BF0CFEFAA50B79A /* ovpncli.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59246D4876EC9CD947D4CA374A8CE973 /* ovpncli.cpp */; settings = {COMPILER_FLAGS = "-x objective-c++ -DUSE_ASIO -DUSE_ASIO_THREADLOCAL -DASIO_STANDALONE -DASIO_NO_DEPRECATED -DASIO_HAS_STD_STRING_VIEW -DHAVE_LZ4 -DUSE_MBEDTLS -DOPENVPN_FORCE_TUN_NULL -DUSE_TUN_BUILDER"; }; };
+		C2BA9D72CD8E8CBA79845B7F586B011B /* padlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 49D4E2F73FEAA79C3132372EDD25F6FF /* padlock.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		C2FC89707E8F8B18FDE6D0447A1BF8CD /* pkcs5.c in Sources */ = {isa = PBXBuildFile; fileRef = A356297887E7DCC62E675DC9012F9D91 /* pkcs5.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		C37CE4A0254F5F0EFB3217272585F3F8 /* ecdsa.c in Sources */ = {isa = PBXBuildFile; fileRef = 35E7B692FC27C5385226AD7802145C3D /* ecdsa.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		C3F2D0C56CDE0F6995BEC9A2EECA638C /* Pods-TunnelProvider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB98492584D4ED69500CBFA4543B52 /* Pods-TunnelProvider-dummy.m */; };
+		CA151C2935B1F8FEDB2E751ECCACEF77 /* ecjpake.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC7A744E4D1F4681CAFCBB405A5FFE7 /* ecjpake.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		CB00E95780751913E84C54B64D10178C /* OpenVPNPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 11CAE36F08898920EBE4A5605FEB6832 /* OpenVPNPacket.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CD0F377C8986E9B599E81D43D057272B /* certs.c in Sources */ = {isa = PBXBuildFile; fileRef = A73C471B7B13A4268057B6AFD93CFC46 /* certs.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		CF36FF21B09E11DBF7C4A715AB7A5390 /* ssl_srv.c in Sources */ = {isa = PBXBuildFile; fileRef = C7967BF4A2A878F6D365D68B2B3685DD /* ssl_srv.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		CFAD86063740E0EAFB34AB395739FF6F /* OpenVPNConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 593BE36A7C9A640DAB0190C29443A1F9 /* OpenVPNConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1A12159EF31CB3AEDB67CB30AD512D3 /* lz4.c in Sources */ = {isa = PBXBuildFile; fileRef = 787EEE8B74FDDE4D3B0320A8AEB81992 /* lz4.c */; settings = {COMPILER_FLAGS = "-DXXH_NAMESPACE=LZ4_"; }; };
+		D1A755D7AE691FDCBD1232E77C8F109F /* OpenVPNInterfaceStats.mm in Sources */ = {isa = PBXBuildFile; fileRef = 836B6B6C3EA5ECA267080B4FBA573CD6 /* OpenVPNInterfaceStats.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		D2A0EE23322CCA08666F9B9A8C5E464A /* ecdh.c in Sources */ = {isa = PBXBuildFile; fileRef = 5F3586B4BD127712452B8BE1978F4D5D /* ecdh.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		D361ACDE9950B23B8428415EBC551C21 /* ssl_ticket.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DF181B75BB69DBF34D6CA2BA863569C /* ssl_ticket.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		D36F6FD3CE04CB8B31021E7A4D533AF8 /* xxhash.h in Headers */ = {isa = PBXBuildFile; fileRef = B0AD97101F43B5532F2214AED3F81F31 /* xxhash.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D67735399E1153ECB9841C0907E5AAB5 /* OpenVPNServerEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02FF5EBA2AD983803F639B73C37A65F9 /* OpenVPNServerEntry.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		D6CA9158684E28B5602281D88E894243 /* OpenVPNTransportStats.mm in Sources */ = {isa = PBXBuildFile; fileRef = 314B529537B36C0E6633F4462E1405E7 /* OpenVPNTransportStats.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		D6CFB1819FAFE88C5E7DF2BC4D93B982 /* OpenVPNServerEntry+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E087ED14898EF76B4272D7B9B9C716C /* OpenVPNServerEntry+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D79B95F67660916995FD7B1FE6D607A2 /* OpenVPNConfiguration.mm in Sources */ = {isa = PBXBuildFile; fileRef = A250850091EB96A8E3EDCDC95B2256D4 /* OpenVPNConfiguration.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		DB43834F2BD45AEF034A6BE286D677E1 /* sha256.c in Sources */ = {isa = PBXBuildFile; fileRef = 49BF7F213D0BD4EF3B2F072B0F4F63B9 /* sha256.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		DDC783F9DFE4AFD90545DD89D3EA877C /* x509write_csr.c in Sources */ = {isa = PBXBuildFile; fileRef = 090B2D7FC709B9532F03C268F18EEECF /* x509write_csr.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		E37016214969F317E37E830AB0519526 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 9259B3FCCC1B50B6F3338E777E3B5D4E /* sha1.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		E4F5EF8B102138507A0999F8E1B173A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA197E6B37891AF223EB1820B2B321C /* Foundation.framework */; };
+		E6CF5BD98D2763A937F6EFDD6CDFE589 /* x509_crt.c in Sources */ = {isa = PBXBuildFile; fileRef = 84DA3C0F2B053BA407929EAF39BCD2E8 /* x509_crt.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		E94F343DD9E795E5D5D98A6DB04C4ED9 /* ssl_cli.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F53184F3695EEAC275D28A2DAA329B /* ssl_cli.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		EA7D8A4784463BB0663F83707673D0AA /* OpenVPNSessionToken.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36ED0CA7E09F4286F9B6EFA53AE71177 /* OpenVPNSessionToken.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		ECDC46DAC09828224CB04B7778EE0EBA /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = 791006368CB9407E1009D93F44EC9A84 /* platform.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		EDD145FCFE768F0C8EC80992B9AB0354 /* bignum.c in Sources */ = {isa = PBXBuildFile; fileRef = C764838F8232E87E11E1EB32B90B17AA /* bignum.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		EE2E0D12FF3426259A164AE0627F6B5B /* OpenVPNAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47FBA9B8F628C1A1701EAA81431537C0 /* OpenVPNAdapter.mm */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
+		F0149EA905429EA89DA96EAE73A99340 /* OpenVPNAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD314DB07171A68972B90D1C4370AFF8 /* OpenVPNAdapter-dummy.m */; };
+		F01776F3BEE1F20287A6CDC3AD7E7DA4 /* OpenVPNAdapterEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = C44A0DBAD855301E38529A043CFCF1E5 /* OpenVPNAdapterEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F25412E01C815F1144136084EE3C9374 /* md_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = CEAC74CD886364C284C75421ADCDFF1C /* md_wrap.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		F4B28B2C98EA6EC5B3D05D02A3FAF90D /* Pods-TunnelProvider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DFE0DC0EC448A2C7D97F55468BD5C37 /* Pods-TunnelProvider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F58868AA03CBFFB151DCA9B12AB3272E /* OpenVPNProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F81DD7B58D4896DD4366D7720702BE /* OpenVPNProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7CD3C818E440E879243CF548D295E13 /* OpenVPNCertificate.h in Headers */ = {isa = PBXBuildFile; fileRef = DB5EF92EB76F0523CC4A459120F36EE8 /* OpenVPNCertificate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F83BBA2F2D176619AC7328BDB008879E /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = BEFA9896BAE1E51B64FD95E64DB715DD /* version.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		F882B7AD044F3B577232BD3166EB471D /* lz4frame_static.h in Headers */ = {isa = PBXBuildFile; fileRef = 121507C5E755761544D5F848E9BD6C8D /* lz4frame_static.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FBF9846B8F32E5250AB66C5B61E75393 /* lz4frame.h in Headers */ = {isa = PBXBuildFile; fileRef = F69C9A1187957B093B98C7CD5E123FC3 /* lz4frame.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FCA872029CB4F3764E7322ABE98933AD /* aesni.c in Sources */ = {isa = PBXBuildFile; fileRef = 055E1B5E16C6A24EB3CB5E63D2A31A39 /* aesni.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		FCED6AE80191081F3DE49081E24F0920 /* sha512.c in Sources */ = {isa = PBXBuildFile; fileRef = 303CEF8D2121810F6256817D0C41042E /* sha512.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		FE4165B4100BFAD48312A1C5CDE04AF7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A940A0D0F9CC6DDB5D17896176BFE /* NetworkExtension.framework */; };
+		FF158AECF3B51F4EF3253495FADB3C19 /* ovpnapi.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 63C187D282EBB458E2395AFDE9485511 /* ovpnapi.hpp */; settings = {ATTRIBUTES = (Private, ); }; };
+		FF232B7993F7641A92ED0128816FC3AC /* asn1parse.c in Sources */ = {isa = PBXBuildFile; fileRef = 2795F42A3832F6BA716B879E8489DC25 /* asn1parse.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACD8E1CB51FA8F483C99B95B9D9FEDE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 371A61FDCACD17804269517282D71BD7;
+			remoteInfo = OpenVPNAdapter;
+		};
+		C8E29DDA464111657E7C27DB6E114167 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 371A61FDCACD17804269517282D71BD7;
+			remoteInfo = OpenVPNAdapter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02FF5EBA2AD983803F639B73C37A65F9 /* OpenVPNServerEntry.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNServerEntry.mm; path = Sources/OpenVPNAdapter/library/OpenVPNServerEntry.mm; sourceTree = "<group>"; };
+		0502DA9F0D131E728D201476E6017B9A /* OpenVPNAdapter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenVPNAdapter-umbrella.h"; sourceTree = "<group>"; };
+		055E1B5E16C6A24EB3CB5E63D2A31A39 /* aesni.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aesni.c; path = Sources/mbedTLS/library/aesni.c; sourceTree = "<group>"; };
+		05F53184F3695EEAC275D28A2DAA329B /* ssl_cli.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_cli.c; path = Sources/mbedTLS/library/ssl_cli.c; sourceTree = "<group>"; };
+		07987EEE9CCF9B45855A1D1D396DAC46 /* OpenVPNServerEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNServerEntry.h; path = Sources/OpenVPNAdapter/library/OpenVPNServerEntry.h; sourceTree = "<group>"; };
+		090B2D7FC709B9532F03C268F18EEECF /* x509write_csr.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509write_csr.c; path = Sources/mbedTLS/library/x509write_csr.c; sourceTree = "<group>"; };
+		09DAB6CC4E6F3C753CB315A6847AB716 /* ecp_curves.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ecp_curves.c; path = Sources/mbedTLS/library/ecp_curves.c; sourceTree = "<group>"; };
+		0B09B7DB95797DFDAB11AB04719CD923 /* OpenVPNReachabilityTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNReachabilityTracker.h; path = Sources/OpenVPNAdapter/library/OpenVPNReachabilityTracker.h; sourceTree = "<group>"; };
+		0BDE583F84C11366D81A48D9177C3CED /* aes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aes.c; path = Sources/mbedTLS/library/aes.c; sourceTree = "<group>"; };
+		0CD77F01530EA70DD86D7591F2597105 /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OpenVPNAdapter.framework; path = OpenVPNAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2FCC413F3A68E906A92FD7300FA360 /* OpenVPNInterfaceStats+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNInterfaceStats+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNInterfaceStats+Internal.h"; sourceTree = "<group>"; };
+		0DFE0DC0EC448A2C7D97F55468BD5C37 /* Pods-TunnelProvider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TunnelProvider-umbrella.h"; sourceTree = "<group>"; };
+		11CAE36F08898920EBE4A5605FEB6832 /* OpenVPNPacket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNPacket.h; path = Sources/OpenVPNAdapter/library/OpenVPNPacket.h; sourceTree = "<group>"; };
+		121507C5E755761544D5F848E9BD6C8D /* lz4frame_static.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lz4frame_static.h; path = Sources/LZ4/lib/lz4frame_static.h; sourceTree = "<group>"; };
+		12CC10EC1D37464418EBCF62151CA4AA /* pk_wrap.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pk_wrap.c; path = Sources/mbedTLS/library/pk_wrap.c; sourceTree = "<group>"; };
+		13FE4E6FF21383F3811FF36323D281A8 /* pem.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pem.c; path = Sources/mbedTLS/library/pem.c; sourceTree = "<group>"; };
+		14AF75B3E790BC1A5BE2EEEEA34D006D /* md5.c */ = {isa = PBXFileReference; includeInIndex = 1; name = md5.c; path = Sources/mbedTLS/library/md5.c; sourceTree = "<group>"; };
+		15B68ED87CE560FF21AA1D8FE67E3C97 /* rsa.c */ = {isa = PBXFileReference; includeInIndex = 1; name = rsa.c; path = Sources/mbedTLS/library/rsa.c; sourceTree = "<group>"; };
+		15CA3671EF3CC6F6EB78BE3480DDC9D5 /* ecp.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ecp.c; path = Sources/mbedTLS/library/ecp.c; sourceTree = "<group>"; };
+		175E03CC8DB9981626AAB9FCF5EC5971 /* OpenVPNAdapterPacketFlow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNAdapterPacketFlow.h; path = Sources/OpenVPNAdapter/library/OpenVPNAdapterPacketFlow.h; sourceTree = "<group>"; };
+		19F0F1E000A48B025E5E8F1B1B6E8E10 /* ssl_cookie.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_cookie.c; path = Sources/mbedTLS/library/ssl_cookie.c; sourceTree = "<group>"; };
+		1B65A8A9BEE3FCF5BE8767BAB422A5F7 /* havege.c */ = {isa = PBXFileReference; includeInIndex = 1; name = havege.c; path = Sources/mbedTLS/library/havege.c; sourceTree = "<group>"; };
+		1EFD2FAB71114D44F74445369CAF7722 /* x509.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509.c; path = Sources/mbedTLS/library/x509.c; sourceTree = "<group>"; };
+		1F42E00CB792245B503EB53232DDFEE8 /* OpenVPNConfiguration+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNConfiguration+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNConfiguration+Internal.h"; sourceTree = "<group>"; };
+		21F81DD7B58D4896DD4366D7720702BE /* OpenVPNProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNProperties.h; path = Sources/OpenVPNAdapter/library/OpenVPNProperties.h; sourceTree = "<group>"; };
+		242A2D43FF090850AFE1C529DED6EE2D /* oid.c */ = {isa = PBXFileReference; includeInIndex = 1; name = oid.c; path = Sources/mbedTLS/library/oid.c; sourceTree = "<group>"; };
+		2795F42A3832F6BA716B879E8489DC25 /* asn1parse.c */ = {isa = PBXFileReference; includeInIndex = 1; name = asn1parse.c; path = Sources/mbedTLS/library/asn1parse.c; sourceTree = "<group>"; };
+		28B6D02932CC270A47D933D472C1BC56 /* Pods_VPNClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VPNClient.framework; path = "Pods-VPNClient.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C9473802BF0ED0788E7DC18906A57B /* entropy_poll.c */ = {isa = PBXFileReference; includeInIndex = 1; name = entropy_poll.c; path = Sources/mbedTLS/library/entropy_poll.c; sourceTree = "<group>"; };
+		2AD148B0FFE24FC69A859FB2E59CFA23 /* xxhash.c */ = {isa = PBXFileReference; includeInIndex = 1; name = xxhash.c; path = Sources/LZ4/lib/xxhash.c; sourceTree = "<group>"; };
+		2B2E6FFE20AABD4FC09AF0F59D132D71 /* pkcs11.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pkcs11.c; path = Sources/mbedTLS/library/pkcs11.c; sourceTree = "<group>"; };
+		2C3DD03D6B8E81E14F597FA880DD9786 /* OpenVPNClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNClient.mm; path = Sources/OpenVPNAdapter/library/OpenVPNClient.mm; sourceTree = "<group>"; };
+		2DD3E5B6F7D03D55036E3F6971813EF3 /* Pods-VPNClient-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VPNClient-acknowledgements.plist"; sourceTree = "<group>"; };
+		2E0876AB26BCF4C0BD6329D97A55612A /* OpenVPNReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNReachability.h; path = Sources/OpenVPNAdapter/library/OpenVPNReachability.h; sourceTree = "<group>"; };
+		2FCB6898E3CA4E6B62F95B872DB91BFB /* Pods-VPNClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VPNClient.release.xcconfig"; sourceTree = "<group>"; };
+		303CEF8D2121810F6256817D0C41042E /* sha512.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sha512.c; path = Sources/mbedTLS/library/sha512.c; sourceTree = "<group>"; };
+		314B529537B36C0E6633F4462E1405E7 /* OpenVPNTransportStats.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNTransportStats.mm; path = Sources/OpenVPNAdapter/library/OpenVPNTransportStats.mm; sourceTree = "<group>"; };
+		32152260FD3B730942AEC06D6B17DDE9 /* ovpncli.hpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ovpncli.hpp; path = Sources/OpenVPN3/client/ovpncli.hpp; sourceTree = "<group>"; };
+		3352F14F1A7952C1D36ECCAECB6F4B81 /* x509_crl.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509_crl.c; path = Sources/mbedTLS/library/x509_crl.c; sourceTree = "<group>"; };
+		35E7B692FC27C5385226AD7802145C3D /* ecdsa.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ecdsa.c; path = Sources/mbedTLS/library/ecdsa.c; sourceTree = "<group>"; };
+		36ED0CA7E09F4286F9B6EFA53AE71177 /* OpenVPNSessionToken.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNSessionToken.mm; path = Sources/OpenVPNAdapter/library/OpenVPNSessionToken.mm; sourceTree = "<group>"; };
+		38347F24C4F774B860E36EE41D65F1B1 /* OpenVPNPacket.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNPacket.mm; path = Sources/OpenVPNAdapter/library/OpenVPNPacket.mm; sourceTree = "<group>"; };
+		38AD7897A5A2FE15152BB11ABE03EEB9 /* Pods-VPNClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VPNClient.debug.xcconfig"; sourceTree = "<group>"; };
+		3B7F93AF78E111349B3E0A77BCD76378 /* NSError+OpenVPNError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+OpenVPNError.m"; path = "Sources/OpenVPNAdapter/library/NSError+OpenVPNError.m"; sourceTree = "<group>"; };
+		3C311BAB729D13DCC549CBB48F5DCE62 /* OpenVPNError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OpenVPNError.m; path = Sources/OpenVPNAdapter/library/OpenVPNError.m; sourceTree = "<group>"; };
+		3DC835E78F55B11F5AFDBDCE48E7396B /* OpenVPNInterfaceStats.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNInterfaceStats.h; path = Sources/OpenVPNAdapter/library/OpenVPNInterfaceStats.h; sourceTree = "<group>"; };
+		3FDA10097D56F2D52F8F79101A701669 /* timing.c */ = {isa = PBXFileReference; includeInIndex = 1; name = timing.c; path = Sources/mbedTLS/library/timing.c; sourceTree = "<group>"; };
+		4308C26AB5A9B77CCFE5A3FB9AF18393 /* OpenVPNPrivateKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNPrivateKey.h; path = Sources/OpenVPNAdapter/library/OpenVPNPrivateKey.h; sourceTree = "<group>"; };
+		4324A37D329CA06F31F70D947FD36CCC /* Pods-TunnelProvider-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TunnelProvider-acknowledgements.plist"; sourceTree = "<group>"; };
+		439DE5686669C8A1E12450B29047C7B0 /* lz4frame.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lz4frame.c; path = Sources/LZ4/lib/lz4frame.c; sourceTree = "<group>"; };
+		463BD5F06B8D847FF96F600B0B0B9FEF /* lz4hc.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lz4hc.c; path = Sources/LZ4/lib/lz4hc.c; sourceTree = "<group>"; };
+		46E5E4C701BC0235D257DEF6BAE1328F /* OpenVPNConnectionInfo+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNConnectionInfo+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNConnectionInfo+Internal.h"; sourceTree = "<group>"; };
+		4761B5BE707F44843170B4C7D5FBAC30 /* OpenVPNNetworkSettingsBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OpenVPNNetworkSettingsBuilder.m; path = Sources/OpenVPNAdapter/library/OpenVPNNetworkSettingsBuilder.m; sourceTree = "<group>"; };
+		47FBA9B8F628C1A1701EAA81431537C0 /* OpenVPNAdapter.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNAdapter.mm; path = Sources/OpenVPNAdapter/library/OpenVPNAdapter.mm; sourceTree = "<group>"; };
+		49BF7F213D0BD4EF3B2F072B0F4F63B9 /* sha256.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sha256.c; path = Sources/mbedTLS/library/sha256.c; sourceTree = "<group>"; };
+		49D4E2F73FEAA79C3132372EDD25F6FF /* padlock.c */ = {isa = PBXFileReference; includeInIndex = 1; name = padlock.c; path = Sources/mbedTLS/library/padlock.c; sourceTree = "<group>"; };
+		4B847CE033945E827A378E84479DC348 /* md2.c */ = {isa = PBXFileReference; includeInIndex = 1; name = md2.c; path = Sources/mbedTLS/library/md2.c; sourceTree = "<group>"; };
+		50165708FD558DCF31526BEB8CA8F006 /* OpenVPNConnectionInfo.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNConnectionInfo.mm; path = Sources/OpenVPNAdapter/library/OpenVPNConnectionInfo.mm; sourceTree = "<group>"; };
+		548332EF8207EF96B3A7B766D35B290E /* Pods-VPNClient-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VPNClient-frameworks.sh"; sourceTree = "<group>"; };
+		548949084C267CFC190E650FF751691E /* cipher.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cipher.c; path = Sources/mbedTLS/library/cipher.c; sourceTree = "<group>"; };
+		59246D4876EC9CD947D4CA374A8CE973 /* ovpncli.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ovpncli.cpp; path = Sources/OpenVPN3/client/ovpncli.cpp; sourceTree = "<group>"; };
+		593BE36A7C9A640DAB0190C29443A1F9 /* OpenVPNConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNConfiguration.h; path = Sources/OpenVPNAdapter/library/OpenVPNConfiguration.h; sourceTree = "<group>"; };
+		594FC6D026BDD24426D9F3DD724324BB /* lz4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lz4.h; path = Sources/LZ4/lib/lz4.h; sourceTree = "<group>"; };
+		5B77A40B6D1257880009E89DB35C50AE /* Pods-VPNClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VPNClient.modulemap"; sourceTree = "<group>"; };
+		5BE186B8F0B19D683AC1A1C6BECB2E08 /* xtea.c */ = {isa = PBXFileReference; includeInIndex = 1; name = xtea.c; path = Sources/mbedTLS/library/xtea.c; sourceTree = "<group>"; };
+		5CF9854E5FD0207B0935D14C3DBB2556 /* Pods-TunnelProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TunnelProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		5F3586B4BD127712452B8BE1978F4D5D /* ecdh.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ecdh.c; path = Sources/mbedTLS/library/ecdh.c; sourceTree = "<group>"; };
+		601E6C4DD1FC7A5A0DD653ECE28E4425 /* threading.c */ = {isa = PBXFileReference; includeInIndex = 1; name = threading.c; path = Sources/mbedTLS/library/threading.c; sourceTree = "<group>"; };
+		63C187D282EBB458E2395AFDE9485511 /* ovpnapi.hpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ovpnapi.hpp; path = Sources/OpenVPNClient/include/ovpnapi.hpp; sourceTree = "<group>"; };
+		64D534F4484519A5E2542F22C9843C8C /* OpenVPNProperties.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNProperties.mm; path = Sources/OpenVPNAdapter/library/OpenVPNProperties.mm; sourceTree = "<group>"; };
+		64E8647432CDD70039B38875A0641111 /* OpenVPNTransportStats.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNTransportStats.h; path = Sources/OpenVPNAdapter/library/OpenVPNTransportStats.h; sourceTree = "<group>"; };
+		65C57A65379A87E1A8BA79A159D0CC33 /* md4.c */ = {isa = PBXFileReference; includeInIndex = 1; name = md4.c; path = Sources/mbedTLS/library/md4.c; sourceTree = "<group>"; };
+		68705A48B5A03D00A7B3DA6191183983 /* ssl_cache.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_cache.c; path = Sources/mbedTLS/library/ssl_cache.c; sourceTree = "<group>"; };
+		6B8B362853E5FA2FD88B0B8FC65892D0 /* md.c */ = {isa = PBXFileReference; includeInIndex = 1; name = md.c; path = Sources/mbedTLS/library/md.c; sourceTree = "<group>"; };
+		6C4F41AFAE15CFF69D4DC28182D9AAC8 /* cmac.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cmac.c; path = Sources/mbedTLS/library/cmac.c; sourceTree = "<group>"; };
+		6DCA9A54394C142E17477D46EDBBDAC5 /* OpenVPNCertificate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OpenVPNCertificate.m; path = Sources/OpenVPNAdapter/library/OpenVPNCertificate.m; sourceTree = "<group>"; };
+		6E89B1C289B230D7A57EAD1105E6B1FD /* des.c */ = {isa = PBXFileReference; includeInIndex = 1; name = des.c; path = Sources/mbedTLS/library/des.c; sourceTree = "<group>"; };
+		70C9FCC7B0C45C7DF253CCD366074927 /* OpenVPNCredentials.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNCredentials.h; path = Sources/OpenVPNAdapter/library/OpenVPNCredentials.h; sourceTree = "<group>"; };
+		73B44106CA8F3E814DEAB4A99B8228BC /* OpenVPNAdapter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OpenVPNAdapter-Info.plist"; sourceTree = "<group>"; };
+		779FB43827EC797EE7E1D1DAE866D688 /* lz4hc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lz4hc.h; path = Sources/LZ4/lib/lz4hc.h; sourceTree = "<group>"; };
+		7831A2E2191DF7D6CE4FB7F7AB8233A2 /* camellia.c */ = {isa = PBXFileReference; includeInIndex = 1; name = camellia.c; path = Sources/mbedTLS/library/camellia.c; sourceTree = "<group>"; };
+		787EEE8B74FDDE4D3B0320A8AEB81992 /* lz4.c */ = {isa = PBXFileReference; includeInIndex = 1; name = lz4.c; path = Sources/LZ4/lib/lz4.c; sourceTree = "<group>"; };
+		791006368CB9407E1009D93F44EC9A84 /* platform.c */ = {isa = PBXFileReference; includeInIndex = 1; name = platform.c; path = Sources/mbedTLS/library/platform.c; sourceTree = "<group>"; };
+		7CB1E83FA5775FF2062FA7F97A6746EA /* Pods-TunnelProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TunnelProvider.release.xcconfig"; sourceTree = "<group>"; };
+		7D1475D188AAA31598BC59544DD5667D /* memory_buffer_alloc.c */ = {isa = PBXFileReference; includeInIndex = 1; name = memory_buffer_alloc.c; path = Sources/mbedTLS/library/memory_buffer_alloc.c; sourceTree = "<group>"; };
+		7D19E8EFA091EA060555F2418E956087 /* OpenVPNReachability+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNReachability+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNReachability+Internal.h"; sourceTree = "<group>"; };
+		7DF0BBDC62DA597582E5246563593EA9 /* hmac_drbg.c */ = {isa = PBXFileReference; includeInIndex = 1; name = hmac_drbg.c; path = Sources/mbedTLS/library/hmac_drbg.c; sourceTree = "<group>"; };
+		7E84A41E47948CD98192DC608813F218 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		7F67AB85A3A88B10BB5AE53920C0B16D /* OpenVPNAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenVPNAdapter.release.xcconfig; sourceTree = "<group>"; };
+		807F1EC66D2949C00BAF92262D27C97A /* OpenVPNAdapter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpenVPNAdapter.modulemap; sourceTree = "<group>"; };
+		836B6B6C3EA5ECA267080B4FBA573CD6 /* OpenVPNInterfaceStats.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNInterfaceStats.mm; path = Sources/OpenVPNAdapter/library/OpenVPNInterfaceStats.mm; sourceTree = "<group>"; };
+		84631EB95B38E048DFFEEF42A9F30573 /* pkcs12.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pkcs12.c; path = Sources/mbedTLS/library/pkcs12.c; sourceTree = "<group>"; };
+		847A3C8D962AA403942EFCE4FBD22B8F /* Pods-TunnelProvider-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TunnelProvider-acknowledgements.markdown"; sourceTree = "<group>"; };
+		84DA3C0F2B053BA407929EAF39BCD2E8 /* x509_crt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509_crt.c; path = Sources/mbedTLS/library/x509_crt.c; sourceTree = "<group>"; };
+		8569739F1A370ED47F6EC88337AF471A /* rsa_internal.c */ = {isa = PBXFileReference; includeInIndex = 1; name = rsa_internal.c; path = Sources/mbedTLS/library/rsa_internal.c; sourceTree = "<group>"; };
+		895520B46073F0A6BE8EC01BFC795104 /* NSArray+OpenVPNAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+OpenVPNAdditions.m"; path = "Sources/OpenVPNAdapter/library/NSArray+OpenVPNAdditions.m"; sourceTree = "<group>"; };
+		8B90F6B354288EED0D7C539DBB1C2B5A /* OpenVPNConnectionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNConnectionInfo.h; path = Sources/OpenVPNAdapter/library/OpenVPNConnectionInfo.h; sourceTree = "<group>"; };
+		8F305EE75EF5625C51A490779F3E60D7 /* OpenVPNCompressionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNCompressionMode.h; path = Sources/OpenVPNAdapter/library/OpenVPNCompressionMode.h; sourceTree = "<group>"; };
+		909EC007D113E8234D463EC57416492C /* net_sockets.c */ = {isa = PBXFileReference; includeInIndex = 1; name = net_sockets.c; path = Sources/mbedTLS/library/net_sockets.c; sourceTree = "<group>"; };
+		9259B3FCCC1B50B6F3338E777E3B5D4E /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sha1.c; path = Sources/mbedTLS/library/sha1.c; sourceTree = "<group>"; };
+		92CB9DBBD04D6C26C45A334ED2ED119D /* NSArray+OpenVPNAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+OpenVPNAdditions.h"; path = "Sources/OpenVPNAdapter/library/NSArray+OpenVPNAdditions.h"; sourceTree = "<group>"; };
+		949E4E8C113439ECDE5126520FFA2728 /* pkwrite.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pkwrite.c; path = Sources/mbedTLS/library/pkwrite.c; sourceTree = "<group>"; };
+		955F7A700DEA6E5C71D93C9F050DEC95 /* Pods-TunnelProvider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TunnelProvider.modulemap"; sourceTree = "<group>"; };
+		96FB98492584D4ED69500CBFA4543B52 /* Pods-TunnelProvider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TunnelProvider-dummy.m"; sourceTree = "<group>"; };
+		99598415688EBD05C5E5674CF57CFA53 /* ctr_drbg.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ctr_drbg.c; path = Sources/mbedTLS/library/ctr_drbg.c; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF181B75BB69DBF34D6CA2BA863569C /* ssl_ticket.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_ticket.c; path = Sources/mbedTLS/library/ssl_ticket.c; sourceTree = "<group>"; };
+		9E087ED14898EF76B4272D7B9B9C716C /* OpenVPNServerEntry+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNServerEntry+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNServerEntry+Internal.h"; sourceTree = "<group>"; };
+		A1C9779F570BDDB5FE218CE2341BA76F /* ssl_tls.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_tls.c; path = Sources/mbedTLS/library/ssl_tls.c; sourceTree = "<group>"; };
+		A250850091EB96A8E3EDCDC95B2256D4 /* OpenVPNConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNConfiguration.mm; path = Sources/OpenVPNAdapter/library/OpenVPNConfiguration.mm; sourceTree = "<group>"; };
+		A28D3300B4A391CA53105AFF30C11339 /* x509write_crt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509write_crt.c; path = Sources/mbedTLS/library/x509write_crt.c; sourceTree = "<group>"; };
+		A356297887E7DCC62E675DC9012F9D91 /* pkcs5.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pkcs5.c; path = Sources/mbedTLS/library/pkcs5.c; sourceTree = "<group>"; };
+		A37168D559A9EE21C5675F7DA7B48AAA /* Pods-TunnelProvider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TunnelProvider-Info.plist"; sourceTree = "<group>"; };
+		A37A940A0D0F9CC6DDB5D17896176BFE /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
+		A4D2EA152BAEC0FA3DE98AB43DC1DB78 /* dhm.c */ = {isa = PBXFileReference; includeInIndex = 1; name = dhm.c; path = Sources/mbedTLS/library/dhm.c; sourceTree = "<group>"; };
+		A73C471B7B13A4268057B6AFD93CFC46 /* certs.c */ = {isa = PBXFileReference; includeInIndex = 1; name = certs.c; path = Sources/mbedTLS/library/certs.c; sourceTree = "<group>"; };
+		AA8244BE8149687F0B4E333D4D54CA0F /* OpenVPNNetworkSettingsBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNNetworkSettingsBuilder.h; path = Sources/OpenVPNAdapter/library/OpenVPNNetworkSettingsBuilder.h; sourceTree = "<group>"; };
+		AAB8F50592AF4122F50771F9826AD8EE /* ccm.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ccm.c; path = Sources/mbedTLS/library/ccm.c; sourceTree = "<group>"; };
+		AB298D3DF0AC11F98F397739B6B8BF6C /* OpenVPNAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNAdapter.h; path = Sources/OpenVPNAdapter/library/OpenVPNAdapter.h; sourceTree = "<group>"; };
+		AD314DB07171A68972B90D1C4370AFF8 /* OpenVPNAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OpenVPNAdapter-dummy.m"; sourceTree = "<group>"; };
+		ADD0738360619819E5313BFCC039D757 /* Pods-VPNClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VPNClient-umbrella.h"; sourceTree = "<group>"; };
+		B0AD97101F43B5532F2214AED3F81F31 /* xxhash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = xxhash.h; path = Sources/LZ4/lib/xxhash.h; sourceTree = "<group>"; };
+		B0C49B14E0BD224F6EF1D9BC9ADCA182 /* OpenVPNPacketFlowBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNPacketFlowBridge.h; path = Sources/OpenVPNAdapter/library/OpenVPNPacketFlowBridge.h; sourceTree = "<group>"; };
+		B1768DED96D58514D3DA23DB1474131B /* version_features.c */ = {isa = PBXFileReference; includeInIndex = 1; name = version_features.c; path = Sources/mbedTLS/library/version_features.c; sourceTree = "<group>"; };
+		B34A14CAFD20446F5DED38EF828E0FC8 /* OpenVPNMinTLSVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNMinTLSVersion.h; path = Sources/OpenVPNAdapter/library/OpenVPNMinTLSVersion.h; sourceTree = "<group>"; };
+		B54A7F1FFDDE20FE27C730449BE9F0A2 /* Pods_TunnelProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TunnelProvider.framework; path = "Pods-TunnelProvider.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B556E514D618326BBE81C348192A2821 /* asn1write.c */ = {isa = PBXFileReference; includeInIndex = 1; name = asn1write.c; path = Sources/mbedTLS/library/asn1write.c; sourceTree = "<group>"; };
+		B67FB8325E8BB98FF4D6C5879F9E6D03 /* OpenVPNSessionToken+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNSessionToken+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNSessionToken+Internal.h"; sourceTree = "<group>"; };
+		B795B34CB861FA6754564DDC97C315A5 /* Pods-VPNClient-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VPNClient-Info.plist"; sourceTree = "<group>"; };
+		B88DA7AB153997AE3405C597014F8C4E /* OpenVPNKeyType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNKeyType.h; path = Sources/OpenVPNAdapter/library/OpenVPNKeyType.h; sourceTree = "<group>"; };
+		BCC10FCC1DE8202E18AC5D77CBDEB876 /* OpenVPNReachability.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNReachability.mm; path = Sources/OpenVPNAdapter/library/OpenVPNReachability.mm; sourceTree = "<group>"; };
+		BDFB986AEEE9AA6B7200B116595E3363 /* OpenVPNAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenVPNAdapter.debug.xcconfig; sourceTree = "<group>"; };
+		BEFA9896BAE1E51B64FD95E64DB715DD /* version.c */ = {isa = PBXFileReference; includeInIndex = 1; name = version.c; path = Sources/mbedTLS/library/version.c; sourceTree = "<group>"; };
+		C01FBE073AB4ACB7BB7FD2D8E60892F8 /* OpenVPNClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNClient.h; path = Sources/OpenVPNAdapter/library/OpenVPNClient.h; sourceTree = "<group>"; };
+		C11809C566CD014B4065313B6FC9396E /* error.c */ = {isa = PBXFileReference; includeInIndex = 1; name = error.c; path = Sources/mbedTLS/library/error.c; sourceTree = "<group>"; };
+		C1ECB8CAA00A8280520953E932862491 /* x509_csr.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509_csr.c; path = Sources/mbedTLS/library/x509_csr.c; sourceTree = "<group>"; };
+		C27E8D5C6318C36C06BACED6B97EBB5E /* OpenVPNTransportProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNTransportProtocol.h; path = Sources/OpenVPNAdapter/library/OpenVPNTransportProtocol.h; sourceTree = "<group>"; };
+		C2AABA84B882120C428FCAE89FEC35DB /* OpenVPNPacketFlowBridge.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNPacketFlowBridge.mm; path = Sources/OpenVPNAdapter/library/OpenVPNPacketFlowBridge.mm; sourceTree = "<group>"; };
+		C2DA0E05512C9874E47EF7B8DF8931FC /* OpenVPNTransportStats+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNTransportStats+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNTransportStats+Internal.h"; sourceTree = "<group>"; };
+		C44A0DBAD855301E38529A043CFCF1E5 /* OpenVPNAdapterEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNAdapterEvent.h; path = Sources/OpenVPNAdapter/library/OpenVPNAdapterEvent.h; sourceTree = "<group>"; };
+		C58F2C0796225E8C55AA7FA1FC32F9A8 /* OpenVPNIPv6Preference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNIPv6Preference.h; path = Sources/OpenVPNAdapter/library/OpenVPNIPv6Preference.h; sourceTree = "<group>"; };
+		C764838F8232E87E11E1EB32B90B17AA /* bignum.c */ = {isa = PBXFileReference; includeInIndex = 1; name = bignum.c; path = Sources/mbedTLS/library/bignum.c; sourceTree = "<group>"; };
+		C7967BF4A2A878F6D365D68B2B3685DD /* ssl_srv.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_srv.c; path = Sources/mbedTLS/library/ssl_srv.c; sourceTree = "<group>"; };
+		C7F7319DB9CB1022CCA192436CF8BBAA /* OpenVPNReachabilityStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNReachabilityStatus.h; path = Sources/OpenVPNAdapter/library/OpenVPNReachabilityStatus.h; sourceTree = "<group>"; };
+		C8F0124F408AACA43128A62C79A8882F /* blowfish.c */ = {isa = PBXFileReference; includeInIndex = 1; name = blowfish.c; path = Sources/mbedTLS/library/blowfish.c; sourceTree = "<group>"; };
+		CEAC74CD886364C284C75421ADCDFF1C /* md_wrap.c */ = {isa = PBXFileReference; includeInIndex = 1; name = md_wrap.c; path = Sources/mbedTLS/library/md_wrap.c; sourceTree = "<group>"; };
+		CFC7A744E4D1F4681CAFCBB405A5FFE7 /* ecjpake.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ecjpake.c; path = Sources/mbedTLS/library/ecjpake.c; sourceTree = "<group>"; };
+		D05AF757D47E624472E10DBB93D0D339 /* OpenVPNSessionToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNSessionToken.h; path = Sources/OpenVPNAdapter/library/OpenVPNSessionToken.h; sourceTree = "<group>"; };
+		D1D9360D981C06F3C40F6416B28E9DF0 /* OpenVPNPrivateKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OpenVPNPrivateKey.m; path = Sources/OpenVPNAdapter/library/OpenVPNPrivateKey.m; sourceTree = "<group>"; };
+		D22FA74114037A59585CADCA5E6032B8 /* pk.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pk.c; path = Sources/mbedTLS/library/pk.c; sourceTree = "<group>"; };
+		D48E497DDE4AC3851A1C59CD120FC143 /* cipher_wrap.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cipher_wrap.c; path = Sources/mbedTLS/library/cipher_wrap.c; sourceTree = "<group>"; };
+		D4F18E9E466D4F6901028664C1826D3D /* ripemd160.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ripemd160.c; path = Sources/mbedTLS/library/ripemd160.c; sourceTree = "<group>"; };
+		D690DB0B1742B1B84CAE470206D533EA /* OpenVPNError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNError.h; path = Sources/OpenVPNAdapter/library/OpenVPNError.h; sourceTree = "<group>"; };
+		D7258B0250391A08434058A06198F8F7 /* OpenVPNReachabilityTracker.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNReachabilityTracker.mm; path = Sources/OpenVPNAdapter/library/OpenVPNReachabilityTracker.mm; sourceTree = "<group>"; };
+		DB5EF92EB76F0523CC4A459120F36EE8 /* OpenVPNCertificate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNCertificate.h; path = Sources/OpenVPNAdapter/library/OpenVPNCertificate.h; sourceTree = "<group>"; };
+		DC8E9D517DD1590D0826C21A80244819 /* OpenVPNProperties+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNProperties+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNProperties+Internal.h"; sourceTree = "<group>"; };
+		E0FB1DC9AE628D7340B0ECE015071CA7 /* gcm.c */ = {isa = PBXFileReference; includeInIndex = 1; name = gcm.c; path = Sources/mbedTLS/library/gcm.c; sourceTree = "<group>"; };
+		E224D6230806973EE366B7E81F265573 /* x509_create.c */ = {isa = PBXFileReference; includeInIndex = 1; name = x509_create.c; path = Sources/mbedTLS/library/x509_create.c; sourceTree = "<group>"; };
+		E29D14A78C7A538C74D92793FB499552 /* NSError+OpenVPNError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+OpenVPNError.h"; path = "Sources/OpenVPNAdapter/library/NSError+OpenVPNError.h"; sourceTree = "<group>"; };
+		E3684105D005F8720CEC9EBE8262E9C7 /* OpenVPNCredentials.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenVPNCredentials.mm; path = Sources/OpenVPNAdapter/library/OpenVPNCredentials.mm; sourceTree = "<group>"; };
+		E50D38960E4EA7A5D1287A824FC09986 /* pkparse.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pkparse.c; path = Sources/mbedTLS/library/pkparse.c; sourceTree = "<group>"; };
+		E594D5D824754EE684ACAF8F3062BA18 /* debug.c */ = {isa = PBXFileReference; includeInIndex = 1; name = debug.c; path = Sources/mbedTLS/library/debug.c; sourceTree = "<group>"; };
+		E9FABFA74410709622390E8D0EFBF0F0 /* entropy.c */ = {isa = PBXFileReference; includeInIndex = 1; name = entropy.c; path = Sources/mbedTLS/library/entropy.c; sourceTree = "<group>"; };
+		EAC4905C9F2723F7FC3BD40F62974293 /* Pods-VPNClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VPNClient-dummy.m"; sourceTree = "<group>"; };
+		EB59B10E3D2484ED793ABB4783275815 /* arc4.c */ = {isa = PBXFileReference; includeInIndex = 1; name = arc4.c; path = Sources/mbedTLS/library/arc4.c; sourceTree = "<group>"; };
+		EDA197E6B37891AF223EB1820B2B321C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F3C8D1185F717323493E6BA00E0AF706 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F48CE5C523B7699DE794624099EF043F /* base64.c */ = {isa = PBXFileReference; includeInIndex = 1; name = base64.c; path = Sources/mbedTLS/library/base64.c; sourceTree = "<group>"; };
+		F4D03293E2F5C056ABE8E757555FE393 /* OpenVPNCredentials+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OpenVPNCredentials+Internal.h"; path = "Sources/OpenVPNAdapter/library/OpenVPNCredentials+Internal.h"; sourceTree = "<group>"; };
+		F69C9A1187957B093B98C7CD5E123FC3 /* lz4frame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lz4frame.h; path = Sources/LZ4/lib/lz4frame.h; sourceTree = "<group>"; };
+		F7B42FDBC713D444AD5359D0EABADADA /* ssl_ciphersuites.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssl_ciphersuites.c; path = Sources/mbedTLS/library/ssl_ciphersuites.c; sourceTree = "<group>"; };
+		FA4AEC3F861E2B31F2F064852847FAC1 /* OpenVPNTLSCertProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenVPNTLSCertProfile.h; path = Sources/OpenVPNAdapter/library/OpenVPNTLSCertProfile.h; sourceTree = "<group>"; };
+		FB4EBFAF10B579E5B647A28F871DFA57 /* Pods-VPNClient-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VPNClient-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36D793D102E696DB35B220399076290F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F5EF8B102138507A0999F8E1B173A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5078C3587D4B2DCA523180E52C8E0327 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691B34E963A1716E42F031C92D120D3A /* Foundation.framework in Frameworks */,
+				FE4165B4100BFAD48312A1C5CDE04AF7 /* NetworkExtension.framework in Frameworks */,
+				8E265E3C8B134A77518D02C4DE4D0A70 /* SystemConfiguration.framework in Frameworks */,
+				A42314DCCC5B8083843482E1C23EA629 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA749E7F9CC62F6B41EC894E62EA692A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6011A9A6F490D8CAD15AA61B44769B94 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04012FB4B0A1FBFDC672F93BDE540A5B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				807F1EC66D2949C00BAF92262D27C97A /* OpenVPNAdapter.modulemap */,
+				AD314DB07171A68972B90D1C4370AFF8 /* OpenVPNAdapter-dummy.m */,
+				73B44106CA8F3E814DEAB4A99B8228BC /* OpenVPNAdapter-Info.plist */,
+				0502DA9F0D131E728D201476E6017B9A /* OpenVPNAdapter-umbrella.h */,
+				BDFB986AEEE9AA6B7200B116595E3363 /* OpenVPNAdapter.debug.xcconfig */,
+				7F67AB85A3A88B10BB5AE53920C0B16D /* OpenVPNAdapter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OpenVPNAdapter";
+			sourceTree = "<group>";
+		};
+		1D122FA6D02FB4EC35C376DE3CF26077 /* OpenVPNAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				F350BD728B33A09202403FC996C29D40 /* LZ4 */,
+				F4FF4E12A36E634E91C295B02D4D76DE /* mbedTLS */,
+				A0AF07EA3F9A4BEDA11775FA1A45FA58 /* OpenVPNAdapter */,
+				3DE84E4A65336A123CE88D28AD06908B /* OpenVPNClient */,
+				04012FB4B0A1FBFDC672F93BDE540A5B /* Support Files */,
+			);
+			name = OpenVPNAdapter;
+			path = OpenVPNAdapter;
+			sourceTree = "<group>";
+		};
+		3DE84E4A65336A123CE88D28AD06908B /* OpenVPNClient */ = {
+			isa = PBXGroup;
+			children = (
+				63C187D282EBB458E2395AFDE9485511 /* ovpnapi.hpp */,
+				59246D4876EC9CD947D4CA374A8CE973 /* ovpncli.cpp */,
+				32152260FD3B730942AEC06D6B17DDE9 /* ovpncli.hpp */,
+			);
+			name = OpenVPNClient;
+			sourceTree = "<group>";
+		};
+		4E4D738AC26F088FD1C4D15D5DB374FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D122FA6D02FB4EC35C376DE3CF26077 /* OpenVPNAdapter */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		509DD629D2A1BA60EEF0AB115543BA2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0CD77F01530EA70DD86D7591F2597105 /* OpenVPNAdapter.framework */,
+				B54A7F1FFDDE20FE27C730449BE9F0A2 /* Pods_TunnelProvider.framework */,
+				28B6D02932CC270A47D933D472C1BC56 /* Pods_VPNClient.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55F1B175EBF341B94B2060D95053D0B3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EDA197E6B37891AF223EB1820B2B321C /* Foundation.framework */,
+				A37A940A0D0F9CC6DDB5D17896176BFE /* NetworkExtension.framework */,
+				7E84A41E47948CD98192DC608813F218 /* SystemConfiguration.framework */,
+				F3C8D1185F717323493E6BA00E0AF706 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		742450EBFAB5DCBD0D06E1B1344D05DE /* Pods-TunnelProvider */ = {
+			isa = PBXGroup;
+			children = (
+				955F7A700DEA6E5C71D93C9F050DEC95 /* Pods-TunnelProvider.modulemap */,
+				847A3C8D962AA403942EFCE4FBD22B8F /* Pods-TunnelProvider-acknowledgements.markdown */,
+				4324A37D329CA06F31F70D947FD36CCC /* Pods-TunnelProvider-acknowledgements.plist */,
+				96FB98492584D4ED69500CBFA4543B52 /* Pods-TunnelProvider-dummy.m */,
+				A37168D559A9EE21C5675F7DA7B48AAA /* Pods-TunnelProvider-Info.plist */,
+				0DFE0DC0EC448A2C7D97F55468BD5C37 /* Pods-TunnelProvider-umbrella.h */,
+				5CF9854E5FD0207B0935D14C3DBB2556 /* Pods-TunnelProvider.debug.xcconfig */,
+				7CB1E83FA5775FF2062FA7F97A6746EA /* Pods-TunnelProvider.release.xcconfig */,
+			);
+			name = "Pods-TunnelProvider";
+			path = "Target Support Files/Pods-TunnelProvider";
+			sourceTree = "<group>";
+		};
+		834E869093BDCA0A4FDB9C80D513CE4A /* Pods-VPNClient */ = {
+			isa = PBXGroup;
+			children = (
+				5B77A40B6D1257880009E89DB35C50AE /* Pods-VPNClient.modulemap */,
+				FB4EBFAF10B579E5B647A28F871DFA57 /* Pods-VPNClient-acknowledgements.markdown */,
+				2DD3E5B6F7D03D55036E3F6971813EF3 /* Pods-VPNClient-acknowledgements.plist */,
+				EAC4905C9F2723F7FC3BD40F62974293 /* Pods-VPNClient-dummy.m */,
+				548332EF8207EF96B3A7B766D35B290E /* Pods-VPNClient-frameworks.sh */,
+				B795B34CB861FA6754564DDC97C315A5 /* Pods-VPNClient-Info.plist */,
+				ADD0738360619819E5313BFCC039D757 /* Pods-VPNClient-umbrella.h */,
+				38AD7897A5A2FE15152BB11ABE03EEB9 /* Pods-VPNClient.debug.xcconfig */,
+				2FCB6898E3CA4E6B62F95B872DB91BFB /* Pods-VPNClient.release.xcconfig */,
+			);
+			name = "Pods-VPNClient";
+			path = "Target Support Files/Pods-VPNClient";
+			sourceTree = "<group>";
+		};
+		8B601D569A5AE5A0893E45AA7DA072B2 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				742450EBFAB5DCBD0D06E1B1344D05DE /* Pods-TunnelProvider */,
+				834E869093BDCA0A4FDB9C80D513CE4A /* Pods-VPNClient */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A0AF07EA3F9A4BEDA11775FA1A45FA58 /* OpenVPNAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				92CB9DBBD04D6C26C45A334ED2ED119D /* NSArray+OpenVPNAdditions.h */,
+				895520B46073F0A6BE8EC01BFC795104 /* NSArray+OpenVPNAdditions.m */,
+				E29D14A78C7A538C74D92793FB499552 /* NSError+OpenVPNError.h */,
+				3B7F93AF78E111349B3E0A77BCD76378 /* NSError+OpenVPNError.m */,
+				AB298D3DF0AC11F98F397739B6B8BF6C /* OpenVPNAdapter.h */,
+				47FBA9B8F628C1A1701EAA81431537C0 /* OpenVPNAdapter.mm */,
+				C44A0DBAD855301E38529A043CFCF1E5 /* OpenVPNAdapterEvent.h */,
+				175E03CC8DB9981626AAB9FCF5EC5971 /* OpenVPNAdapterPacketFlow.h */,
+				DB5EF92EB76F0523CC4A459120F36EE8 /* OpenVPNCertificate.h */,
+				6DCA9A54394C142E17477D46EDBBDAC5 /* OpenVPNCertificate.m */,
+				C01FBE073AB4ACB7BB7FD2D8E60892F8 /* OpenVPNClient.h */,
+				2C3DD03D6B8E81E14F597FA880DD9786 /* OpenVPNClient.mm */,
+				8F305EE75EF5625C51A490779F3E60D7 /* OpenVPNCompressionMode.h */,
+				593BE36A7C9A640DAB0190C29443A1F9 /* OpenVPNConfiguration.h */,
+				A250850091EB96A8E3EDCDC95B2256D4 /* OpenVPNConfiguration.mm */,
+				1F42E00CB792245B503EB53232DDFEE8 /* OpenVPNConfiguration+Internal.h */,
+				8B90F6B354288EED0D7C539DBB1C2B5A /* OpenVPNConnectionInfo.h */,
+				50165708FD558DCF31526BEB8CA8F006 /* OpenVPNConnectionInfo.mm */,
+				46E5E4C701BC0235D257DEF6BAE1328F /* OpenVPNConnectionInfo+Internal.h */,
+				70C9FCC7B0C45C7DF253CCD366074927 /* OpenVPNCredentials.h */,
+				E3684105D005F8720CEC9EBE8262E9C7 /* OpenVPNCredentials.mm */,
+				F4D03293E2F5C056ABE8E757555FE393 /* OpenVPNCredentials+Internal.h */,
+				D690DB0B1742B1B84CAE470206D533EA /* OpenVPNError.h */,
+				3C311BAB729D13DCC549CBB48F5DCE62 /* OpenVPNError.m */,
+				3DC835E78F55B11F5AFDBDCE48E7396B /* OpenVPNInterfaceStats.h */,
+				836B6B6C3EA5ECA267080B4FBA573CD6 /* OpenVPNInterfaceStats.mm */,
+				0D2FCC413F3A68E906A92FD7300FA360 /* OpenVPNInterfaceStats+Internal.h */,
+				C58F2C0796225E8C55AA7FA1FC32F9A8 /* OpenVPNIPv6Preference.h */,
+				B88DA7AB153997AE3405C597014F8C4E /* OpenVPNKeyType.h */,
+				B34A14CAFD20446F5DED38EF828E0FC8 /* OpenVPNMinTLSVersion.h */,
+				AA8244BE8149687F0B4E333D4D54CA0F /* OpenVPNNetworkSettingsBuilder.h */,
+				4761B5BE707F44843170B4C7D5FBAC30 /* OpenVPNNetworkSettingsBuilder.m */,
+				11CAE36F08898920EBE4A5605FEB6832 /* OpenVPNPacket.h */,
+				38347F24C4F774B860E36EE41D65F1B1 /* OpenVPNPacket.mm */,
+				B0C49B14E0BD224F6EF1D9BC9ADCA182 /* OpenVPNPacketFlowBridge.h */,
+				C2AABA84B882120C428FCAE89FEC35DB /* OpenVPNPacketFlowBridge.mm */,
+				4308C26AB5A9B77CCFE5A3FB9AF18393 /* OpenVPNPrivateKey.h */,
+				D1D9360D981C06F3C40F6416B28E9DF0 /* OpenVPNPrivateKey.m */,
+				21F81DD7B58D4896DD4366D7720702BE /* OpenVPNProperties.h */,
+				64D534F4484519A5E2542F22C9843C8C /* OpenVPNProperties.mm */,
+				DC8E9D517DD1590D0826C21A80244819 /* OpenVPNProperties+Internal.h */,
+				2E0876AB26BCF4C0BD6329D97A55612A /* OpenVPNReachability.h */,
+				BCC10FCC1DE8202E18AC5D77CBDEB876 /* OpenVPNReachability.mm */,
+				7D19E8EFA091EA060555F2418E956087 /* OpenVPNReachability+Internal.h */,
+				C7F7319DB9CB1022CCA192436CF8BBAA /* OpenVPNReachabilityStatus.h */,
+				0B09B7DB95797DFDAB11AB04719CD923 /* OpenVPNReachabilityTracker.h */,
+				D7258B0250391A08434058A06198F8F7 /* OpenVPNReachabilityTracker.mm */,
+				07987EEE9CCF9B45855A1D1D396DAC46 /* OpenVPNServerEntry.h */,
+				02FF5EBA2AD983803F639B73C37A65F9 /* OpenVPNServerEntry.mm */,
+				9E087ED14898EF76B4272D7B9B9C716C /* OpenVPNServerEntry+Internal.h */,
+				D05AF757D47E624472E10DBB93D0D339 /* OpenVPNSessionToken.h */,
+				36ED0CA7E09F4286F9B6EFA53AE71177 /* OpenVPNSessionToken.mm */,
+				B67FB8325E8BB98FF4D6C5879F9E6D03 /* OpenVPNSessionToken+Internal.h */,
+				FA4AEC3F861E2B31F2F064852847FAC1 /* OpenVPNTLSCertProfile.h */,
+				C27E8D5C6318C36C06BACED6B97EBB5E /* OpenVPNTransportProtocol.h */,
+				64E8647432CDD70039B38875A0641111 /* OpenVPNTransportStats.h */,
+				314B529537B36C0E6633F4462E1405E7 /* OpenVPNTransportStats.mm */,
+				C2DA0E05512C9874E47EF7B8DF8931FC /* OpenVPNTransportStats+Internal.h */,
+			);
+			name = OpenVPNAdapter;
+			sourceTree = "<group>";
+		};
+		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55F1B175EBF341B94B2060D95053D0B3 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
+				4E4D738AC26F088FD1C4D15D5DB374FD /* Pods */,
+				509DD629D2A1BA60EEF0AB115543BA2A /* Products */,
+				8B601D569A5AE5A0893E45AA7DA072B2 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F350BD728B33A09202403FC996C29D40 /* LZ4 */ = {
+			isa = PBXGroup;
+			children = (
+				787EEE8B74FDDE4D3B0320A8AEB81992 /* lz4.c */,
+				594FC6D026BDD24426D9F3DD724324BB /* lz4.h */,
+				439DE5686669C8A1E12450B29047C7B0 /* lz4frame.c */,
+				F69C9A1187957B093B98C7CD5E123FC3 /* lz4frame.h */,
+				121507C5E755761544D5F848E9BD6C8D /* lz4frame_static.h */,
+				463BD5F06B8D847FF96F600B0B0B9FEF /* lz4hc.c */,
+				779FB43827EC797EE7E1D1DAE866D688 /* lz4hc.h */,
+				2AD148B0FFE24FC69A859FB2E59CFA23 /* xxhash.c */,
+				B0AD97101F43B5532F2214AED3F81F31 /* xxhash.h */,
+			);
+			name = LZ4;
+			sourceTree = "<group>";
+		};
+		F4FF4E12A36E634E91C295B02D4D76DE /* mbedTLS */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE583F84C11366D81A48D9177C3CED /* aes.c */,
+				055E1B5E16C6A24EB3CB5E63D2A31A39 /* aesni.c */,
+				EB59B10E3D2484ED793ABB4783275815 /* arc4.c */,
+				2795F42A3832F6BA716B879E8489DC25 /* asn1parse.c */,
+				B556E514D618326BBE81C348192A2821 /* asn1write.c */,
+				F48CE5C523B7699DE794624099EF043F /* base64.c */,
+				C764838F8232E87E11E1EB32B90B17AA /* bignum.c */,
+				C8F0124F408AACA43128A62C79A8882F /* blowfish.c */,
+				7831A2E2191DF7D6CE4FB7F7AB8233A2 /* camellia.c */,
+				AAB8F50592AF4122F50771F9826AD8EE /* ccm.c */,
+				A73C471B7B13A4268057B6AFD93CFC46 /* certs.c */,
+				548949084C267CFC190E650FF751691E /* cipher.c */,
+				D48E497DDE4AC3851A1C59CD120FC143 /* cipher_wrap.c */,
+				6C4F41AFAE15CFF69D4DC28182D9AAC8 /* cmac.c */,
+				99598415688EBD05C5E5674CF57CFA53 /* ctr_drbg.c */,
+				E594D5D824754EE684ACAF8F3062BA18 /* debug.c */,
+				6E89B1C289B230D7A57EAD1105E6B1FD /* des.c */,
+				A4D2EA152BAEC0FA3DE98AB43DC1DB78 /* dhm.c */,
+				5F3586B4BD127712452B8BE1978F4D5D /* ecdh.c */,
+				35E7B692FC27C5385226AD7802145C3D /* ecdsa.c */,
+				CFC7A744E4D1F4681CAFCBB405A5FFE7 /* ecjpake.c */,
+				15CA3671EF3CC6F6EB78BE3480DDC9D5 /* ecp.c */,
+				09DAB6CC4E6F3C753CB315A6847AB716 /* ecp_curves.c */,
+				E9FABFA74410709622390E8D0EFBF0F0 /* entropy.c */,
+				28C9473802BF0ED0788E7DC18906A57B /* entropy_poll.c */,
+				C11809C566CD014B4065313B6FC9396E /* error.c */,
+				E0FB1DC9AE628D7340B0ECE015071CA7 /* gcm.c */,
+				1B65A8A9BEE3FCF5BE8767BAB422A5F7 /* havege.c */,
+				7DF0BBDC62DA597582E5246563593EA9 /* hmac_drbg.c */,
+				6B8B362853E5FA2FD88B0B8FC65892D0 /* md.c */,
+				4B847CE033945E827A378E84479DC348 /* md2.c */,
+				65C57A65379A87E1A8BA79A159D0CC33 /* md4.c */,
+				14AF75B3E790BC1A5BE2EEEEA34D006D /* md5.c */,
+				CEAC74CD886364C284C75421ADCDFF1C /* md_wrap.c */,
+				7D1475D188AAA31598BC59544DD5667D /* memory_buffer_alloc.c */,
+				909EC007D113E8234D463EC57416492C /* net_sockets.c */,
+				242A2D43FF090850AFE1C529DED6EE2D /* oid.c */,
+				49D4E2F73FEAA79C3132372EDD25F6FF /* padlock.c */,
+				13FE4E6FF21383F3811FF36323D281A8 /* pem.c */,
+				D22FA74114037A59585CADCA5E6032B8 /* pk.c */,
+				12CC10EC1D37464418EBCF62151CA4AA /* pk_wrap.c */,
+				2B2E6FFE20AABD4FC09AF0F59D132D71 /* pkcs11.c */,
+				84631EB95B38E048DFFEEF42A9F30573 /* pkcs12.c */,
+				A356297887E7DCC62E675DC9012F9D91 /* pkcs5.c */,
+				E50D38960E4EA7A5D1287A824FC09986 /* pkparse.c */,
+				949E4E8C113439ECDE5126520FFA2728 /* pkwrite.c */,
+				791006368CB9407E1009D93F44EC9A84 /* platform.c */,
+				D4F18E9E466D4F6901028664C1826D3D /* ripemd160.c */,
+				15B68ED87CE560FF21AA1D8FE67E3C97 /* rsa.c */,
+				8569739F1A370ED47F6EC88337AF471A /* rsa_internal.c */,
+				9259B3FCCC1B50B6F3338E777E3B5D4E /* sha1.c */,
+				49BF7F213D0BD4EF3B2F072B0F4F63B9 /* sha256.c */,
+				303CEF8D2121810F6256817D0C41042E /* sha512.c */,
+				68705A48B5A03D00A7B3DA6191183983 /* ssl_cache.c */,
+				F7B42FDBC713D444AD5359D0EABADADA /* ssl_ciphersuites.c */,
+				05F53184F3695EEAC275D28A2DAA329B /* ssl_cli.c */,
+				19F0F1E000A48B025E5E8F1B1B6E8E10 /* ssl_cookie.c */,
+				C7967BF4A2A878F6D365D68B2B3685DD /* ssl_srv.c */,
+				9DF181B75BB69DBF34D6CA2BA863569C /* ssl_ticket.c */,
+				A1C9779F570BDDB5FE218CE2341BA76F /* ssl_tls.c */,
+				601E6C4DD1FC7A5A0DD653ECE28E4425 /* threading.c */,
+				3FDA10097D56F2D52F8F79101A701669 /* timing.c */,
+				BEFA9896BAE1E51B64FD95E64DB715DD /* version.c */,
+				B1768DED96D58514D3DA23DB1474131B /* version_features.c */,
+				1EFD2FAB71114D44F74445369CAF7722 /* x509.c */,
+				E224D6230806973EE366B7E81F265573 /* x509_create.c */,
+				3352F14F1A7952C1D36ECCAECB6F4B81 /* x509_crl.c */,
+				84DA3C0F2B053BA407929EAF39BCD2E8 /* x509_crt.c */,
+				C1ECB8CAA00A8280520953E932862491 /* x509_csr.c */,
+				A28D3300B4A391CA53105AFF30C11339 /* x509write_crt.c */,
+				090B2D7FC709B9532F03C268F18EEECF /* x509write_csr.c */,
+				5BE186B8F0B19D683AC1A1C6BECB2E08 /* xtea.c */,
+			);
+			name = mbedTLS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C07779B2F5F7AB05268B4AF226C6D59 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C419B704687997891817C80F30AEF5F /* Pods-VPNClient-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F464178FAC010BD7AE8AE2959F24DC2C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				716A2DFAD2411F1A6DF212058C97426B /* lz4.h in Headers */,
+				FBF9846B8F32E5250AB66C5B61E75393 /* lz4frame.h in Headers */,
+				F882B7AD044F3B577232BD3166EB471D /* lz4frame_static.h in Headers */,
+				20B0E2B08D8BCF1A19D0012D0228B5B0 /* lz4hc.h in Headers */,
+				7A916334321888E41DEC13A1DD9EBD53 /* NSArray+OpenVPNAdditions.h in Headers */,
+				4BEEF3E27648800F65F9E18887F9481A /* NSError+OpenVPNError.h in Headers */,
+				170E9AEBE37644FE5F8A5AF448E4D26A /* OpenVPNAdapter-umbrella.h in Headers */,
+				72C5E40F08F12EB6C541338894ABA587 /* OpenVPNAdapter.h in Headers */,
+				F01776F3BEE1F20287A6CDC3AD7E7DA4 /* OpenVPNAdapterEvent.h in Headers */,
+				219504FF5DE993EF28D6005B2A4492A8 /* OpenVPNAdapterPacketFlow.h in Headers */,
+				F7CD3C818E440E879243CF548D295E13 /* OpenVPNCertificate.h in Headers */,
+				26B069B780E38A2AA2C9E6C0BD333E88 /* OpenVPNClient.h in Headers */,
+				9099271C1FB779092969B745501EF9C6 /* OpenVPNCompressionMode.h in Headers */,
+				6BD3338C2AB7E6CCA6F1D864F4F6D26D /* OpenVPNConfiguration+Internal.h in Headers */,
+				CFAD86063740E0EAFB34AB395739FF6F /* OpenVPNConfiguration.h in Headers */,
+				00E8526CD631470896FA949BBDA8E80F /* OpenVPNConnectionInfo+Internal.h in Headers */,
+				5BAB7EBFF7806C0EB154E4180B522957 /* OpenVPNConnectionInfo.h in Headers */,
+				879D50F18A79D40949B1873B80ADC4A9 /* OpenVPNCredentials+Internal.h in Headers */,
+				8C7A846744A44B4EFAF920654AE9EA8B /* OpenVPNCredentials.h in Headers */,
+				453589CEBF1B6CA4B47D14A6D06DF19C /* OpenVPNError.h in Headers */,
+				8837FD154C20B6250762BC762C8F0923 /* OpenVPNInterfaceStats+Internal.h in Headers */,
+				47405CACF850A636592E1899F6411E39 /* OpenVPNInterfaceStats.h in Headers */,
+				3C1D05D63A128C947D7E1AE47510CE4C /* OpenVPNIPv6Preference.h in Headers */,
+				7D2E4B1BE4B1183360AA9FD0E2B87F47 /* OpenVPNKeyType.h in Headers */,
+				B3E3F706839285A2923731801AD13BA2 /* OpenVPNMinTLSVersion.h in Headers */,
+				9276CAC7174354EC5A0EF06228A242DE /* OpenVPNNetworkSettingsBuilder.h in Headers */,
+				CB00E95780751913E84C54B64D10178C /* OpenVPNPacket.h in Headers */,
+				A1DCC2D19F1853E7D87B392FA5BB030F /* OpenVPNPacketFlowBridge.h in Headers */,
+				64DB3CBA160FF8BE0590D8DDA08842E4 /* OpenVPNPrivateKey.h in Headers */,
+				46871014FF463B839D6880803C476F85 /* OpenVPNProperties+Internal.h in Headers */,
+				F58868AA03CBFFB151DCA9B12AB3272E /* OpenVPNProperties.h in Headers */,
+				25A4BA491D78976963E4DBD3031B8C8A /* OpenVPNReachability+Internal.h in Headers */,
+				1DAD0726FB2A1F791417229E793D08E3 /* OpenVPNReachability.h in Headers */,
+				8FE342C252D8C9CAB291F3E3ECA0218A /* OpenVPNReachabilityStatus.h in Headers */,
+				8312015A1251C28E8B90E0CE8088FD39 /* OpenVPNReachabilityTracker.h in Headers */,
+				D6CFB1819FAFE88C5E7DF2BC4D93B982 /* OpenVPNServerEntry+Internal.h in Headers */,
+				43FCFE1561CA61884136EB97A9A0AC12 /* OpenVPNServerEntry.h in Headers */,
+				9BFEF0C6E0A22AA8B31F00EB4C56C8F8 /* OpenVPNSessionToken+Internal.h in Headers */,
+				89BD80682D1B034D66515F061EF2AA2E /* OpenVPNSessionToken.h in Headers */,
+				435EDAC3903BC759DFF46C8855BD5983 /* OpenVPNTLSCertProfile.h in Headers */,
+				9487FDC3247F7A4F3686064D552ABCF9 /* OpenVPNTransportProtocol.h in Headers */,
+				B37665561FFDDBE6CAB0977640F835F1 /* OpenVPNTransportStats+Internal.h in Headers */,
+				3198FED54DFD66E888F40C6E0A8DE41C /* OpenVPNTransportStats.h in Headers */,
+				FF158AECF3B51F4EF3253495FADB3C19 /* ovpnapi.hpp in Headers */,
+				269E3BFA0EE2708EDEDE4B0FE90E038C /* ovpncli.hpp in Headers */,
+				D36F6FD3CE04CB8B31021E7A4D533AF8 /* xxhash.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDD6282F4512D77D9797278F25587C65 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B28B2C98EA6EC5B3D05D02A3FAF90D /* Pods-TunnelProvider-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		371A61FDCACD17804269517282D71BD7 /* OpenVPNAdapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DCEA8CAE67DE3CD308BF203B8285560 /* Build configuration list for PBXNativeTarget "OpenVPNAdapter" */;
+			buildPhases = (
+				F464178FAC010BD7AE8AE2959F24DC2C /* Headers */,
+				46A7DCCEDE57E052AEE0463D75D2BE74 /* Sources */,
+				5078C3587D4B2DCA523180E52C8E0327 /* Frameworks */,
+				388D88AB48F15CEE2C36710EDF97378F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenVPNAdapter;
+			productName = OpenVPNAdapter;
+			productReference = 0CD77F01530EA70DD86D7591F2597105 /* OpenVPNAdapter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4852B32D72A117A1F5CEEE83F5CDF5DF /* Pods-VPNClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48646749F40C57CE1FFE7A8F0BB9E543 /* Build configuration list for PBXNativeTarget "Pods-VPNClient" */;
+			buildPhases = (
+				6C07779B2F5F7AB05268B4AF226C6D59 /* Headers */,
+				521DCC3078CB380923D53B84A8374754 /* Sources */,
+				DA749E7F9CC62F6B41EC894E62EA692A /* Frameworks */,
+				EED2DCF6BF6984143A57046FDD047423 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECD4903DCA0DB944AD22EDDBD7CDFA54 /* PBXTargetDependency */,
+			);
+			name = "Pods-VPNClient";
+			productName = "Pods-VPNClient";
+			productReference = 28B6D02932CC270A47D933D472C1BC56 /* Pods_VPNClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D8760CEFA32D742BF26496773AE076C8 /* Pods-TunnelProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D281D3620736F94DC887FA28C4B5E570 /* Build configuration list for PBXNativeTarget "Pods-TunnelProvider" */;
+			buildPhases = (
+				FDD6282F4512D77D9797278F25587C65 /* Headers */,
+				8D6481D07B3496E3F3E94BA7EE58A637 /* Sources */,
+				36D793D102E696DB35B220399076290F /* Frameworks */,
+				D9E668E264313A7FE36695884F58A885 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5EB6B669EAB2198F51A98762BF259C2 /* PBXTargetDependency */,
+			);
+			name = "Pods-TunnelProvider";
+			productName = "Pods-TunnelProvider";
+			productReference = B54A7F1FFDDE20FE27C730449BE9F0A2 /* Pods_TunnelProvider.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 509DD629D2A1BA60EEF0AB115543BA2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				371A61FDCACD17804269517282D71BD7 /* OpenVPNAdapter */,
+				D8760CEFA32D742BF26496773AE076C8 /* Pods-TunnelProvider */,
+				4852B32D72A117A1F5CEEE83F5CDF5DF /* Pods-VPNClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		388D88AB48F15CEE2C36710EDF97378F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9E668E264313A7FE36695884F58A885 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EED2DCF6BF6984143A57046FDD047423 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46A7DCCEDE57E052AEE0463D75D2BE74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7BE3FAB2DD5C5F0E9D22382CF6780E /* aes.c in Sources */,
+				FCA872029CB4F3764E7322ABE98933AD /* aesni.c in Sources */,
+				652BF60240F225627176885860AAB14D /* arc4.c in Sources */,
+				FF232B7993F7641A92ED0128816FC3AC /* asn1parse.c in Sources */,
+				33871610C7B59B2C23CF73B8F0B78287 /* asn1write.c in Sources */,
+				4104B24B9D2B3856CE238B9F553C6732 /* base64.c in Sources */,
+				EDD145FCFE768F0C8EC80992B9AB0354 /* bignum.c in Sources */,
+				99925D41DE6DE608A8E05EE3E816A6DF /* blowfish.c in Sources */,
+				6CDF56BD458786CF589DECBA52121435 /* camellia.c in Sources */,
+				684F3FBCB32563B954164DECF1DB1594 /* ccm.c in Sources */,
+				CD0F377C8986E9B599E81D43D057272B /* certs.c in Sources */,
+				1EA39CEB49852A66E7D4B7ED9EB4FDCB /* cipher.c in Sources */,
+				3AED738CEB85C64EB2EC6780AD34A7C6 /* cipher_wrap.c in Sources */,
+				9FC3FC5B86EB666DF2764139D91FF7D2 /* cmac.c in Sources */,
+				7C69B18600889A4B7607F97DA70F30FB /* ctr_drbg.c in Sources */,
+				7117F19B61785B0264D86A92630AD467 /* debug.c in Sources */,
+				9D73E95EFBA4AE74D4B19AAEA6C724C9 /* des.c in Sources */,
+				2EC4E28E028E89BA08EB965B68A1A7EF /* dhm.c in Sources */,
+				D2A0EE23322CCA08666F9B9A8C5E464A /* ecdh.c in Sources */,
+				C37CE4A0254F5F0EFB3217272585F3F8 /* ecdsa.c in Sources */,
+				CA151C2935B1F8FEDB2E751ECCACEF77 /* ecjpake.c in Sources */,
+				22F08583493B0FD3AB8B289596E9D864 /* ecp.c in Sources */,
+				62BA2701A0B139E920060061FD862E13 /* ecp_curves.c in Sources */,
+				51B7CC439CA9D39382F3A7DA62879FEF /* entropy.c in Sources */,
+				B3C36B60FD08ED7749079069C41CE0E4 /* entropy_poll.c in Sources */,
+				6FD7C5256741B57AA765A4A9C9CC01EA /* error.c in Sources */,
+				540F89DEFC9FC5C90AE17196EE88F719 /* gcm.c in Sources */,
+				6573000880CEFF0BCB73C6E7D7AFF93E /* havege.c in Sources */,
+				33E654F43B5429E0FA436A31D78A8977 /* hmac_drbg.c in Sources */,
+				D1A12159EF31CB3AEDB67CB30AD512D3 /* lz4.c in Sources */,
+				A3DBF743BD47D52078871F64864CD2DF /* lz4frame.c in Sources */,
+				7A3E9160CC599AF874895C0F07533AEA /* lz4hc.c in Sources */,
+				49C27E26B4335CD8DB2684628D0B06AE /* md.c in Sources */,
+				4A87D19DA2AB45951D9D4183159FEB57 /* md2.c in Sources */,
+				0E40C5A958D2F5E326FE6A2D16F2AE2E /* md4.c in Sources */,
+				174CECD061A193D48CBAB3039F7C6FBC /* md5.c in Sources */,
+				F25412E01C815F1144136084EE3C9374 /* md_wrap.c in Sources */,
+				192AE474EBB7A883FF5213B623C1B3CF /* memory_buffer_alloc.c in Sources */,
+				044025C8361C62BC015D4A5B2357894E /* net_sockets.c in Sources */,
+				9D1113B154548D155D9D9F5F7D4D8F51 /* NSArray+OpenVPNAdditions.m in Sources */,
+				B3604211F170AF314644B5591A290307 /* NSError+OpenVPNError.m in Sources */,
+				07E52F8165CA47FE9CD35EEBB884199C /* oid.c in Sources */,
+				F0149EA905429EA89DA96EAE73A99340 /* OpenVPNAdapter-dummy.m in Sources */,
+				EE2E0D12FF3426259A164AE0627F6B5B /* OpenVPNAdapter.mm in Sources */,
+				78177856C458F82A95E6835ABF004DE6 /* OpenVPNCertificate.m in Sources */,
+				B5E364298D9E84131BC8DED3CD3B96B0 /* OpenVPNClient.mm in Sources */,
+				D79B95F67660916995FD7B1FE6D607A2 /* OpenVPNConfiguration.mm in Sources */,
+				3D0019C30376B42D42AAE216793B89F8 /* OpenVPNConnectionInfo.mm in Sources */,
+				4F7B1A37E2387884A9FDD7AAA8A05DF1 /* OpenVPNCredentials.mm in Sources */,
+				071817BBD2387B82C137153DCF682AD5 /* OpenVPNError.m in Sources */,
+				D1A755D7AE691FDCBD1232E77C8F109F /* OpenVPNInterfaceStats.mm in Sources */,
+				7A3F649A4B0D0ED4057CE1F12C7B06CE /* OpenVPNNetworkSettingsBuilder.m in Sources */,
+				51111CD0F92304E29134873D282C3D03 /* OpenVPNPacket.mm in Sources */,
+				3C4BE1DB62BB04D14DD9971CADCBF796 /* OpenVPNPacketFlowBridge.mm in Sources */,
+				448CF2A9F3C3684D4035B75A0FD24FCC /* OpenVPNPrivateKey.m in Sources */,
+				7A603621BB7E35FC92C65A906A416678 /* OpenVPNProperties.mm in Sources */,
+				34659D5D7F7041C91A7EBD359516CEAB /* OpenVPNReachability.mm in Sources */,
+				B05D9561B5C5B1072F89B3DE49A3DCC5 /* OpenVPNReachabilityTracker.mm in Sources */,
+				D67735399E1153ECB9841C0907E5AAB5 /* OpenVPNServerEntry.mm in Sources */,
+				EA7D8A4784463BB0663F83707673D0AA /* OpenVPNSessionToken.mm in Sources */,
+				D6CA9158684E28B5602281D88E894243 /* OpenVPNTransportStats.mm in Sources */,
+				C04FCE09AE8844828BF0CFEFAA50B79A /* ovpncli.cpp in Sources */,
+				C2BA9D72CD8E8CBA79845B7F586B011B /* padlock.c in Sources */,
+				8608C66688733796CB5349E8D16C6A36 /* pem.c in Sources */,
+				458AB1F061E590A79010A7177DD3224B /* pk.c in Sources */,
+				2B75259F41C6EBCCB3F3D6B25A7DDCC3 /* pk_wrap.c in Sources */,
+				84C4C2F3CEB6F92F18F7B04A30959CE7 /* pkcs11.c in Sources */,
+				50B58EB1C4AB6FB897B045CB0AE139FA /* pkcs12.c in Sources */,
+				C2FC89707E8F8B18FDE6D0447A1BF8CD /* pkcs5.c in Sources */,
+				B09AC8B657ADB3E34BE00DDB602E0778 /* pkparse.c in Sources */,
+				0816DF71F666D5877E46141B7BC8ADDB /* pkwrite.c in Sources */,
+				ECDC46DAC09828224CB04B7778EE0EBA /* platform.c in Sources */,
+				33CEF746FC047BADB3C59B47E86EB7A2 /* ripemd160.c in Sources */,
+				3F42D7E4AD93A635657470527723A03B /* rsa.c in Sources */,
+				1D46D38D3DAC9D7AD947534AFD0BED7A /* rsa_internal.c in Sources */,
+				E37016214969F317E37E830AB0519526 /* sha1.c in Sources */,
+				DB43834F2BD45AEF034A6BE286D677E1 /* sha256.c in Sources */,
+				FCED6AE80191081F3DE49081E24F0920 /* sha512.c in Sources */,
+				612C76C54B8DEE59CB14645F6442436A /* ssl_cache.c in Sources */,
+				3EE886ADE20D14FEF13FF78FBBA15EA9 /* ssl_ciphersuites.c in Sources */,
+				E94F343DD9E795E5D5D98A6DB04C4ED9 /* ssl_cli.c in Sources */,
+				043840939A93F39FF45AF61E98A18F5B /* ssl_cookie.c in Sources */,
+				CF36FF21B09E11DBF7C4A715AB7A5390 /* ssl_srv.c in Sources */,
+				D361ACDE9950B23B8428415EBC551C21 /* ssl_ticket.c in Sources */,
+				6FA686A20C49E367779E9A646E466D72 /* ssl_tls.c in Sources */,
+				3FCEB263B31E8E3DCEC2607175A8B3B6 /* threading.c in Sources */,
+				3C7AA94B3A02203F0CD7A2497CF9C7DD /* timing.c in Sources */,
+				F83BBA2F2D176619AC7328BDB008879E /* version.c in Sources */,
+				40F469A0A163C4E469051CCC68503DD6 /* version_features.c in Sources */,
+				8534FA607ECE7A8F1D95106C847FE1A8 /* x509.c in Sources */,
+				8B1D8B2E745C24DA32BFB1F812719674 /* x509_create.c in Sources */,
+				8587B7767C75F9B76F8E886026F4E01E /* x509_crl.c in Sources */,
+				E6CF5BD98D2763A937F6EFDD6CDFE589 /* x509_crt.c in Sources */,
+				1D5C0F016DABFD6A82817B4E9CBBE3F5 /* x509_csr.c in Sources */,
+				3694FE6307F950C4F77D0C736A03CE98 /* x509write_crt.c in Sources */,
+				DDC783F9DFE4AFD90545DD89D3EA877C /* x509write_csr.c in Sources */,
+				79CC237FC23AD781275922BB3876665D /* xtea.c in Sources */,
+				1AA7D3C19F9AB98456459A89F0DA94D2 /* xxhash.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521DCC3078CB380923D53B84A8374754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450A224E71468FE01EEE95FDFA0B542B /* Pods-VPNClient-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D6481D07B3496E3F3E94BA7EE58A637 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3F2D0C56CDE0F6995BEC9A2EECA638C /* Pods-TunnelProvider-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECD4903DCA0DB944AD22EDDBD7CDFA54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenVPNAdapter;
+			target = 371A61FDCACD17804269517282D71BD7 /* OpenVPNAdapter */;
+			targetProxy = C8E29DDA464111657E7C27DB6E114167 /* PBXContainerItemProxy */;
+		};
+		F5EB6B669EAB2198F51A98762BF259C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenVPNAdapter;
+			target = 371A61FDCACD17804269517282D71BD7 /* OpenVPNAdapter */;
+			targetProxy = ACD8E1CB51FA8F483C99B95B9D9FEDE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7E05554880C54BF8CA2192EB55B0C5AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB1E83FA5775FF2062FA7F97A6746EA /* Pods-TunnelProvider.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TunnelProvider/Pods-TunnelProvider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TunnelProvider/Pods-TunnelProvider.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		96073297B25B8EEEFA644C03258F9ADD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38AD7897A5A2FE15152BB11ABE03EEB9 /* Pods-VPNClient.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VPNClient/Pods-VPNClient-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VPNClient/Pods-VPNClient.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B18C479D0D9B81581D9A15806813D131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FCB6898E3CA4E6B62F95B872DB91BFB /* Pods-VPNClient.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VPNClient/Pods-VPNClient-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VPNClient/Pods-VPNClient.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B1D323F355C3AA2BFB93A99945D9D166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F67AB85A3A88B10BB5AE53920C0B16D /* OpenVPNAdapter.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/OpenVPNAdapter/OpenVPNAdapter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/OpenVPNAdapter/OpenVPNAdapter.modulemap";
+				PRODUCT_MODULE_NAME = OpenVPNAdapter;
+				PRODUCT_NAME = OpenVPNAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA212B5B066739F53A4C53A5B789482C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDFB986AEEE9AA6B7200B116595E3363 /* OpenVPNAdapter.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/OpenVPNAdapter/OpenVPNAdapter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/OpenVPNAdapter/OpenVPNAdapter.modulemap";
+				PRODUCT_MODULE_NAME = OpenVPNAdapter;
+				PRODUCT_NAME = OpenVPNAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFD9D19FEEBF98DE271D7FBABCB845B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F5F04600F5626DC980F02790D1ED2C19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F8E6553C286B2DFCC7172B8262C68285 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CF9854E5FD0207B0935D14C3DBB2556 /* Pods-TunnelProvider.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TunnelProvider/Pods-TunnelProvider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TunnelProvider/Pods-TunnelProvider.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFD9D19FEEBF98DE271D7FBABCB845B5 /* Debug */,
+				F5F04600F5626DC980F02790D1ED2C19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48646749F40C57CE1FFE7A8F0BB9E543 /* Build configuration list for PBXNativeTarget "Pods-VPNClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96073297B25B8EEEFA644C03258F9ADD /* Debug */,
+				B18C479D0D9B81581D9A15806813D131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DCEA8CAE67DE3CD308BF203B8285560 /* Build configuration list for PBXNativeTarget "OpenVPNAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA212B5B066739F53A4C53A5B789482C /* Debug */,
+				B1D323F355C3AA2BFB93A99945D9D166 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D281D3620736F94DC887FA28C4B5E570 /* Build configuration list for PBXNativeTarget "Pods-TunnelProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E6553C286B2DFCC7172B8262C68285 /* Debug */,
+				7E05554880C54BF8CA2192EB55B0C5AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
