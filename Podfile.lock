@@ -1,34 +1,33 @@
 PODS:
-  - OpenVPNAdapter (0.6.0):
-    - OpenVPNAdapter/ASIO (= 0.6.0)
-    - OpenVPNAdapter/LZ4 (= 0.6.0)
-    - OpenVPNAdapter/mbedTLS (= 0.6.0)
-    - OpenVPNAdapter/OpenVPN3 (= 0.6.0)
-    - OpenVPNAdapter/OpenVPNAdapter (= 0.6.0)
-    - OpenVPNAdapter/OpenVPNClient (= 0.6.0)
-  - OpenVPNAdapter/ASIO (0.6.0)
-  - OpenVPNAdapter/LZ4 (0.6.0)
-  - OpenVPNAdapter/mbedTLS (0.6.0)
-  - OpenVPNAdapter/OpenVPN3 (0.6.0)
-  - OpenVPNAdapter/OpenVPNAdapter (0.6.0)
-  - OpenVPNAdapter/OpenVPNClient (0.6.0)
+  - OpenVPNAdapter (0.7.0):
+    - OpenVPNAdapter/ASIO (= 0.7.0)
+    - OpenVPNAdapter/LZ4 (= 0.7.0)
+    - OpenVPNAdapter/mbedTLS (= 0.7.0)
+    - OpenVPNAdapter/OpenVPN3 (= 0.7.0)
+    - OpenVPNAdapter/OpenVPNAdapter (= 0.7.0)
+    - OpenVPNAdapter/OpenVPNClient (= 0.7.0)
+  - OpenVPNAdapter/ASIO (0.7.0)
+  - OpenVPNAdapter/LZ4 (0.7.0)
+  - OpenVPNAdapter/mbedTLS (0.7.0)
+  - OpenVPNAdapter/OpenVPN3 (0.7.0)
+  - OpenVPNAdapter/OpenVPNAdapter (0.7.0)
+  - OpenVPNAdapter/OpenVPNClient (0.7.0)
 
 DEPENDENCIES:
-  - OpenVPNAdapter (from `https://github.com/ss-abramchuk/OpenVPNAdapter.git`, tag `0.6.0`)
+  - OpenVPNAdapter (from `https://github.com/ss-abramchuk/OpenVPNAdapter.git`)
 
 EXTERNAL SOURCES:
   OpenVPNAdapter:
     :git: https://github.com/ss-abramchuk/OpenVPNAdapter.git
-    :tag: 0.6.0
 
 CHECKOUT OPTIONS:
   OpenVPNAdapter:
+    :commit: efc584cc410c555d3f2a858ef7735f4597d1690d
     :git: https://github.com/ss-abramchuk/OpenVPNAdapter.git
-    :tag: 0.6.0
 
 SPEC CHECKSUMS:
-  OpenVPNAdapter: 5a81788e3f28de2ef1be07c4b21b16fba8ffea4c
+  OpenVPNAdapter: 173fcc4c11a3a8a83ae8d250c079cdc5b9fb8ff1
 
-PODFILE CHECKSUM: 4f93adb8f9344cd9cf066a2127fbd921e7c3273b
+PODFILE CHECKSUM: c8f54ac1f15f77231a6f163550434b473fe5ce4f
 
 COCOAPODS: 1.9.3

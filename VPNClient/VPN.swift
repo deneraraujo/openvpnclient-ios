@@ -46,7 +46,7 @@ public class VPN: NSObject, ObservableObject {
     private var providerManager: NETunnelProviderManager! = nil
     private var isConfigSaved = false
     private let appGroupDefaults = UserDefaults(suiteName:Config.appGroupName)!
-    private var properties: OpenVPNProperties!
+    private var evaluation: OpenVPNConfigurationEvaluation!
     private var configFile: Data! = nil
     
     public var serverAddress = ""
@@ -180,12 +180,12 @@ public class VPN: NSObject, ObservableObject {
     public func setConfigFile(configFile: Data) {
         self.configFile = configFile
         
-        let OVPNproperties = self.getOVPNProperties()
+        let OVPNevaluation = self.getOVPNEvaluation()
         
       
         
-        self.serverAddress = OVPNproperties?.remoteHost ?? ""
-        self.username = OVPNproperties?.username ?? ""
+        self.serverAddress = OVPNevaluation?.remoteHost ?? ""
+        self.username = OVPNevaluation?.username ?? ""
         
     }
     
@@ -221,17 +221,17 @@ public class VPN: NSObject, ObservableObject {
         }
     }
     
-    private func getOVPNProperties() -> OpenVPNProperties? {
+    private func getOVPNEvaluation() -> OpenVPNConfigurationEvaluation? {
         do {
             let adapter = OpenVPNAdapter()
             let configuration = OpenVPNConfiguration()
             
             configuration.fileContent = configFile
-            let properties = try adapter.apply(configuration: configuration)
+            let evaluation = try adapter.apply(configuration: configuration)
             
-            //let s = properties.route
+            //let s = evaluation.route
             
-            return properties
+            return evaluation
         } catch {
             return nil
         }

@@ -14,7 +14,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     var vpnReachability = OpenVPNReachability()
 
     var configuration: OpenVPNConfiguration!
-    var properties: OpenVPNProperties!
+    var evaluation: OpenVPNConfigurationEvaluation!
     var UDPSession: NWUDPSession!
     var TCPConnection: NWTCPConnection!
     let appGroupDefaults = UserDefaults(suiteName:Config.appGroupName)!
@@ -48,7 +48,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         configuration.fileContent = ovpnFileContent
         
         do {
-            properties = try vpnAdapter.apply(configuration: configuration)
+            evaluation = try vpnAdapter.apply(configuration: configuration)
         } catch {
             completionHandler(error)
             return
@@ -56,7 +56,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
         configuration.tunPersist = true
 
-        if !properties.autologin {
+        if !evaluation.autologin {
             if let username: String = providerConfiguration["username"] as? String, let password: String = providerConfiguration["password"] as? String {
                 let credentials = OpenVPNCredentials()
                 credentials.username = username
@@ -119,7 +119,7 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
             Log.append("Routes:\n\(routes?.joined(separator: "\n") ?? "")", .info, .packetTunnelProvider)
         }
         
-        let remoteIPAddress = getIPAddress(dns: properties.remoteHost!) ?? "1.1.1.1"
+        let remoteIPAddress = getIPAddress(dns: evaluation.remoteHost!) ?? "1.1.1.1"
         Log.append("Remote IP Address: \(remoteIPAddress)", .info, .packetTunnelProvider)
         
         let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: remoteIPAddress)

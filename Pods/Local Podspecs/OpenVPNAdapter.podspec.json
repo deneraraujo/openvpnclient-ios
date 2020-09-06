@@ -1,6 +1,6 @@
 {
   "name": "OpenVPNAdapter",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "summary": "Objective-C wrapper for OpenVPN library. Compatible with iOS and macOS.",
   "description": "OpenVPNAdapter is an Objective-C framework that allows to easily configure and establish VPN connection using OpenVPN protocol.\nIt is based on the original openvpn3 library so it has every feature the library has. The framework is designed to use in conjunction\nwith NetworkExtension framework and doesn't use any private Apple API. Compatible with iOS and macOS and also Swift friendly.",
   "homepage": "https://github.com/ss-abramchuk/OpenVPNAdapter",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/ss-abramchuk/OpenVPNAdapter.git",
-    "tag": "0.6.0"
+    "tag": "0.7.0"
   },
   "ios": {
     "frameworks": [
