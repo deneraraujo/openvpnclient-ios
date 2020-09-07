@@ -52,8 +52,10 @@ struct MainView: View {
     
     func setConfigFile(configFile: Data) {
         vpn.setConfigFile(configFile: configFile)
-        username = vpn.username
+        
         serverAddress = vpn.serverAddress
+        username = vpn.username
+        dnsList = vpn.dnsList
     }
     
     func mainButton() -> AnyView {

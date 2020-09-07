@@ -239,7 +239,9 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
         var logLevel: Log.LogLevel
         
         if logMessage.lowercased().contains("exception") || logMessage.lowercased().contains("error") {
-            if logMessage.lowercased().contains("[dhcp-option] [wins]") {
+            let lowMessage = logMessage.lowercased()
+            
+            if lowMessage.contains("tun_prop_dhcp_option_error") && dnsList.contains(where: lowMessage.contains) {
                 logLevel = .debug
             } else {
                 logLevel = .error

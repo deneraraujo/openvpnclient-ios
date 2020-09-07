@@ -180,13 +180,12 @@ public class VPN: NSObject, ObservableObject {
     public func setConfigFile(configFile: Data) {
         self.configFile = configFile
         
-        let OVPNevaluation = self.getOVPNEvaluation()
+        let evaluation = self.getOVPNEvaluation()
+        let dhcpOptions: [OpenVPNDhcpOptionEntry] = evaluation?.dhcpOptions ?? []
         
-      
-        
-        self.serverAddress = OVPNevaluation?.remoteHost ?? ""
-        self.username = OVPNevaluation?.username ?? ""
-        
+        serverAddress = evaluation?.remoteHost ?? ""
+        username = evaluation?.username ?? ""
+        dnsList = dhcpOptions.map({ $0.address ?? "" })
     }
     
     public func startVPN() {
@@ -228,8 +227,6 @@ public class VPN: NSObject, ObservableObject {
             
             configuration.fileContent = configFile
             let evaluation = try adapter.apply(configuration: configuration)
-            
-            //let s = evaluation.route
             
             return evaluation
         } catch {
