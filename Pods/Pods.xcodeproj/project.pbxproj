@@ -52,7 +52,6 @@
 		4F2ECE4BE788C3A2FBA390E8507E6421 /* x509_crl.c in Sources */ = {isa = PBXBuildFile; fileRef = DE1F52CC07D8CBB32ABDF5F2A2017F90 /* x509_crl.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
 		5197F81038657B9E7455171960D8710C /* OpenVPNCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6539CDAB9F626C165A91AAA6B7EAE781 /* OpenVPNCertificate.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
 		545B33C362A7922EA4BBC4A7591AEE78 /* OpenVPNServerEntry+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = E38017BD16FC6096ACA657BD9E2B9309 /* OpenVPNServerEntry+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5574292DE6918F6F870734BD81DB4E6A /* OpenVPNDhcpOptionEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9FA0587855944C02FBBAF806EEA738 /* OpenVPNDhcpOptionEntry.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5805F53F3F935B77649FB47EC9B37835 /* x509write_csr.c in Sources */ = {isa = PBXBuildFile; fileRef = A87F5CB491ECAC00A1A2391A5CFFB2FD /* x509write_csr.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
 		58978ED9CA15C2256A94F470A8D34DB1 /* hmac_drbg.c in Sources */ = {isa = PBXBuildFile; fileRef = DAD85832EC4AABD975215427B8281CAB /* hmac_drbg.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
 		598E9E7E811BEEBCF3582881BD2DC5DF /* NSError+OpenVPNError.m in Sources */ = {isa = PBXBuildFile; fileRef = A45E348B116DFFBD332558B82C2D83D7 /* NSError+OpenVPNError.m */; settings = {COMPILER_FLAGS = "-DUSE_ASIO"; }; };
@@ -89,6 +88,7 @@
 		9257500669973FD7DAA3E6605970133B /* cipher_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BB0ED14529324933D168CF7CA24FBD2 /* cipher_wrap.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
 		95537910E51008CF826C3123539F640E /* OpenVPNDhcpOptionEntry+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F83D4AE28261676EBFFFA76350B6579 /* OpenVPNDhcpOptionEntry+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		98F5DDD9DB07880FDECEB8986716B6AA /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = B18D5301815444CDFB3C365796A7D9B9 /* entropy.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
+		9959039773228560C8E75BDB64A6F9F7 /* OpenVPNDhcpOptionEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9FA0587855944C02FBBAF806EEA738 /* OpenVPNDhcpOptionEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BB286DFC38DB75D0A6813C12077C930 /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = 55FF97963CCB510347DAF5FE6176EFA7 /* platform.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
 		9C6276773CC2F9D9FB2AE915CB48F424 /* ecp_curves.c in Sources */ = {isa = PBXBuildFile; fileRef = 56BCE2683AEBC86912FD2BD6DDC0D4AB /* ecp_curves.c */; settings = {COMPILER_FLAGS = "-DMBEDTLS_MD4_C -DMBEDTLS_RELAXED_X509_DATE -D_FILE_OFFSET_BITS=64"; }; };
 		9C6B25DDEE8F2E1D7E6B462F5EF2581A /* OpenVPNClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C0CAF76A722E3CC322D919047B7C9C0E /* OpenVPNClient.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -720,7 +720,7 @@
 				BEFB82DD0267D5F875CA4CB041DD25E6 /* OpenVPNCredentials+Internal.h in Headers */,
 				2F0AC5296975A6CA38E49626EEFABD53 /* OpenVPNCredentials.h in Headers */,
 				95537910E51008CF826C3123539F640E /* OpenVPNDhcpOptionEntry+Internal.h in Headers */,
-				5574292DE6918F6F870734BD81DB4E6A /* OpenVPNDhcpOptionEntry.h in Headers */,
+				9959039773228560C8E75BDB64A6F9F7 /* OpenVPNDhcpOptionEntry.h in Headers */,
 				84BF50321314EE8C835CE2BB7742DCF4 /* OpenVPNError.h in Headers */,
 				4AF897D1B003E2A7DA3A8CE7F5519DF1 /* OpenVPNInterfaceStats+Internal.h in Headers */,
 				86DA26B39371272C9647B37E161A2D11 /* OpenVPNInterfaceStats.h in Headers */,

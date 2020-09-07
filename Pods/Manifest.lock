@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   OpenVPNAdapter:
-    :commit: fa98daeac9de0df441948601acedcaecd5e0e6a1
+    :commit: 9b48f3b650fa36cf324448b9bcee6c59519f702c
     :git: https://github.com/deneraraujo/OpenVPNAdapter.git
 
 SPEC CHECKSUMS:

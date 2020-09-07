@@ -19,6 +19,7 @@
 #import "OpenVPNConfigurationEvaluation.h"
 #import "OpenVPNConnectionInfo.h"
 #import "OpenVPNCredentials.h"
+#import "OpenVPNDhcpOptionEntry.h"
 #import "OpenVPNError.h"
 #import "OpenVPNInterfaceStats.h"
 #import "OpenVPNIPv6Preference.h"
