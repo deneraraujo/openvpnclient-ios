@@ -17,8 +17,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     var evaluation: OpenVPNConfigurationEvaluation!
     var UDPSession: NWUDPSession!
     var TCPConnection: NWTCPConnection!
-    let appGroupDefaults = UserDefaults(suiteName:Config.appGroupName)!
-
+    
+    var appGroupDefaults: UserDefaults
+    var profileId: String
     var dnsList = [String]()
     
     lazy var vpnAdapter: OpenVPNAdapter = {
@@ -28,10 +29,13 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }()
     
     override init() {
+        appGroupDefaults = UserDefaults(suiteName:Config.appGroupName)!
+        profileId = appGroupDefaults.value(forKey: Settings.selectedProfileKey) as! String
+        
         super.init()
         
         Log.append("Application TunnelProvider started.", .debug, .packetTunnelProvider)
-        dnsList = appGroupDefaults.value(forKey: Config.dnsListKey) as! [String]
+        dnsList = appGroupDefaults.value(forKey: Settings.dnsListKey(profileId: profileId)) as! [String]
     }
     
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {

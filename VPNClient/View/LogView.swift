@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct LogView: View {
-    @EnvironmentObject var vpn: VPN
+    //@EnvironmentObject var vpn: VPN
     
     var body: some View {
         
-        Text("teste")
+        Text("test")
         
         //List(vpn.output, id: \.self) { log in
             //Text(log.text)

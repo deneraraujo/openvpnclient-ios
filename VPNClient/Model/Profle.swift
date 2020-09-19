@@ -1,5 +1,5 @@
 //
-//  VPN.swift
+//  Profile.swift
 //  VPN Client
 //
 //  Created by Dener Araújo on 01/08/20.
@@ -10,71 +10,31 @@ import NetworkExtension
 import UIKit
 import OpenVPNAdapter
 
-extension NEVPNStatus: CustomStringConvertible {
-    public var description: String {
-        switch self {
-            case .disconnected: return "disconnected"
-            case .invalid: return "invalid"
-            case .connected: return "connected"
-            case .connecting: return "connecting"
-            case .disconnecting: return "disconnecting"
-            case .reasserting: return "reasserting"
-        @unknown default:
-            return "unknown"
-        }
-    }
-
-    public var message: String {
-        switch self {
-            case .disconnected: return "Disconnected"
-            case .invalid: return "Invalid connection attempt."
-            case .connected: return "You are connected!"
-            case .connecting: return "Connecting..."
-            case .disconnecting: return "Disconnecting..."
-            case .reasserting: return "Reconnecting..."
-        @unknown default:
-            return "unknown"
-        }
-    }
-}
-
-public class VPN: NSObject, ObservableObject {
+public class Profile: NSObject, ObservableObject {
+    public let profileId = UUID().uuidString
+    @Published var profileName = ""
     @Published var connectionStatus = NEVPNStatus.disconnected
     @Published var output = [Log]()
     @Published var message = Message("", .message)
-    
+    @Published var serverAddress = ""
+    @Published var username = ""
+    @Published var password = ""
+    @Published var customDNSEnabled = true
+    @Published var dnsList = [String]()
+
     private var providerManager: NETunnelProviderManager! = nil
     private var isConfigSaved = false
-    private let appGroupDefaults = UserDefaults(suiteName:Config.appGroupName)!
     private var evaluation: OpenVPNConfigurationEvaluation!
     private var configFile: Data! = nil
-    
-    public var serverAddress = ""
-    public var username = ""
-    public var password = ""
-    public var dnsList = [String]()
-    
-    public enum MessageLevel {
-        case error
-        case success
-        case alert
-        case message
-    }
-    
-    public struct Message {
-        var text: String
-        var level: MessageLevel
-        
-        init(_ text: String, _ level : MessageLevel = MessageLevel.message) {
-            self.text = text
-            self.level = level
-        }
-    }
+    private var appGroupDefaults: UserDefaults
 
     public override init() {
+        appGroupDefaults = UserDefaults(suiteName: Config.appGroupName)!
+        
         super.init()
         
-        appGroupDefaults.addObserver(self, forKeyPath: Config.logKey, options: .new, context: nil)
+        appGroupDefaults.set(profileId, forKey: Settings.selectedProfileKey)
+        appGroupDefaults.addObserver(self, forKeyPath: Settings.logKey, options: .new, context: nil)
         Log.append("Application VPNClient started.", .debug, .mainApp)
 
         loadProviderManager {
@@ -94,19 +54,19 @@ public class VPN: NSObject, ObservableObject {
     private func NEVPNStatusToMessage(_ status: NEVPNStatus) -> Message {
         switch status {
         case .disconnected:
-            return Message(status.message, MessageLevel.message)
+            return Message(status.message, .message)
         case .invalid:
-            return Message(status.message, MessageLevel.error)
+            return Message(status.message, .error)
         case .connected:
-            return Message(status.message, MessageLevel.success)
+            return Message(status.message, .success)
         case .connecting:
-            return Message(status.message, MessageLevel.message)
+            return Message(status.message, .message)
         case .disconnecting:
-            return Message(status.message, MessageLevel.message)
+            return Message(status.message, .message)
         case .reasserting:
-            return Message(status.message, MessageLevel.message)
+            return Message(status.message, .message)
         @unknown default:
-            return Message(status.message, MessageLevel.error)
+            return Message(status.message, .error)
         }
     }
     
@@ -118,8 +78,9 @@ public class VPN: NSObject, ObservableObject {
             let newMessages = outputMessages[outputMessages.count - qtNewMessages ..< outputMessages.count]
 
             newMessages.forEach { message in
-                let log = Log.getValue(log: message)
+                let log = Log.getValue(data: message)
                 output.append(log)
+                NSLog(log.text)
             }
             
             //output.append(contentsOf: newMessages)
@@ -152,7 +113,7 @@ public class VPN: NSObject, ObservableObject {
                 self.providerManager.localizedDescription = "OpenVPN Client" // the title of the VPN profile which will appear on Settings
                 self.providerManager.isEnabled = true
                 
-                self.appGroupDefaults.set(self.dnsList, forKey: Config.dnsListKey)
+                self.appGroupDefaults.set(self.dnsList, forKey: Settings.dnsListKey(profileId: self.profileId))
 
                 self.providerManager.saveToPreferences(completionHandler: { (error) in
                     if error == nil  {
@@ -240,6 +201,34 @@ public class VPN: NSObject, ObservableObject {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        appGroupDefaults.removeObserver(self, forKeyPath: Config.logKey)
+        appGroupDefaults.removeObserver(self, forKeyPath: Settings.logKey)
+    }
+}
+
+extension NEVPNStatus: CustomStringConvertible {
+    public var description: String {
+        switch self {
+            case .disconnected: return "disconnected"
+            case .invalid: return "invalid"
+            case .connected: return "connected"
+            case .connecting: return "connecting"
+            case .disconnecting: return "disconnecting"
+            case .reasserting: return "reasserting"
+        @unknown default:
+            return "unknown"
+        }
+    }
+
+    public var message: String {
+        switch self {
+            case .disconnected: return "Disconnected"
+            case .invalid: return "Invalid connection attempt."
+            case .connected: return "You are connected!"
+            case .connecting: return "Connecting..."
+            case .disconnecting: return "Disconnecting..."
+            case .reasserting: return "Reconnecting..."
+        @unknown default:
+            return "unknown"
+        }
     }
 }

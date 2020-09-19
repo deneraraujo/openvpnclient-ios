@@ -1,5 +1,5 @@
 //
-//  Util.swift
+//  Log.swift
 //  TunnelProvider
 //
 //  Created by Dener Araújo on 07/08/20.
@@ -77,14 +77,14 @@ public struct Log: Codable, Hashable {
     }
 
     public static func append(_ log: Log) {
-        NSLog(log.text)
-        var outputMessages = (appGroupDefaults.value(forKey: Config.logKey) as? [Data]) ?? []
+        //NSLog(log.text)
+        var outputMessages = (appGroupDefaults.value(forKey: Settings.logKey) as? [Data]) ?? []
         
         do {
             let encodedData = try jsonEncoder.encode(log)
             outputMessages.append(encodedData)
 
-            appGroupDefaults.set(outputMessages, forKey: Config.logKey)
+            appGroupDefaults.set(outputMessages, forKey: Settings.logKey)
         } catch {
             NSLog(error.localizedDescription)
         }
@@ -92,21 +92,21 @@ public struct Log: Codable, Hashable {
     
     public static func getValues() -> [Log] {
         var values = [Log]()
-        let logs = appGroupDefaults.value(forKey: Config.logKey) as! [Data]
+        let logs = appGroupDefaults.value(forKey: Settings.logKey) as! [Data]
         
         logs.forEach { log in
-            let value = getValue(log: log)
+            let value = getValue(data: log)
             values.append(value)
         }
         
         return values
     }
     
-    public static func getValue(log: Data) -> Log {
+    public static func getValue(data: Data) -> Log {
         var value: Log
         
         do {
-            value = try jsonDecoder.decode(Log.self, from: log)
+            value = try jsonDecoder.decode(Log.self, from: data)
         } catch {
             value = Log(text: "Error on deserialize log data from UserDefaults: \(error.localizedDescription)", level: .debug, source: .other)
             NSLog(error.localizedDescription)
@@ -116,6 +116,6 @@ public struct Log: Codable, Hashable {
     }
 
     public static func cleanLog() {
-        appGroupDefaults.removeObject(forKey: Config.logKey)
+        appGroupDefaults.removeObject(forKey: Settings.logKey)
     }
 }
