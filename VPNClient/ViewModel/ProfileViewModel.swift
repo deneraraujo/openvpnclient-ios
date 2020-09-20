@@ -5,7 +5,6 @@
 //  Created by Dener Araújo on 19/09/20.
 //
 
-import Foundation
 import SwiftUI
 
 /// Bridge between connection profile and view. Even contains render functions.

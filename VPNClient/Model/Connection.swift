@@ -6,7 +6,6 @@
 //
 
 import NetworkExtension
-import UIKit
 import OpenVPNAdapter
 
 /// Manage VPN connection

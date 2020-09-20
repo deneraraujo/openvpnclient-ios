@@ -6,8 +6,6 @@
 //  Copyright © 2020 Dener Araújo. All rights reserved.
 //
 
-import NetworkExtension
-import UIKit
 import OpenVPNAdapter
 
 /// VPN profile
