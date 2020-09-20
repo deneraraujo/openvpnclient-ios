@@ -42,14 +42,20 @@ public class Connection: NSObject, ObservableObject {
         loadProviderManager {
             self.connectionStatus = self.providerManager.connection.status
             
-            //First message output: our connection status
+            //First message output: connection status
             //"Welcome" if the connection was not already established in a previous instance of this app
-            self.message = self.providerManager.connection.status == NEVPNStatus.disconnected ? Message("Welcome!", .message) : self.NEVPNStatusToMessage(self.providerManager.connection.status)
+            self.message = self.providerManager.connection.status == NEVPNStatus.invalid ||
+                self.providerManager.connection.status == NEVPNStatus.disconnected
+                ? Message("Welcome!", .message)
+                : self.NEVPNStatusToMessage(self.providerManager.connection.status)
             
             //Register to be notified of changes in the connection status
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: self.providerManager.connection, queue: OperationQueue.main, using: { notification in
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange,
+                object: self.providerManager.connection,
+                queue: OperationQueue.main,
+                using: { notification in
+                    
                 self.connectionStatus = self.providerManager.connection.status
-                
                 Log.append("Connection status changed to \"\(self.providerManager.connection.status.description)\".", .info, .mainApp)
                 self.message = self.NEVPNStatusToMessage(self.providerManager.connection.status)
             })
