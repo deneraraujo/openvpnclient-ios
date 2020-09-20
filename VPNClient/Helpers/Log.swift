@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Cross-target Log (stored in UserDefaults)
 public struct Log: Codable, Hashable {
     private var id: String
     public var text: String

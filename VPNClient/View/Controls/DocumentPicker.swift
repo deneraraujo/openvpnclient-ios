@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// File selector control
 struct DocumentPicker: UIViewControllerRepresentable {
     var callBack:  (_ data :Data) -> ()
     

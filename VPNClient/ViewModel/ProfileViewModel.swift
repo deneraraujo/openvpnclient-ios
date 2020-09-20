@@ -8,25 +8,36 @@
 import Foundation
 import SwiftUI
 
-public class ProfileViewModel: Profile {
+/// Bridge between connection profile and view. Even contains render functions.
+public class ProfileViewModel {
+    public var connection: Connection
+    public var profile: Profile
+    
+    public init() {
+        profile = Profile(profileName: "default")
+        connection = Connection(profile: profile)
+    }
+    
+    //Set main button action according to connection status
     func mainButtonAction() {
-        switch connectionStatus {
+        switch connection.connectionStatus {
         case .invalid, .disconnected:
-            startVPN()
+            connection.startVPN()
             break
         case .connecting, .connected, .reasserting:
-            stopVPN()
+            connection.stopVPN()
             break
         case .disconnecting:
             break
         @unknown default:
-            startVPN()
+            connection.startVPN()
             break
         }
     }
     
+    //Define message color according to its level
     func messageColor() -> Color {
-        switch message.level {
+        switch connection.message.level {
             case .error: return .red
             case .success: return .green
             case .alert: return .yellow
@@ -34,6 +45,7 @@ public class ProfileViewModel: Profile {
         }
     }
 
+    //Define log entry color according to its level
     func logColor(logLevel: Log.LogLevel) -> Color {
         switch logLevel {
 
@@ -48,10 +60,12 @@ public class ProfileViewModel: Profile {
         }
     }
     
-    func addRow() {
-        dnsList.append("")
+    //Add new entry to DNS list
+    func addDns() {
+        profile.dnsList.append("")
     }
     
+    //Define main button style according to connection status
     func mainButton() -> AnyView {
         func button(_ text: String, _ bgColor: Color, textColor: Color = .white, tapable: Bool = true) -> AnyView {
             let button = AnyView(Button(action: {
@@ -65,7 +79,7 @@ public class ProfileViewModel: Profile {
             return button
         }
 
-        switch connectionStatus {
+        switch connection.connectionStatus {
         case .invalid, .disconnected:
             return button("Connect", .green)
         case .connecting:

@@ -7,13 +7,17 @@
 
 import SwiftUI
 
+/// A view to create/edit a profile
 struct ProfileView: View {
-    @ObservedObject var viewModel = ProfileViewModel()
+    private var viewModel = ProfileViewModel()
+    @ObservedObject var profile: Profile
+    @ObservedObject var connection: Connection
 
     @State var showFilePicker = false
     
     init() {
-        UITableView.appearance().separatorInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        self.profile = viewModel.profile
+        self.connection = viewModel.connection
     }
 
     var body: some View {
@@ -26,31 +30,31 @@ struct ProfileView: View {
                         Text("Pick a \".ovpn\" file")
                     }
                     .sheet(isPresented: $showFilePicker) {
-                        DocumentPicker(callBack: self.viewModel.setConfigFile)
+                        DocumentPicker(callBack: self.viewModel.profile.setConfigFile)
                     }
                     
-                    Text(viewModel.serverAddress)
-                }
+                    Text(viewModel.profile.serverAddress)
+                }.listStyle(PlainListStyle())
                 
                 Section(header: Text("CREDENTIALS")) {
-                    TextField("Username", text: $viewModel.username)
-                    SecureField("Password", text: $viewModel.password)
+                    TextField("Username", text: $profile.username)
+                    SecureField("Password", text: $profile.password)
                 }
                 
                 Section(header: Text("SETTINGS")) {
-                    Toggle(isOn: $viewModel.customDNSEnabled) {
+                    Toggle(isOn: $profile.customDNSEnabled) {
                         Text("Manage DNS servers")
                     }
                     
-                    if viewModel.customDNSEnabled {
+                    if viewModel.profile.customDNSEnabled {
                         List {
-                            ForEach(0 ..< viewModel.dnsList.count, id: \.self) { i in
-                                TextField("Address", text: self.$viewModel.dnsList[i])
+                            ForEach(0 ..< viewModel.profile.dnsList.count, id: \.self) { i in
+                                TextField("Address", text: self.$profile.dnsList[i])
                             }
                         }
                             
                         Button(action: {
-                            self.viewModel.addRow()
+                            self.viewModel.addDns()
                         }) {
                             Text("Add address")
                         }
@@ -58,23 +62,18 @@ struct ProfileView: View {
                 }
                 
                 Section() {
-                    Text(viewModel.message.text)
+                    Text(connection.message.text)
                     .foregroundColor(viewModel.messageColor())
                     .frame(maxWidth: .infinity)
                     
                     viewModel.mainButton()
-
-                    List(viewModel.output, id: \.self) { log in
+                }
+                
+                Section(header: Text("LOG")) {
+                    List(connection.output, id: \.self) { log in
                         Text(log.text)
                             .foregroundColor(self.viewModel.logColor(logLevel: log.level))
                     }.id(UUID())
-                    
-                    //Text(vpn.output.joined(separator: "\n\n"))
-                    //.lineLimit(nil)
-
-                    //NavigationLink(destination: LogView()) {
-                    //    Text("Show log")
-                    //}
                 }
             }
             .navigationBarTitle("OpenVPN Client")

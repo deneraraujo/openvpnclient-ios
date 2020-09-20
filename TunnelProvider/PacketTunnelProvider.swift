@@ -8,6 +8,7 @@
 import NetworkExtension
 import OpenVPNAdapter
 
+/// PacketTunnelProvider extension
 class PacketTunnelProvider: NEPacketTunnelProvider {
     var startHandler: ((Error?) -> Void)?
     var stopHandler: (() -> Void)?
@@ -34,7 +35,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
         super.init()
         
-        Log.append("Application TunnelProvider started.", .debug, .packetTunnelProvider)
+        Log.append("Application \(Util.getAppName()) started.", .debug, .packetTunnelProvider)
         dnsList = appGroupDefaults.value(forKey: Settings.dnsListKey(profileId: profileId)) as! [String]
     }
     

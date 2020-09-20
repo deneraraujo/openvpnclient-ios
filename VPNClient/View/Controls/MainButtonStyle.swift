@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Custom style for the main buttons
 struct MainButtonStyle: ButtonStyle {
     var bgColor: Color
     var textColor: Color

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Keys for UserDefaults values
 public struct Settings {
     public static let selectedProfileKey = "VPNClient_selectedProfile"
     public static let logKey = "VPNClient_log"

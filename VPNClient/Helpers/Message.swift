@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Structure for a output message
 public struct Message {
     public enum MessageLevel {
         case error
