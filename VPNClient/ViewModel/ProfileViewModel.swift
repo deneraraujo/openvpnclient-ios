@@ -17,7 +17,7 @@ public class ProfileViewModel {
         connection = Connection(profile: profile)
     }
     
-    //Set main button action according to connection status
+    /// Set main button action according to connection status
     func mainButtonAction() {
         switch connection.connectionStatus {
         case .invalid, .disconnected:
@@ -34,7 +34,7 @@ public class ProfileViewModel {
         }
     }
     
-    //Define message color according to its level
+    /// Define message color according to its level
     func messageColor() -> Color {
         switch connection.message.level {
             case .error: return .red
@@ -44,7 +44,7 @@ public class ProfileViewModel {
         }
     }
 
-    //Define log entry color according to its level
+    /// Define log entry color according to its level
     func logColor(logLevel: Log.LogLevel) -> Color {
         switch logLevel {
 
@@ -59,12 +59,12 @@ public class ProfileViewModel {
         }
     }
     
-    //Add new entry to DNS list
+    /// Add new entry to DNS list
     func addDns() {
         profile.dnsList.append("")
     }
     
-    //Define main button style according to connection status
+    /// Define main button style according to connection status
     func mainButton() -> AnyView {
         func button(_ text: String, _ bgColor: Color, textColor: Color = .white, tapable: Bool = true) -> AnyView {
             let button = AnyView(Button(action: {
@@ -92,5 +92,14 @@ public class ProfileViewModel {
         @unknown default:
             return button("Connect", .green)
         }
+    }
+    
+    /// Ignore debug level entries if app is not in debug mode
+    var filteredLog: [Log] {
+        #if DEBUG
+        return connection.output
+        #else
+        return connection.output.filter { $0.level != .debug }
+        #endif
     }
 }

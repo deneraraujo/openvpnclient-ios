@@ -69,8 +69,8 @@ struct ProfileView: View {
                     viewModel.mainButton()
                 }
                 
-                Section(header: Text("LOG")) {
-                    List(connection.output, id: \.self) { log in
+                Section() {
+                    List(viewModel.filteredLog, id: \.self) { log in
                         Text(log.text)
                             .foregroundColor(self.viewModel.logColor(logLevel: log.level))
                     }.id(UUID())
