@@ -22,6 +22,6 @@
 #ifndef OVPNAPI_H
 #define OVPNAPI_H
 
-#include "ovpncli.hpp"
+#include <ovpncli.hpp>
 
 #endif

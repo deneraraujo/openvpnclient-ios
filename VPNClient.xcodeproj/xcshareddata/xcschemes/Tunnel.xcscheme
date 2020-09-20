@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1150"
+   LastUpgradeVersion = "1200"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED02605224D60AB600D00301"
+               BlueprintIdentifier = "ED594CCD24DBE4010069D301"
                BuildableName = "TunnelProvider.appex"
                BlueprintName = "TunnelProvider"
                ReferencedContainer = "container:VPNClient.xcodeproj">
