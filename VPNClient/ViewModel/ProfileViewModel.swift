@@ -13,7 +13,7 @@ public class ProfileViewModel {
     public var profile: Profile
     
     public init() {
-        profile = Profile(profileName: "default")
+        profile = Profile(profileName: "default", profileId: "default")
         connection = Connection(profile: profile)
     }
     
@@ -68,6 +68,9 @@ public class ProfileViewModel {
     func mainButton() -> AnyView {
         func button(_ text: String, _ bgColor: Color, textColor: Color = .white, tapable: Bool = true) -> AnyView {
             let button = AnyView(Button(action: {
+                Settings.addProfile(profile: self.profile)
+                Settings.setSelectedProfile(profileId: self.profile.profileId)
+                
                 self.mainButtonAction()
             }) {
                 Text(text)

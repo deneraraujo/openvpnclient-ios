@@ -29,11 +29,8 @@ public class Connection: NSObject, ObservableObject {
         
         super.init()
         
-        //Set current profile as selected in UserDefaults
-        appGroupDefaults.set(self.profile.profileId, forKey: Settings.selectedProfileKey)
-        
         //Add observer to Log output
-        appGroupDefaults.addObserver(self, forKeyPath: Settings.logKey, options: .new, context: nil)
+        appGroupDefaults.addObserver(self, forKeyPath: Log.LOG_KEY, options: .new, context: nil)
         
         //First Log output
         Log.append("Application \(Util.getAppName()) started.", .debug, .mainApp)
@@ -133,8 +130,6 @@ public class Connection: NSObject, ObservableObject {
                 self.providerManager.protocolConfiguration = tunnelProtocol
                 self.providerManager.localizedDescription = "\(Util.getAppName()) (\(self.profile.profileName))" // the title of the VPN profile which will appear on Settings
                 self.providerManager.isEnabled = true
-                
-                self.appGroupDefaults.set(self.profile.dnsList, forKey: Settings.dnsListKey(profileId: self.profile.profileId))
 
                 self.providerManager.saveToPreferences(completionHandler: { (error) in
                     if error == nil  {
@@ -201,7 +196,7 @@ public class Connection: NSObject, ObservableObject {
     /// Dipose observers
     deinit {
         NotificationCenter.default.removeObserver(self)
-        appGroupDefaults.removeObserver(self, forKeyPath: Settings.logKey)
+        appGroupDefaults.removeObserver(self, forKeyPath: Log.LOG_KEY)
     }
 }
 

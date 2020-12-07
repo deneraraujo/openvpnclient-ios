@@ -9,6 +9,8 @@ import Foundation
 
 /// Cross-target Log (stored in UserDefaults)
 public struct Log: Codable, Hashable {
+    public static let LOG_KEY = "vpnclient_log"
+    
     private var id: String
     public var text: String
     public var level: LogLevel
@@ -79,13 +81,13 @@ public struct Log: Codable, Hashable {
 
     public static func append(_ log: Log) {
         //NSLog(log.text)
-        var outputMessages = (appGroupDefaults.value(forKey: Settings.logKey) as? [Data]) ?? []
+        var outputMessages = (appGroupDefaults.value(forKey: LOG_KEY) as? [Data]) ?? []
         
         do {
             let encodedData = try jsonEncoder.encode(log)
             outputMessages.append(encodedData)
 
-            appGroupDefaults.set(outputMessages, forKey: Settings.logKey)
+            appGroupDefaults.set(outputMessages, forKey: LOG_KEY)
         } catch {
             NSLog(error.localizedDescription)
         }
@@ -93,7 +95,7 @@ public struct Log: Codable, Hashable {
     
     public static func getValues() -> [Log] {
         var values = [Log]()
-        let logs = appGroupDefaults.value(forKey: Settings.logKey) as! [Data]
+        let logs = appGroupDefaults.value(forKey: LOG_KEY) as! [Data]
         
         logs.forEach { log in
             let value = getValue(data: log)
@@ -117,6 +119,6 @@ public struct Log: Codable, Hashable {
     }
 
     public static func cleanLog() {
-        appGroupDefaults.removeObject(forKey: Settings.logKey)
+        appGroupDefaults.removeObject(forKey: LOG_KEY)
     }
 }

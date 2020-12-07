@@ -20,6 +20,7 @@
 		ED2C5A502515BA9F00266110 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C5A4F2515BA9F00266110 /* ProfileViewModel.swift */; };
 		ED2C5A522515BC9600266110 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C5A512515BC9600266110 /* MainButtonStyle.swift */; };
 		ED2C5A542515BD5800266110 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C5A532515BD5800266110 /* DocumentPicker.swift */; };
+		ED360615257E0F080039561F /* Profle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED360614257E0F080039561F /* Profle.swift */; };
 		ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */; };
 		ED594CD624DBE4010069D301 /* TunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED594CCE24DBE4010069D301 /* TunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ED594CDA24DBE4230069D301 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */; };
@@ -81,6 +82,7 @@
 		ED2C5A4F2515BA9F00266110 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		ED2C5A512515BC9600266110 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 		ED2C5A532515BD5800266110 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		ED360614257E0F080039561F /* Profle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profle.swift; path = VPNClient/Model/Profle.swift; sourceTree = SOURCE_ROOT; };
 		ED594CCE24DBE4010069D301 /* TunnelProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TunnelProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TunnelProvider.entitlements; sourceTree = "<group>"; };
@@ -229,9 +231,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		ED360613257E0EEF0039561F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED360614257E0F080039561F /* Profle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ED594CCF24DBE4010069D301 /* TunnelProvider */ = {
 			isa = PBXGroup;
 			children = (
+				ED360613257E0EEF0039561F /* Model */,
 				EDC86A6E2516E95600504FFA /* Helpers */,
 				ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */,
 				ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */,
@@ -450,6 +461,7 @@
 				EDC86A732516E9B100504FFA /* Settings.swift in Sources */,
 				EDC86A752516E9B100504FFA /* Config.swift in Sources */,
 				EDC86A762516E9B100504FFA /* Util.swift in Sources */,
+				ED360615257E0F080039561F /* Profle.swift in Sources */,
 				ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */,
 				EDC86A742516E9B100504FFA /* Log.swift in Sources */,
 			);

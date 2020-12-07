@@ -19,8 +19,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     var UDPSession: NWUDPSession!
     var TCPConnection: NWTCPConnection!
     
-    var appGroupDefaults: UserDefaults
-    var profileId: String
     var dnsList = [String]()
     
     lazy var vpnAdapter: OpenVPNAdapter = {
@@ -30,13 +28,12 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }()
     
     override init() {
-        appGroupDefaults = UserDefaults(suiteName:Config.appGroupName)!
-        profileId = appGroupDefaults.value(forKey: Settings.selectedProfileKey) as! String
+        _ = Settings.load()
         
         super.init()
         
         Log.append("Application \(Util.getAppName()) started.", .debug, .packetTunnelProvider)
-        dnsList = appGroupDefaults.value(forKey: Settings.dnsListKey(profileId: profileId)) as! [String]
+        dnsList = Settings.getSelectedProfile()?.dnsList ?? []
     }
     
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
@@ -105,7 +102,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 extension PacketTunnelProvider: OpenVPNAdapterDelegate {
     func openVPNAdapter(_ openVPNAdapter: OpenVPNAdapter, configureTunnelWithNetworkSettings networkSettings: NEPacketTunnelNetworkSettings?, completionHandler: @escaping (Error?) -> Void) {
-
+        
         let DNSSettings = NEDNSSettings(servers: dnsList)
         DNSSettings.matchDomains = [""]
         
