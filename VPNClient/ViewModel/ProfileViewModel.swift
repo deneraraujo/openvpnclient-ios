@@ -83,17 +83,17 @@ public class ProfileViewModel {
 
         switch connection.connectionStatus {
         case .invalid, .disconnected:
-            return button("Connect", .green)
+            return button(Util.localize("connect"), .green)
         case .connecting:
-            return button("Cancel", .yellow)
+            return button(Util.localize("cancel"), .yellow)
         case .connected:
-            return button("Disconnect", .red)
+            return button(Util.localize("disconnect"), .red)
         case .reasserting:
-            return button("Cancel", .yellow)
+            return button(Util.localize("cancel"), .yellow)
         case .disconnecting:
-            return button("Disconnecting...", .yellow, tapable: false)
+            return button(Util.localize("disconnecting"), .yellow, tapable: false)
         @unknown default:
-            return button("Connect", .green)
+            return button(Util.localize("connect"), .green)
         }
     }
     

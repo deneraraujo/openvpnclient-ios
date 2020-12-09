@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  VPNClient
+
+  Created by Dener Araújo on 09/12/20.
+  
+*/
+
+// ProfileView
+"app-title" = "Cliente OpenVPN";
+"configuration-file" = "ARQUIVO DE CONFIGURAÇÃO";
+"pick-file" = "Selecione um arquivo \".ovpn\"";
+"cannot-get-permission-read-file" = "Sem premissão para ler o arquivo.";
+"credentials" = "CREDENCIAIS";
+"username" = "Nome de usuário";
+"password" = "Senha";
+"settings" = "CONFIGURAÇÕES";
+"manage-dns" = "Gerenciar servidores DNS";
+"address" = "Endereço";
+"add-address" = "Adicionar endereço";
+
+// Connection outputs
+"application-started" = "Aplicação %@ iniciada.";
+"welcome" = "Bem-vindo!";
+"connection-status-changed" = "Status da conexão alterado para \"%@\".";
+"error-adding-vpn-configuration" = "Erro ao adicionar perfil de VPN às configurações do iOS.";
+"invalid-configuration-file" = "Selecione um arquivo de configuração válido.";
+"username-empty" = "O campo \"Nome de usuário\" deve ser preenchido.";
+"password-empty" = "O campo \"Senha\" deve ser preenchido.";
+
+// Connection status
+"connect" = "Conectar";
+"cancel" = "Cancelar";
+"disconnect" = "Desconectar";
+"disconnected" = "Desconectado";
+"invalid" = "Tentativa de conexão falhou.";
+"connected" = "Você está conectado!";
+"connecting" = "Conectando...";
+"disconnecting" = "Desconectando...";
+"reconnecting" = "Reconectando...";
+
+// PacketTunnelProvider
+"got-message-from-app" = "Mensagem recebida do app: %@";
+"routes" = "Rotas:\n%@";
+"remote-ip-address" = "Endereço IP remoto: %@";
+"dns-servers-added" = "Servidores DNS adicionados: %@";
+"error" = "Erro: %@";
+"connection-info" = "Detalhes da conexão: %@";

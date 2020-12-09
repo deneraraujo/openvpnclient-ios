@@ -32,10 +32,10 @@ public class Profile: ObservableObject, Codable {
     }
     
     public init(profileName: String, profileId: String? = nil) {
-        //Set profile name
+        // Set profile name
         self.profileName = profileName
         
-        //Set profile ID
+        // Set profile ID
         self.profileId = profileId != nil ? profileId! : UUID().uuidString
     }
     

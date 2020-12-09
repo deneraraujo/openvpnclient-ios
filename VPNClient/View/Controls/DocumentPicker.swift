@@ -42,7 +42,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
             do {
                 // Start accessing a security-scoped resource.
                 guard url.startAccessingSecurityScopedResource() else {
-                    Log.append("Cannot get permission to raad the file.", .error, .mainApp)
+                    Log.append("cannot-get-permission-read-file", .error, .mainApp)
                     return
                 }
                 

@@ -21,39 +21,39 @@ public class Connection: NSObject, ObservableObject {
     @Published var message = Message("", .message)
     
     public init(profile: Profile) {
-        //Load user defaults
+        // Load user defaults
         appGroupDefaults = UserDefaults(suiteName: Config.appGroupName)!
         
-        //Set active profile
+        // Set active profile
         self.profile = profile
         
         super.init()
         
-        //Add observer to Log output
+        // Add observer to Log output
         appGroupDefaults.addObserver(self, forKeyPath: Log.LOG_KEY, options: .new, context: nil)
         
-        //First Log output
-        Log.append("Application \(Util.getAppName()) started.", .debug, .mainApp)
+        // First Log output
+        Log.append(Util.localize("application-started", Util.getAppName()), .debug, .mainApp)
         
-        //Load iOS VPN settings manager and get our connection current status
+        // Load iOS VPN settings manager and get our connection current status
         loadProviderManager {
             self.connectionStatus = self.providerManager.connection.status
             
-            //First message output: connection status
-            //"Welcome" if the connection was not already established in a previous instance of this app
+            // First message output: connection status
+            // "Welcome" if the connection was not already established in a previous instance of this app
             self.message = self.providerManager.connection.status == NEVPNStatus.invalid ||
                 self.providerManager.connection.status == NEVPNStatus.disconnected
-                ? Message("Welcome!", .message)
+                ? Message(Util.localize("welcome"), .message)
                 : self.NEVPNStatusToMessage(self.providerManager.connection.status)
             
-            //Register to be notified of changes in the connection status
+            // Register to be notified of changes in the connection status
             NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange,
                 object: self.providerManager.connection,
                 queue: OperationQueue.main,
                 using: { notification in
                     
                 self.connectionStatus = self.providerManager.connection.status
-                Log.append("Connection status changed to \"\(self.providerManager.connection.status.description)\".", .info, .mainApp)
+                Log.append(Util.localize("connection-status-changed", self.providerManager.connection.status.description), .info, .mainApp)
                 self.message = self.NEVPNStatusToMessage(self.providerManager.connection.status)
             })
         }
@@ -68,7 +68,7 @@ public class Connection: NSObject, ObservableObject {
                 completion()
             } else {
                 Log.append("\(error.debugDescription)", .error, .mainApp)
-                self.message = Message("Error on adding VPN configuration to iOS settings.", .error)
+                self.message = Message(Util.localize("error-adding-vpn-configuration"), .error)
             }
         }
     }
@@ -103,14 +103,14 @@ public class Connection: NSObject, ObservableObject {
         if qtNewMessages > 0 {
             let newMessages = outputMessages[outputMessages.count - qtNewMessages ..< outputMessages.count]
             
-            //Append each new log entry
+            // Append each new log entry
             newMessages.forEach { message in
                 let log = Log.getValue(data: message)
                 output.append(log)
                 NSLog(log.text)
             }
             
-            //Append all new log entries in batch
+            // Append all new log entries in batch
             //output.append(contentsOf: newMessages)
         }
     }
@@ -139,7 +139,7 @@ public class Connection: NSObject, ObservableObject {
                         })
                     } else {
                         Log.append("\(error.debugDescription)", .error, .mainApp)
-                        self.message = Message("Error on adding VPN configuration to iOS settings.", .error)
+                        self.message = Message(Util.localize("error-adding-vpn-configuration"), .error)
                     }
                 })
             }
@@ -150,19 +150,19 @@ public class Connection: NSObject, ObservableObject {
     public func startVPN() {
         if profile.configFile == nil {
             Log.append("configFile is nil.", .debug, .mainApp)
-            message = Message("Invalid configuration file.", .error)
+            message = Message(Util.localize("invalid-configuration-file"), .error)
             return
         }
         
         if profile.username.isEmpty {
             Log.append("username is empty", .debug, .mainApp)
-            message = Message("Username is empty.", .error)
+            message = Message(Util.localize("username-empty"), .error)
             return
         }
         
         if profile.password.isEmpty {
             Log.append("password is empty.", .debug, .mainApp)
-            message = Message("Password is empty.", .error)
+            message = Message(Util.localize("password-empty"), .error)
             return
         }
 
@@ -217,12 +217,12 @@ extension NEVPNStatus: CustomStringConvertible {
 
     public var message: String {
         switch self {
-            case .disconnected: return "Disconnected"
-            case .invalid: return "Invalid connection attempt."
-            case .connected: return "You are connected!"
-            case .connecting: return "Connecting..."
-            case .disconnecting: return "Disconnecting..."
-            case .reasserting: return "Reconnecting..."
+            case .disconnected: return Util.localize("disconnected")
+            case .invalid: return Util.localize("invalid")
+            case .connected: return Util.localize("connected")
+            case .connecting: return Util.localize("connecting")
+            case .disconnecting: return Util.localize("disconnecting")
+            case .reasserting: return Util.localize("reconnecting")
         @unknown default:
             return "unknown"
         }

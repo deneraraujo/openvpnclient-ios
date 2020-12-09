@@ -23,11 +23,11 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("CONFIGURATION FILE")) {
+                Section(header: Text("configuration-file")) {
                     Button(action: {
                         self.showFilePicker.toggle()
                     }) {
-                        Text("Pick a \".ovpn\" file")
+                        Text("pick-file")
                     }
                     .sheet(isPresented: $showFilePicker) {
                         DocumentPicker(callBack: self.viewModel.profile.setConfigFile)
@@ -36,27 +36,27 @@ struct ProfileView: View {
                     Text(viewModel.profile.serverAddress)
                 }.listStyle(PlainListStyle())
                 
-                Section(header: Text("CREDENTIALS")) {
-                    TextField("Username", text: $profile.username)
-                    SecureField("Password", text: $profile.password)
+                Section(header: Text("credentials")) {
+                    TextField("username", text: $profile.username)
+                    SecureField("password", text: $profile.password)
                 }
                 
-                Section(header: Text("SETTINGS")) {
+                Section(header: Text("settings")) {
                     Toggle(isOn: $profile.customDNSEnabled) {
-                        Text("Manage DNS servers")
+                        Text("manage-dns")
                     }
                     
                     if viewModel.profile.customDNSEnabled {
                         List {
                             ForEach(0 ..< viewModel.profile.dnsList.count, id: \.self) { i in
-                                TextField("Address", text: self.$profile.dnsList[i])
+                                TextField("address", text: self.$profile.dnsList[i])
                             }
                         }
                             
                         Button(action: {
                             self.viewModel.addDns()
                         }) {
-                            Text("Add address")
+                            Text("add-address")
                         }
                     }
                 }
@@ -76,7 +76,7 @@ struct ProfileView: View {
                     }.id(UUID())
                 }
             }
-            .navigationBarTitle("OpenVPN Client")
+            .navigationBarTitle("app-title")
         }
     }
 }

@@ -32,7 +32,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
         super.init()
         
-        Log.append("Application \(Util.getAppName()) started.", .debug, .packetTunnelProvider)
+        Log.append(Util.localize("application-started", Util.getAppName()), .debug, .packetTunnelProvider)
         dnsList = Settings.getSelectedProfile()?.dnsList ?? []
     }
     
@@ -89,6 +89,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         }
 
         Log.append("Got a message from the app: \(messageString)", .info, .packetTunnelProvider)
+        Log.append(Util.localize("got-message-from-app", messageString), .info, .packetTunnelProvider)
         completionHandler?(messageData)
     }
 
@@ -118,11 +119,11 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
         
         let routes = ipv4Settings?.includedRoutes?.map({ return "\($0.destinationAddress) subnetmask:\($0.destinationSubnetMask)" })
         if (routes?.count ?? 0) > 0 {
-            Log.append("Routes:\n\(routes?.joined(separator: "\n") ?? "")", .info, .packetTunnelProvider)
+            Log.append(Util.localize("routes", routes?.joined(separator: "\n") ?? ""), .info, .packetTunnelProvider)
         }
         
         let remoteIPAddress = getIPAddress(dns: evaluation.remoteHost!) ?? "1.1.1.1"
-        Log.append("Remote IP Address: \(remoteIPAddress)", .info, .packetTunnelProvider)
+        Log.append(Util.localize("remote-ip-address", remoteIPAddress), .info, .packetTunnelProvider)
         
         let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: remoteIPAddress)
         settings.ipv4Settings = networkSettings?.ipv4Settings
@@ -130,11 +131,11 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
         
         setTunnelNetworkSettings(settings) { (error) in
             if (networkSettings?.dnsSettings?.servers.count ?? 0) > 0 {
-                Log.append("DNS servers added: \(networkSettings?.dnsSettings?.servers.joined(separator: ", ") ?? "")", .info, .packetTunnelProvider)
+                Log.append(Util.localize("dns-servers-added", networkSettings?.dnsSettings?.servers.joined(separator: ", ") ?? ""), .info, .packetTunnelProvider)
             }
             
             if error == nil {
-                //Start handling packets
+                // Start handling packets
                 //self.packetFlow.readPackets(completionHandler: self.handlePackets)
                 //self.handlePackets()
                 
@@ -143,7 +144,7 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
                 //self.packetFlow.readPacketObjects(completionHandler: self.handerr)
                 
             } else {
-                Log.append("Error: \(error.debugDescription)", .error, .packetTunnelProvider)
+                Log.append(Util.localize("error", error.debugDescription), .error, .packetTunnelProvider)
             }
             
             completionHandler(error)
@@ -223,7 +224,7 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
         }
         
         Log.append("\(error.localizedDescription)", .error, .packetTunnelProvider)
-        Log.append("Connection Info: \(vpnAdapter.connectionInformation.debugDescription)", .info, .packetTunnelProvider)
+        Log.append(Util.localize("connection-info", vpnAdapter.connectionInformation.debugDescription), .info, .packetTunnelProvider)
         
         if vpnReachability.isTracking {
             vpnReachability.stopTracking()

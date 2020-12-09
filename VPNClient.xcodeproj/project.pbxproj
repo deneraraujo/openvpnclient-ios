@@ -24,6 +24,8 @@
 		ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */; };
 		ED594CD624DBE4010069D301 /* TunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED594CCE24DBE4010069D301 /* TunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ED594CDA24DBE4230069D301 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */; };
+		ED6A90422580849D00243BD4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED6A90442580849D00243BD4 /* Localizable.strings */; };
+		ED6A904A2580853A00243BD4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED6A90482580853A00243BD4 /* Localizable.strings */; };
 		ED91EC3824E135AD00E462EC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3324E1355800E462EC /* Config.swift */; };
 		ED91EC4024E1417900E462EC /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3F24E1417900E462EC /* LogView.swift */; };
 		ED91EC4724E15A8800E462EC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91EC3C24E135E700E462EC /* Log.swift */; };
@@ -86,6 +88,10 @@
 		ED594CCE24DBE4010069D301 /* TunnelProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TunnelProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TunnelProvider.entitlements; sourceTree = "<group>"; };
+		ED6A90432580849D00243BD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED6A9045258084CD00243BD4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		ED6A90492580853A00243BD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = VPNClient/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		ED6A904D2580856200243BD4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "VPNClient/pt-BR.lproj/Localizable.strings"; sourceTree = SOURCE_ROOT; };
 		ED91EC3324E1355800E462EC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ED91EC3C24E135E700E462EC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = VPNClient/Helpers/Log.swift; sourceTree = SOURCE_ROOT; };
 		ED91EC3F24E1417900E462EC /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 				ED02604424D60A3900D00301 /* LaunchScreen.storyboard */,
 				ED02604724D60A3900D00301 /* Info.plist */,
 				ED02604124D60A3900D00301 /* Preview Content */,
+				ED6A90442580849D00243BD4 /* Localizable.strings */,
 			);
 			path = VPNClient;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 				EDC86A6E2516E95600504FFA /* Helpers */,
 				ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */,
 				ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */,
+				ED6A90482580853A00243BD4 /* Localizable.strings */,
 			);
 			path = TunnelProvider;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = ED02602D24D60A3800D00301;
 			productRefGroup = ED02603724D60A3800D00301 /* Products */;
@@ -354,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED02604624D60A3900D00301 /* LaunchScreen.storyboard in Resources */,
+				ED6A90422580849D00243BD4 /* Localizable.strings in Resources */,
 				ED02604324D60A3900D00301 /* Preview Assets.xcassets in Resources */,
 				ED02604024D60A3900D00301 /* Assets.xcassets in Resources */,
 			);
@@ -363,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6A904A2580853A00243BD4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +497,24 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		ED6A90442580849D00243BD4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED6A90432580849D00243BD4 /* en */,
+				ED6A9045258084CD00243BD4 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		ED6A90482580853A00243BD4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED6A90492580853A00243BD4 /* en */,
+				ED6A904D2580856200243BD4 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -493,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -554,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
