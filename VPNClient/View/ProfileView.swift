@@ -14,6 +14,7 @@ struct ProfileView: View {
     @ObservedObject var connection: Connection
 
     @State var showFilePicker = false
+    @State var secured: Bool = true
     
     init() {
         self.profile = viewModel.profile
@@ -24,21 +25,38 @@ struct ProfileView: View {
         NavigationView {
             Form {
                 Section(header: Text("configuration-file")) {
-                    Button(action: {
-                        self.showFilePicker.toggle()
-                    }) {
-                        Text("pick-file")
+                    HStack {
+                        Button(action: {
+                            self.showFilePicker.toggle()
+                        }) {
+                            Text("pick-file")
+                        }
+                        .sheet(isPresented: $showFilePicker) {
+                            DocumentPicker(callBack: self.viewModel.profile.setConfigFile)
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .imageScale(.small)
+                            .foregroundColor(Color(UIColor.systemBlue))
                     }
-                    .sheet(isPresented: $showFilePicker) {
-                        DocumentPicker(callBack: self.viewModel.profile.setConfigFile)
-                    }
-                    
                     Text(viewModel.profile.serverAddress)
                 }.listStyle(PlainListStyle())
                 
                 Section(header: Text("credentials")) {
                     TextField("username", text: $profile.username)
-                    SecureField("password", text: $profile.password)
+                    HStack {
+                        if secured {
+                            SecureField("Password", text: $profile.password)
+                        } else {
+                            TextField("Password", text: $profile.password)
+                        }
+                        Button(action: {
+                            self.secured.toggle()
+                        }) {
+                            Image(systemName: secured ? "eye.slash" : "eye").imageScale(.medium)
+                                .foregroundColor(Color(UIColor.systemBlue))
+                        }
+                    }
                 }
                 
                 Section(header: Text("settings")) {
@@ -52,11 +70,17 @@ struct ProfileView: View {
                                 TextField("address", text: self.$profile.dnsList[i])
                             }
                         }
-                            
-                        Button(action: {
-                            self.viewModel.addDns()
-                        }) {
-                            Text("add-address")
+                        
+                        HStack {
+                            Button(action: {
+                                self.viewModel.addDns()
+                            }) {
+                                Text("add-address")
+                            }
+                            Spacer()
+                            Image(systemName: "plus")
+                                .imageScale(.medium)
+                                .foregroundColor(Color(UIColor.systemBlue))
                         }
                     }
                 }
