@@ -40,18 +40,17 @@ public class ProfileViewModel {
             case .error: return .red
             case .success: return .green
             case .alert: return .yellow
-            case .message: return .gray
+            case .message: return Color(UIColor.secondaryLabel)
         }
     }
 
     /// Define log entry color according to its level
     func logColor(logLevel: Log.LogLevel) -> Color {
         switch logLevel {
-
         case .debug:
-            return .gray
+            return Color(UIColor.secondaryLabel)
         case .info, .notice:
-            return .black
+            return Color(UIColor.label)
         case .warning:
             return .yellow
         case .error, .critical, .alert, .emergency:
@@ -68,7 +67,7 @@ public class ProfileViewModel {
     func mainButton() -> AnyView {
         func button(_ text: String, _ bgColor: Color, textColor: Color = .white, tapable: Bool = true) -> AnyView {
             let button = AnyView(Button(action: {
-                Settings.addProfile(profile: self.profile)
+                Settings.saveProfile(profile: self.profile)
                 Settings.setSelectedProfile(profileId: self.profile.profileId)
                 
                 self.mainButtonAction()

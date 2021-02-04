@@ -12,7 +12,6 @@ import OpenVPNAdapter
 public class Connection: NSObject, ObservableObject {
     private var providerManager: NETunnelProviderManager! = nil
     private var isConfigSaved = false
-    private var evaluation: OpenVPNConfigurationEvaluation!
     private var appGroupDefaults: UserDefaults
     private var profile: Profile
     
@@ -74,7 +73,7 @@ public class Connection: NSObject, ObservableObject {
     }
     
     /// Convert NEVPNStatus to Message structure
-    /// - Parameter status: the NEVPNStatus (connection status)
+    /// - Parameter status: The NEVPNStatus (connection status)
     /// - Returns: Message structure for view presentation purpose
     private func NEVPNStatusToMessage(_ status: NEVPNStatus) -> Message {
         switch status {
@@ -95,13 +94,26 @@ public class Connection: NSObject, ObservableObject {
         }
     }
     
-    /// Observe new Log entries in UserDefaults and append to "output" variable
+    /// Observe new UserDefaults entries
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        let outputMessages = change?[NSKeyValueChangeKey.newKey] as? [Data] ?? [Data]()
-        let qtNewMessages = outputMessages.count - output.count
+        var newEntry: Any?
+        
+        switch keyPath {
+        case Log.LOG_KEY:
+            newEntry = change?[NSKeyValueChangeKey.newKey] as? [Data] ?? [Data]()
+            updateLog(logData: newEntry as! [Data])
+        case .none, .some:
+            return
+        }
+    }
+    
+    /// Append new Log entries to "output" variable
+    private func updateLog(logData: [Data]) {
+        //let outputMessages = change?[NSKeyValueChangeKey.newKey] as? [Data] ?? [Data]()
+        let qtNewMessages = logData.count - output.count
         
         if qtNewMessages > 0 {
-            let newMessages = outputMessages[outputMessages.count - qtNewMessages ..< outputMessages.count]
+            let newMessages = logData[logData.count - qtNewMessages ..< logData.count]
             
             // Append each new log entry
             newMessages.forEach { message in
@@ -146,6 +158,41 @@ public class Connection: NSObject, ObservableObject {
         }
     }
     
+    /// Load content from config file and update the profile
+    /// - Parameter configFile: .ovpn file content (OpenVPN configuration file)
+    public func setConfigFile(configFile: Data) {
+        let evaluation = parseConfigFile(configFile: configFile)
+        
+        profile.configFile = configFile
+        profile.serverAddress = evaluation?.remoteHost ?? ""
+        profile.anonymousAuth = evaluation?.autologin ?? false
+        profile.privKeyPassRequired = evaluation?.isPrivateKeyPasswordRequired ?? false
+        
+        if let ev_dhcpOptions = evaluation?.dhcpOptions {
+            profile.dnsList = ev_dhcpOptions.map({ $0.address ?? "" })
+        }
+        
+        if !(evaluation?.username ?? "").isEmpty {
+            profile.username = evaluation!.username!
+        }
+    }
+    
+    /// Parse .ovpn file
+    /// - Returns: A object contating the options stored on the configuration file
+    private func parseConfigFile(configFile: Data) -> OpenVPNConfigurationEvaluation? {
+        do {
+            let adapter = OpenVPNAdapter()
+            let configuration = OpenVPNConfiguration()
+
+            configuration.fileContent = configFile
+            let evaluation = try adapter.apply(configuration: configuration)
+
+            return evaluation
+        } catch {
+            return nil
+        }
+    }
+    
     /// Validate profile entries an starts (or not) the connection
     public func startVPN() {
         if profile.configFile == nil {
@@ -154,13 +201,19 @@ public class Connection: NSObject, ObservableObject {
             return
         }
         
-        if profile.username.isEmpty {
+        if profile.privKeyPassRequired && profile.privateKeyPassword.isEmpty {
+            Log.append("privateKeyPassword is empty", .debug, .mainApp)
+            message = Message(Util.localize("private-key-password-empty"), .error)
+            return
+        }
+        
+        if !profile.anonymousAuth && profile.username.isEmpty {
             Log.append("username is empty", .debug, .mainApp)
             message = Message(Util.localize("username-empty"), .error)
             return
         }
         
-        if profile.password.isEmpty {
+        if !profile.anonymousAuth && profile.password.isEmpty {
             Log.append("password is empty.", .debug, .mainApp)
             message = Message(Util.localize("password-empty"), .error)
             return

@@ -6,18 +6,26 @@
   
 */
 
+// Global
+"ok" = "OK";
+"cancel" = "Cancelar";
+
 // ProfileView
 "app-title" = "Cliente OpenVPN";
 "configuration-file" = "ARQUIVO DE CONFIGURAÇÃO";
 "pick-file" = "Selecione um arquivo \".ovpn\"";
 "cannot-get-permission-read-file" = "Sem premissão para ler o arquivo.";
+"security" = "SEGURANÇA";
 "credentials" = "CREDENCIAIS";
+"anonymous" = "Anônimo";
 "username" = "Nome de usuário";
 "password" = "Senha";
 "settings" = "CONFIGURAÇÕES";
 "manage-dns" = "Gerenciar servidores DNS";
 "address" = "Endereço";
 "add-address" = "Adicionar endereço";
+"private-key-password" = "Senha da chave privada";
+"insert-private-key-password" = "Por favor insira a senha da chave privada.";
 
 // Connection outputs
 "application-started" = "Aplicação %@ iniciada.";
@@ -25,12 +33,12 @@
 "connection-status-changed" = "Status da conexão alterado para \"%@\".";
 "error-adding-vpn-configuration" = "Erro ao adicionar perfil de VPN às configurações do iOS.";
 "invalid-configuration-file" = "Selecione um arquivo de configuração válido.";
+"private-key-password-empty" = "O campo \"Senha da chave privada\" deve ser preenchido.";
 "username-empty" = "O campo \"Nome de usuário\" deve ser preenchido.";
 "password-empty" = "O campo \"Senha\" deve ser preenchido.";
 
 // Connection status
 "connect" = "Conectar";
-"cancel" = "Cancelar";
 "disconnect" = "Desconectar";
 "disconnected" = "Desconectado";
 "invalid" = "Tentativa de conexão falhou.";

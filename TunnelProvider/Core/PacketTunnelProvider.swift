@@ -19,6 +19,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     var UDPSession: NWUDPSession!
     var TCPConnection: NWTCPConnection!
     
+    var profile: Profile?
     var dnsList = [String]()
     
     lazy var vpnAdapter: OpenVPNAdapter = {
@@ -33,7 +34,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         super.init()
         
         Log.append(Util.localize("application-started", Util.getAppName()), .debug, .packetTunnelProvider)
-        dnsList = Settings.getSelectedProfile()?.dnsList ?? []
+        
+        profile = Settings.getSelectedProfile()
+        dnsList = profile?.dnsList ?? []
     }
     
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
@@ -46,17 +49,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
         guard let ovpnFileContent: Data = providerConfiguration["ovpn"] as? Data else { return }
         
-        let configuration = OpenVPNConfiguration()
+        configuration = OpenVPNConfiguration()
         configuration.fileContent = ovpnFileContent
-        
-        do {
-            evaluation = try vpnAdapter.apply(configuration: configuration)
-        } catch {
-            completionHandler(error)
-            return
-        }
-        
-        configuration.tunPersist = true
+        configuration.privateKeyPassword = profile?.privateKeyPassword
+        applyConfiguration(completionHandler: completionHandler)
 
         if !evaluation.autologin {
             if let username: String = providerConfiguration["username"] as? String, let password: String = providerConfiguration["password"] as? String {
@@ -82,13 +78,21 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         vpnAdapter.connect(using: packetFlow)
     }
     
+    func applyConfiguration(completionHandler: @escaping (Error?) -> Void) {
+        do {
+            evaluation = try vpnAdapter.apply(configuration: configuration)
+        } catch {
+            completionHandler(error)
+            return
+        }
+    }
+    
     override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
         guard let messageString = NSString(data: messageData, encoding: String.Encoding.utf8.rawValue) else {
             completionHandler?(nil)
             return
         }
 
-        Log.append("Got a message from the app: \(messageString)", .info, .packetTunnelProvider)
         Log.append(Util.localize("got-message-from-app", messageString), .info, .packetTunnelProvider)
         completionHandler?(messageData)
     }
@@ -103,77 +107,58 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 extension PacketTunnelProvider: OpenVPNAdapterDelegate {
     func openVPNAdapter(_ openVPNAdapter: OpenVPNAdapter, configureTunnelWithNetworkSettings networkSettings: NEPacketTunnelNetworkSettings?, completionHandler: @escaping (Error?) -> Void) {
-        
-        let DNSSettings = NEDNSSettings(servers: dnsList)
-        DNSSettings.matchDomains = [""]
-        
-        var ipv4IncludeRoutes = [NEIPv4Route]()
-        
-        for dnsServerAddr in dnsList {
-            let dnsRoute = NEIPv4Route(destinationAddress: dnsServerAddr, subnetMask: "255.255.255.0")
-            ipv4IncludeRoutes.append(dnsRoute)
-        }
-        
-        let ipv4Settings = networkSettings?.ipv4Settings
-        ipv4Settings?.includedRoutes = ipv4IncludeRoutes
-        
-        let routes = ipv4Settings?.includedRoutes?.map({ return "\($0.destinationAddress) subnetmask:\($0.destinationSubnetMask)" })
-        if (routes?.count ?? 0) > 0 {
-            Log.append(Util.localize("routes", routes?.joined(separator: "\n") ?? ""), .info, .packetTunnelProvider)
-        }
-        
-        let remoteIPAddress = getIPAddress(dns: evaluation.remoteHost!) ?? "1.1.1.1"
-        Log.append(Util.localize("remote-ip-address", remoteIPAddress), .info, .packetTunnelProvider)
-        
-        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: remoteIPAddress)
-        settings.ipv4Settings = networkSettings?.ipv4Settings
-        settings.dnsSettings = DNSSettings
-        
-        setTunnelNetworkSettings(settings) { (error) in
-            if (networkSettings?.dnsSettings?.servers.count ?? 0) > 0 {
-                Log.append(Util.localize("dns-servers-added", networkSettings?.dnsSettings?.servers.joined(separator: ", ") ?? ""), .info, .packetTunnelProvider)
+
+        // Add custom settings (dns, routes, etc)
+        if let remoteIPAddress = networkSettings?.tunnelRemoteAddress ?? Util.getIPAddress(evaluation.remoteHost!) {
+            let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: remoteIPAddress)
+            let DNSSettings = NEDNSSettings(servers: dnsList)
+            let ipv4Settings = networkSettings?.ipv4Settings
+            
+            DNSSettings.matchDomains = [""]
+            
+            //var ipv4IncludeRoutes = [NEIPv4Route]()
+            //let dnsRoute = NEIPv4Route(destinationAddress: "", subnetMask: "255.255.255.0")
+            
+            //ipv4IncludeRoutes.append(dnsRoute)
+            //ipv4Settings?.includedRoutes = ipv4IncludeRoutes
+
+            settings.ipv4Settings = ipv4Settings
+            settings.dnsSettings = DNSSettings
+
+            setTunnelNetworkSettings(settings) { (error) in
+                if error == nil {
+                    // Start handling packets
+                    //self.packetFlow.readPackets(completionHandler: self.handlePackets)
+                    //self.handlePackets()
+                    
+                    //self.readPackets(completionHandler: self.handlePackets)
+                    //self.packetFlow.readPackets(completionHandler: self.handlePackets)
+                    //self.packetFlow.readPacketObjects(completionHandler: self.handler)
+                    
+                } else {
+                    Log.append(Util.localize("error", error.debugDescription), .error, .packetTunnelProvider)
+                }
+                
+                completionHandler(error)
             }
             
-            if error == nil {
-                // Start handling packets
-                //self.packetFlow.readPackets(completionHandler: self.handlePackets)
-                //self.handlePackets()
+            // Custom settings successfully added
+            if networkSettings?.tunnelRemoteAddress != nil {
+                Log.append(Util.localize("remote-ip-address", networkSettings!.tunnelRemoteAddress), .info, .packetTunnelProvider)
+                Log.append(Util.localize("dns-servers-added", networkSettings!.dnsSettings?.servers.joined(separator: ", ") ?? ""), .info, .packetTunnelProvider)
                 
-                //self.readPackets(completionHandler: self.handlePackets)
-                //self.packetFlow.readPackets(completionHandler: self.handlePackets)
-                //self.packetFlow.readPacketObjects(completionHandler: self.handerr)
-                
-            } else {
-                Log.append(Util.localize("error", error.debugDescription), .error, .packetTunnelProvider)
+                if let ipv4Settings = networkSettings?.ipv4Settings {
+                    let routes = ipv4Settings.includedRoutes?.map({ return "\($0.destinationAddress) subnetmask:\($0.destinationSubnetMask)" })
+                    
+                    if (routes?.count ?? 0) > 0 {
+                        Log.append(Util.localize("routes", routes?.joined(separator: "\n") ?? ""), .info, .packetTunnelProvider)
+                    }
+                }
             }
-            
-            completionHandler(error)
         }
     }
-    
-    func getIPAddress(dns: String) -> String? {
-        var success: DarwinBoolean = false
-        let host = CFHostCreateWithName(nil, dns as CFString).takeRetainedValue()
-        CFHostStartInfoResolution(host, .addresses, nil)
-        
-        if let addresses = CFHostGetAddressing(host, &success)?.takeUnretainedValue() as NSArray?,
-            let theAddress = addresses.firstObject as? NSData {
-            var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
-            
-            if getnameinfo(theAddress.bytes.assumingMemoryBound(to: sockaddr.self), socklen_t(theAddress.length),
-                           &hostname, socklen_t(hostname.count), nil, 0, NI_NUMERICHOST) == 0 {
-                let numAddress = String(cString: hostname)
-                
-                return numAddress
-            } else {
-                return nil
-            }
-        } else {
-            return nil
-        }
-    }
-    
-    func handerr(_ packets: [NEPacket]) {
+
+    func handler(_ packets: [NEPacket]) {
         Log.append("Packet: \(packets[0].description)", .debug, .packetTunnelProvider)
     }
     
@@ -223,7 +208,12 @@ extension PacketTunnelProvider: OpenVPNAdapterDelegate {
             return
         }
         
-        Log.append("\(error.localizedDescription)", .error, .packetTunnelProvider)
+        if let errorMessage = (error as NSError).userInfo[OpenVPNAdapterErrorMessageKey] {
+            Log.append("\(errorMessage as! String)", .error, .packetTunnelProvider)
+        } else {
+            Log.append("\(error.localizedDescription)", .error, .packetTunnelProvider)
+        }
+        
         Log.append(Util.localize("connection-info", vpnAdapter.connectionInformation.debugDescription), .info, .packetTunnelProvider)
         
         if vpnReachability.isTracking {

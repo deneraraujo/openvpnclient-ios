@@ -21,6 +21,9 @@
 		ED2C5A522515BC9600266110 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C5A512515BC9600266110 /* MainButtonStyle.swift */; };
 		ED2C5A542515BD5800266110 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C5A532515BD5800266110 /* DocumentPicker.swift */; };
 		ED360615257E0F080039561F /* Profle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED360614257E0F080039561F /* Profle.swift */; };
+		ED40EB1425CB0074001FFEB7 /* AlertControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40EB1325CB0074001FFEB7 /* AlertControlView.swift */; };
+		ED40EB1A25CB3077001FFEB7 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40EB1925CB3077001FFEB7 /* Bridge.swift */; };
+		ED40EB1E25CB30A0001FFEB7 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40EB1D25CB30A0001FFEB7 /* Bridge.swift */; };
 		ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */; };
 		ED594CD624DBE4010069D301 /* TunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED594CCE24DBE4010069D301 /* TunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ED594CDA24DBE4230069D301 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAA1A9524D60C3100EBFC9C /* NetworkExtension.framework */; };
@@ -85,6 +88,9 @@
 		ED2C5A512515BC9600266110 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 		ED2C5A532515BD5800266110 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		ED360614257E0F080039561F /* Profle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profle.swift; path = VPNClient/Model/Profle.swift; sourceTree = SOURCE_ROOT; };
+		ED40EB1325CB0074001FFEB7 /* AlertControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControlView.swift; sourceTree = "<group>"; };
+		ED40EB1925CB3077001FFEB7 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		ED40EB1D25CB30A0001FFEB7 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bridge.swift; path = VPNClient/Helpers/Bridge.swift; sourceTree = SOURCE_ROOT; };
 		ED594CCE24DBE4010069D301 /* TunnelProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TunnelProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TunnelProvider.entitlements; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		ED02603824D60A3800D00301 /* VPNClient */ = {
 			isa = PBXGroup;
 			children = (
+				ED40EB2125CB30F0001FFEB7 /* Core */,
 				ED2C5A432515608400266110 /* Model */,
 				ED1C5CE924D9E31C0010FF37 /* View */,
 				ED2C5A4E2515BA8800266110 /* ViewModel */,
@@ -217,6 +224,7 @@
 				ED91EC3C24E135E700E462EC /* Log.swift */,
 				ED91EC3324E1355800E462EC /* Config.swift */,
 				ED91EC4C24E15ABE00E462EC /* Util.swift */,
+				ED40EB1925CB3077001FFEB7 /* Bridge.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -224,7 +232,6 @@
 		ED2C5A432515608400266110 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EDA52BA72516833500EB4277 /* Connection.swift */,
 				EDAD6F6024D9EA510050A0C9 /* Profle.swift */,
 			);
 			path = Model;
@@ -246,12 +253,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED40EB2125CB30F0001FFEB7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EDA52BA72516833500EB4277 /* Connection.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ED40EB2225CB3176001FFEB7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		ED594CCF24DBE4010069D301 /* TunnelProvider */ = {
 			isa = PBXGroup;
 			children = (
+				ED40EB2225CB3176001FFEB7 /* Core */,
 				ED360613257E0EEF0039561F /* Model */,
 				EDC86A6E2516E95600504FFA /* Helpers */,
-				ED594CD024DBE4010069D301 /* PacketTunnelProvider.swift */,
 				ED594CD324DBE4010069D301 /* TunnelProvider.entitlements */,
 				ED6A90482580853A00243BD4 /* Localizable.strings */,
 			);
@@ -263,6 +286,7 @@
 			children = (
 				ED2C5A532515BD5800266110 /* DocumentPicker.swift */,
 				ED2C5A512515BC9600266110 /* MainButtonStyle.swift */,
+				ED40EB1325CB0074001FFEB7 /* AlertControlView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -274,6 +298,7 @@
 				EDC86A702516E9B100504FFA /* Log.swift */,
 				EDC86A6F2516E9B100504FFA /* Settings.swift */,
 				EDC86A722516E9B100504FFA /* Util.swift */,
+				ED40EB1D25CB30A0001FFEB7 /* Bridge.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -452,7 +477,9 @@
 				ED91EC4724E15A8800E462EC /* Log.swift in Sources */,
 				ED2C5A522515BC9600266110 /* MainButtonStyle.swift in Sources */,
 				ED02603A24D60A3800D00301 /* AppDelegate.swift in Sources */,
+				ED40EB1A25CB3077001FFEB7 /* Bridge.swift in Sources */,
 				ED2C5A542515BD5800266110 /* DocumentPicker.swift in Sources */,
+				ED40EB1425CB0074001FFEB7 /* AlertControlView.swift in Sources */,
 				ED91EC4D24E15ABE00E462EC /* Util.swift in Sources */,
 				ED02603C24D60A3800D00301 /* SceneDelegate.swift in Sources */,
 				ED2C5A4725156E3600266110 /* Settings.swift in Sources */,
@@ -471,6 +498,7 @@
 			files = (
 				EDC86A732516E9B100504FFA /* Settings.swift in Sources */,
 				EDC86A752516E9B100504FFA /* Config.swift in Sources */,
+				ED40EB1E25CB30A0001FFEB7 /* Bridge.swift in Sources */,
 				EDC86A762516E9B100504FFA /* Util.swift in Sources */,
 				ED360615257E0F080039561F /* Profle.swift in Sources */,
 				ED594CD124DBE4010069D301 /* PacketTunnelProvider.swift in Sources */,

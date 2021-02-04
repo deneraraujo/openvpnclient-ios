@@ -13,10 +13,9 @@ public struct Util {
     public static func getAppName() -> String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
     }
-    
-    
+
     /// Get string from localizable.strings file, and format if necessary
-    /// - Returns: translated string
+    /// - Returns: Translated string
     public static func localize(_ key: String, _ arguments: CVarArg...) -> String {
         var response: String
         
@@ -27,5 +26,30 @@ public struct Util {
         }
         
         return response
+    }
+    
+    /// Get IP Address from a DNS
+    /// - Parameter hostname: Host name or DNS
+    /// - Returns: IP Address
+    public static func getIPAddress(_ hostname: String) -> String? {
+        var success: DarwinBoolean = false
+        let host = CFHostCreateWithName(nil, hostname as CFString).takeRetainedValue()
+        CFHostStartInfoResolution(host, .addresses, nil)
+        
+        if let addresses = CFHostGetAddressing(host, &success)?.takeUnretainedValue() as NSArray?,
+            let theAddress = addresses.firstObject as? NSData {
+            var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+            
+            if getnameinfo(theAddress.bytes.assumingMemoryBound(to: sockaddr.self), socklen_t(theAddress.length),
+                           &hostname, socklen_t(hostname.count), nil, 0, NI_NUMERICHOST) == 0 {
+                let numAddress = String(cString: hostname)
+                
+                return numAddress
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
     }
 }

@@ -118,7 +118,7 @@ public struct Log: Codable, Hashable {
         return value
     }
 
-    public static func cleanLog() {
+    public static func clean() {
         appGroupDefaults.removeObject(forKey: LOG_KEY)
     }
 }

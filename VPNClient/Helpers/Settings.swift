@@ -52,7 +52,7 @@ public struct Settings: Codable {
         return _profiles
     }
     
-    public static func addProfile(profile: Profile) {
+    public static func saveProfile(profile: Profile) {
         if let index = _profiles.firstIndex(where: { $0.profileId == profile.profileId }) {
             _profiles[index] = profile
         } else {
@@ -97,7 +97,7 @@ public struct Settings: Codable {
         return value
     }
     
-    public static func cleanSettings() {
+    public static func clean() {
         appGroupDefaults.removeObject(forKey: SETTINGS_KEY)
         _selectedProfileId = ""
         _profiles = []

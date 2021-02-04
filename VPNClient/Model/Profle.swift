@@ -15,20 +15,26 @@ public class Profile: ObservableObject, Codable {
 
     @Published var profileName = ""
     @Published var serverAddress = ""
+    @Published var anonymousAuth = false
     @Published var username = ""
     @Published var password = ""
     @Published var customDNSEnabled = true
     @Published var dnsList = [String]()
+    @Published var privKeyPassRequired = false
+    @Published var privateKeyPassword = ""
 
     enum CodingKeys: CodingKey {
         case profileId
         case configFile
         case profileName
         case serverAddress
+        case anonymousAuth
         case username
         case password
         case customDNSEnabled
         case dnsList
+        case privKeyPassRequired
+        case privateKeyPassword
     }
     
     public init(profileName: String, profileId: String? = nil) {
@@ -51,10 +57,13 @@ public class Profile: ObservableObject, Codable {
         configFile = try container.decode(Data.self, forKey: .configFile)
         profileName = try container.decode(String.self, forKey: .profileName)
         serverAddress = try container.decode(String.self, forKey: .serverAddress)
+        anonymousAuth = try container.decode(Bool.self, forKey: .anonymousAuth)
         username = try container.decode(String.self, forKey: .username)
         password = try container.decode(String.self, forKey: .password)
         customDNSEnabled = try container.decode(Bool.self, forKey: .customDNSEnabled)
         dnsList = try container.decode([String].self, forKey: .dnsList)
+        privKeyPassRequired = try container.decode(Bool.self, forKey: .privKeyPassRequired)
+        privateKeyPassword = try container.decode(String.self, forKey: .privateKeyPassword)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -64,38 +73,12 @@ public class Profile: ObservableObject, Codable {
         try container.encode(configFile, forKey: .configFile)
         try container.encode(profileName, forKey: .profileName)
         try container.encode(serverAddress, forKey: .serverAddress)
+        try container.encode(anonymousAuth, forKey: .anonymousAuth)
         try container.encode(username, forKey: .username)
         try container.encode(password, forKey: .password)
         try container.encode(customDNSEnabled, forKey: .customDNSEnabled)
         try container.encode(dnsList, forKey: .dnsList)
-    }
-    
-    /// Load content from config file and update the profile
-    /// - Parameter configFile: .ovpn file content (OpenVPN configuration file)
-    public func setConfigFile(configFile: Data) {
-        self.configFile = configFile
-
-        let evaluation = getOVPNEvaluation()
-        let dhcpOptions: [OpenVPNDhcpOptionEntry] = evaluation?.dhcpOptions ?? []
-
-        serverAddress = evaluation?.remoteHost ?? ""
-        username = evaluation?.username ?? ""
-        dnsList = dhcpOptions.map({ $0.address ?? "" })
-    }
-    
-    /// Parse .ovpn file
-    /// - Returns: A object contating the options stored on the configuration file
-    private func getOVPNEvaluation() -> OpenVPNConfigurationEvaluation? {
-        do {
-            let adapter = OpenVPNAdapter()
-            let configuration = OpenVPNConfiguration()
-
-            configuration.fileContent = configFile
-            let evaluation = try adapter.apply(configuration: configuration)
-
-            return evaluation
-        } catch {
-            return nil
-        }
+        try container.encode(privKeyPassRequired, forKey: .privKeyPassRequired)
+        try container.encode(privateKeyPassword, forKey: .privateKeyPassword)
     }
 }

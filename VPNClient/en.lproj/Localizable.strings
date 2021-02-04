@@ -6,18 +6,26 @@
   
 */
 
+// Global
+"ok" = "OK";
+"cancel" = "Cancel";
+
 // ProfileView
 "app-title" = "OpenVPN Client";
 "configuration-file" = "CONFIGURATION FILE";
 "pick-file" = "Pick a \".ovpn\" file";
 "cannot-get-permission-read-file" = "Cannot get permission to raad the file.";
+"security" = "SECURITY";
 "credentials" = "CREDENTIALS";
+"anonymous" = "Anonymous";
 "username" = "Username";
 "password" = "Password";
 "settings" = "SETTINGS";
 "manage-dns" = "Manage DNS servers";
 "address" = "Address";
 "add-address" = "Add address";
+"private-key-password" = "Private key password";
+"insert-private-key-password" = "Please insert the private key password.";
 
 // Connection outputs
 "application-started" = "Application %@ started.";
@@ -25,12 +33,12 @@
 "connection-status-changed" = "Connection status changed to \"%@\".";
 "error-adding-vpn-configuration" = "Error on adding VPN configuration to iOS settings.";
 "invalid-configuration-file" = "Select a valid configuration file.";
+"private-key-password-empty" = "Private key password is empty.";
 "username-empty" = "Username is empty.";
 "password-empty" = "Password is empty.";
 
 // Connection status
 "connect" = "Connect";
-"cancel" = "Cancel";
 "disconnect" = "Disconnect";
 "disconnected" = "Disconnected";
 "invalid" = "Invalid connection attempt.";

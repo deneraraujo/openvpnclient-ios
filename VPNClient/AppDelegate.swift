@@ -12,7 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Clean the output log
-        Log.cleanLog()
+        Log.clean()
+        
+        // Clean bridge values
+        Bridge.clean()
         
         // Load app settings
         _ = Settings.load()
